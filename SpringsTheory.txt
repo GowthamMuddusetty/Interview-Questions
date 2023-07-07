@@ -235,10 +235,57 @@ Feautures :
 -> Optional integration with spring mvc
 __________________________________________________________________________________________________________________________________________________________________________
 
+<<<<<<< Updated upstream
 
 
 
 
+=======
+What is criteria query ?
+
+-> Criteria Query in hibernate is used for join queries for joining multiple tables, criteria queries are more flexible and provide better support to for writing dynamic queries as compared to HQL. 
+
+-> useful methods for hibernate criteria join are createAlias(), setFetchMode(), and setProtection().
+__________________________________________________________________________________________________________________________________________________________________________
+
+
+What is pagenation ?
+
+-> Pagenation is a process that is used to divide a large dataset into smaller chunks.
+-> paging and sorting interfaces of a spring data provides methods for paging and sorting.
+
+__________________________________________________________________________________________________________________________________________________________________________
+
+Exception Handling - Spring Boot 
+
+https://www.geeksforgeeks.org/spring-boot-exception-handling/
+_________________________________________________________________________________________________________________________________________________________________________
+
+what is @exceptionhandler annotation ?
+
+-> it is a part of spring mvc module and is used with in the context of controller class
+
+-> When an exception occurs during the execution of a request handling method in Spring MVC, 
+   the @ExceptionHandler annotation allows you to define a method that will handle that specific type of exception. 
+
+-> By annotating a method with @ExceptionHandler, you are essentially declaring it as an exception handler method for the associated controller class.
+
+@Controller
+public class MyController {
+
+  @ExceptionHandler(Exception.class)
+  public ModelAndView handleException(Exception ex) {
+    // Handle the exception
+    ModelAndView modelAndView = new ModelAndView();
+    modelAndView.setViewName("error");
+    modelAndView.addObject("errorMessage", "An error occurred: " + ex.getMessage());
+    return modelAndView;
+  }
+
+  // Other request handling methods...
+}
+__________________________________________________________________________________________________________________________________________________________________________
+>>>>>>> Stashed changes
 
 
 

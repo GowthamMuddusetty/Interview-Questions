@@ -459,7 +459,44 @@ Threads in java ?
 
 -> Multithreading is commonly used in Java for tasks that require parallel processing,
    such as running multiple background tasks, performing I/O operations, and handling user interface events. 
+
+
+
+// Way 1
+// Creating thread By Extending To Thread class
+
+class MyThread extends Thread {
+
+	// Method 1
+	// Run() method for our thread
+	public void run()
+	{
+
+		// Print statement
+		System.out.println(
+			"Thread is running created by extending to parent Thread class");
+	}
+
+	// Method 2
+	// Main driver method
+	public static void main(String[] args)
+	{
+
+		// Creating object of our thread class inside main()
+		// method
+		MyThread myThread = new MyThread();
+	
+		// Starting the thread
+		myThread.start();
+	}
+}
+
 _________________________________________________________________________________________________________________________________________________________________________
+
+What is thread safe in java ?
+
+Thread safety in java is the process to make our program safe to use in multithreaded environmentthere are different ways through which we can make our program thread safe. Synchronization is the easiest and most widely used tool for thread safety in java.
+__________________________________________________________________________________________________________________________________________________________________________
 
 what is aggregation and composition in java ?
 
@@ -498,6 +535,170 @@ What is the difference between final, finally, and finalize in Java?
 
 -> finalize is a method called by the garbage collector before reclaiming the memory occupied by an object. However, it's generally recommended to use the try-with-
    resources statement or explicitly close resources instead of relying on finalize
+__________________________________________________________________________________________________________________________________________________________________________
+
+when finally block wont be executed ?
+
+In Java, there is one possibility where finally block will not be executed. They are as follows:
+
+1. When the System.exit() method is called in the try block before the execution of finally block, finally block will not be executed.
+
+
+package finallyProgram;
+public class FinallyBlock1
+{
+ void m1()
+ { 
+    try {
+       System.out.println("I am in try block");
+       System.exit(0);
+    }
+    finally {
+       System.out.println("I am in finally block");	
+    }
+   System.out.println("Statement after finally block");
+  }
+public static void main(String[] args) 
+{
+   FinallyBlock1 obj = new FinallyBlock1();
+   obj.m1();
+  }
+}
+
+
+Output:
+       I am in try block
+---------------
+Program code 2:
+
+package finallyProgram;
+public class FinallyBlock2 {
+void m1()
+{ 
+  int a = 20, b = 0;	
+  try {
+     System.out.println("I am in try block");
+     System.exit(0);
+     int c = a/b;
+     System.out.println("Result: " +c);
+  }
+  catch(ArithmeticException ae)
+  {
+     System.out.println("I am in catch block");
+  }
+  finally {
+      System.out.println("I am in finally block");	
+  }
+ System.out.println("Statement after finally block");
+}
+public static void main(String[] args) 
+{
+   FinallyBlock2 obj = new FinallyBlock2();
+   obj.m1();
+  }
+}
+Output:
+      I am in try block
+---------------
+Program code 3:
+
+package finallyProgram;
+public class FinallyBlock3 {
+void m1()
+{ 
+  int a = 20, b = 0;	
+  try {
+     System.out.println("I am in try block");
+     int c = a/b;
+     System.exit(0);
+     System.out.println("Result: " +c);
+  }
+  catch(ArithmeticException ae)
+  {
+    System.out.println("I am in catch block");
+  }
+  finally 
+  {
+    System.out.println("I am in finally block");	
+  }
+  System.out.println("Statement after finally block");
+}
+ public static void main(String[] args) 
+ {
+ FinallyBlock3 obj = new FinallyBlock3();
+  obj.m1();
+  }
+}
+Output:
+       I am in try block
+       I am in catch block
+       I am in finally block
+       Statement after finally block
+__________________________________________________________________________________________________________________________________________________________________________
+
+what is try with resources in java ?
+
+-> The try-with-resources statement is a try statement that declares one or more resources. 
+
+-> A resource is an object that must be closed after the program is finished with it. 
+ 
+-> The try-with-resources statement ensures that each resource is closed at the end of the statement
+
+static String readFirstLineFromFile(String path) throws IOException {
+	    try (FileReader fr = new FileReader(path);
+	         BufferedReader br = new BufferedReader(fr)) {
+	        return br.readLine();
+	    }
+	}
+
+Here are some examples of commonly used resources that need to be closed after use:
+
+File streams: When reading from or writing to files.
+Database connections: When interacting with databases.
+Network sockets: When establishing connections to remote servers.
+Input/output streams: When performing input/output operations, such as reading or writing data.
+Readers and writers: Used for reading and writing character data.
+JDBC resources: PreparedStatements, ResultSets, and other JDBC-related objects.
+Image resources: When working with images, such as loading and manipulating them.
+Audio resources: When playing or manipulating audio files.
+ZIP file streams: When reading from or writing to ZIP archives.
+BufferedReader and BufferedWriter: Used for efficient reading and writing of character data.
+__________________________________________________________________________________________________________________________________________________________________________
+ 
+Buffer Reader and Buffer Writer ?
+
+buffer reader:
+
+-> A BufferedReader reads text from a character stream with buffering capabilities, which helps in reducing the number of I/O operations. 
+
+-> It provides methods like readLine() to read a line of text, read() to read a single character, and more.
+
+try (BufferedReader reader = new BufferedReader(new FileReader("file.txt"))) {
+    String line;
+    while ((line = reader.readLine()) != null) {
+        // Process each line of text
+        System.out.println(line);
+    }
+} catch (IOException e) {
+    // Exception handling
+}
+
+
+buffer writer :
+
+-> A BufferedWriter writes text to a character stream with buffering capabilities. 
+
+-> Similar to BufferedReader, it writes data to an internal buffer and performs fewer I/O operations, which can improve performance. 
+
+-> It provides methods like write(String) to write a string, newLine() to write a platform-specific line separator, and more.
+
+try (BufferedWriter writer = new BufferedWriter(new FileWriter("file.txt"))) {
+    writer.write("Hello, world!");
+    writer.newLine();
+    writer.write("This is a new line.");
+} catch (IOException e) {
+    // Exception handling
+}
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is the difference between String, StringBuilder, and StringBuffer in Java?
@@ -594,7 +795,7 @@ public class ParallelStreamExample {
                 .sum();
 
         // Parallel stream
-        int sumParallel = numbers.parallelStream()
+        int sumParallel = numbers.parallelStream() 
                 .filter(n -> n % 2 == 0)
                 .mapToInt(n -> n)
                 .sum();
@@ -637,6 +838,41 @@ How HashMap internally works?
 
 -> When ever you declare a hashmap, internally it will create an array of buckets. The buckets are reffered to as nodes or you can say as list.
 __________________________________________________________________________________________________________________________________________________________________________
+
+Collections heirarchy ?
+
+https://data-flair.training/blogs/wp-content/uploads/sites/2/2018/03/hierarchy-of-collection-framework-in-java.webp
+__________________________________________________________________________________________________________________________________________________________________________
+
+what is   lock ?
+
+dead lock in java is a situation that occur when thread is waiting for an object lock, that is acquired by another thread and second thread is waiting for an object lock that is acquired by th first thread, since both the threads are waiting for each other to release the lock simultaneously this condition is called dead lock.
+__________________________________________________________________________________________________________________________________________________________________________
+
+Difference between Abstraction and Encapsulation ? 
+
+-> Abstraction is the method of hiding the unwanted information.
+-> Whereas encapsulation is a method to hide the data in a single entity or unit along with a method to protect information from outside. 
+-> We can implement abstraction using abstract class and interfaces.
+__________________________________________________________________________________________________________________________________________________________________________
+
+object class methods ?
+
+-> Object() - constructor 
+1. getClass()
+2. finalize(), its deprcated since 9  
+3. notify()
+4. notifyAll()
+5. clone()
+6. wait() --> overloaded 3 methods 
+7. toString()
+8. equals()
+9. hashcode()
+__________________________________________________________________________________________________________________________________________________________________________
+
+
+
+
 
 
 
