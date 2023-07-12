@@ -235,12 +235,6 @@ Feautures :
 -> Optional integration with spring mvc
 __________________________________________________________________________________________________________________________________________________________________________
 
-<<<<<<< Updated upstream
-
-
-
-
-=======
 What is criteria query ?
 
 -> Criteria Query in hibernate is used for join queries for joining multiple tables, criteria queries are more flexible and provide better support to for writing dynamic queries as compared to HQL. 
@@ -285,7 +279,256 @@ public class MyController {
   // Other request handling methods...
 }
 __________________________________________________________________________________________________________________________________________________________________________
->>>>>>> Stashed changes
+
+what is difference between controller and restcontroller ?
+
+-> The main difference between Controller and RestController Annotation is ResponseBody Annotation.
+
+->Controller annotation does not call @ResponseBody to all Controller's method itself. 
+
+-> Whereas @RestController combines Controller and @ResponseBody, which use @ResponseBody to all its methods by default.
+__________________________________________________________________________________________________________________________________________________________________________
+
+what is Response Body ?
+
+-> @ResponseBody. The @ResponseBody annotation tells a controller that the object returned is automatically serialized into JSON 
+   and passed back into the HttpResponse object.
+__________________________________________________________________________________________________________________________________________________________________________
+
+what is Response Entity ?
+
+-> ResponseEntity is a class provided by Spring Framework that represents an HTTP response. It allows you to customize the response status, headers, and body.
+
+
+In the context of the save method:
+
+java
+Copy code
+public ResponseEntity<Course> save(@RequestBody Course course) {
+    service.save(course);
+    return ResponseEntity.ok().body(course);
+}
+
+
+
+ResponseEntity<Course>: This is the return type of the method, indicating that the response will be wrapped in a ResponseEntity object containing a Course object as the response body.
+
+ResponseEntity.ok(): This is a static factory method of the ResponseEntity class. It creates a new ResponseEntity with a response status of 200 OK. It indicates that the request was successful.
+
+body(course): This method is called on the ResponseEntity object to set the response body as the provided course object.
+__________________________________________________________________________________________________________________________________________________________________________
+
+HIBERNATE MAPPINGS
+
+ONE TO ONE MAPPINGS :
+
+in one directional way :
+
+public class customer {
+	private int id;
+
+	private string name;
+
+	@onetoone(cascade = cascadetype.all)
+	private Item item;
+	
+	// GETTERS AND SETTERS & constructor
+}
+
+
+public class Item{
+
+	private int Id;
+	private string name;
+}
+
+-------------------------
+for bi-directional way :
+
+public class customer {
+	private int id;
+
+	private string name;
+
+	@onetoone(cascade = cascadetype.all)
+	private Item item;
+	
+	// GETTERS AND SETTERS & constructor
+}
+
+
+public class Item{
+
+	private int Id;
+	private string name;
+	
+	@onetoone(cascade = cascadeType.all, mappedby = item)
+	private Customer customer;
+
+}
+
+case 3 : what if u wanted to define joining table? 
+
+public class customer {
+	private int id;
+
+	private string name;
+
+	@onetoone(cascade = cascadetype.all)
+	@Jointable(name = "customer_item",
+			join columns = {@Join column(name = "customer_id)},
+			inversejoincolumns = {@Joincolumn(name = "item_id)})
+	private Item item;
+	
+	// GETTERS AND SETTERS & constructor
+}
+
+public class Item{
+
+	private int Id;
+	private string name;
+
+}
+__________________________________________________________________________________________________________________________________________________________________________
+
+ONE TO MANY & MANY TO ONE :
+
+case 1: 
+
+
+public class customer {
+	private int id;
+
+	private string name;
+
+	@onetomany(cascade = cascadetype.all)
+	private List<Item> items = new ArrayList<>();
+	
+	// GETTERS AND SETTERS & constructor
+}
+
+
+public class Item{
+
+	private int Id;
+	private string name;
+
+}
+
+-> this will create 3 tables , customer & item & customer_items
+---------------------
+
+case 2 :
+
+
+public class customer {
+	private int id;
+
+	private string name;
+
+	@onetomany(cascade = cascadetype.all)
+	@joincolumn(name = "customer_id")
+	private List<Item> items = new ArrayList<>();
+	
+	// GETTERS AND SETTERS & constructor
+}
+
+
+public class Item{
+
+	private int Id;
+	private string name;
+
+}
+
+-> this will create 2 tables only customer & item.  in item u will have customer_id, this is one to many.
+-------------------------
+
+
+case 3 :
+
+if you want to have many to one in bi-directional way also 
+
+
+public class customer {
+	private int id;
+
+	private string name;
+
+	@onetomany(cascade = cascadetype.all, mappedby="customer")
+	private List<Item> items = new ArrayList<>();
+	
+	// GETTERS AND SETTERS & constructor
+}
+
+
+public class Item{
+
+	private int Id;
+	private string name;
+	
+	@Many2one(cascade = cascadetype.all)
+	@JoinColumn(name="customer_id")
+	private Customer customer;
+
+}
+
+-> u have to set items to customer and also have to set customer to items, this is how bidirectional works.
+-> 2 tables will be shown, customer, item, in items u will have fk.
+__________________________________________________________________________________________________________________________________________________________________________
+
+MANY 2 MANY :
+
+CASE 1:
+
+public class customer {
+	private int id;
+
+	private string name;
+
+	@manytomany(cascade = cascadetype.all)
+	private Set<Item> items = new HashSet<>();
+	
+	// GETTERS AND SETTERS & constructor
+}
+
+
+public class Item{
+
+	private int Id;
+	private string name;
+}
+
+-> this will create 3 tables customer,item,customer_item
+----------------------------
+
+case 2 : BI-Directional
+
+
+public class customer {
+	private int id;
+
+	private string name;
+
+	@manytomany(cascade = cascadetype.all)
+	@JoinTable(name = "customer_item,
+		joincolumns={ @joincolumn(name = "customer_id")},
+		inversejoincolumn = { @joincolumn = "item_id)})
+	private Set<Item> items = new HashSet<>();
+	
+	// GETTERS AND SETTERS & constructor
+}
+
+
+public class Item{
+
+	private int Id;
+	private string name;
+	
+	@many2many(cascade = cascadetype.all, mappedby = "items")
+	private Set<Customer> customer = new HashSet<>()
+}
+__________________________________________________________________________________________________________________________________________________________________________
 
 
 

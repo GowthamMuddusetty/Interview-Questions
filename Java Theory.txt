@@ -818,7 +818,6 @@ public class ParallelStreamExample {
    produce incorrect results when executed in parallel.
 __________________________________________________________________________________________________________________________________________________________________________
 
-
 What is an interface in Java?
 
 Ans: An interface in Java is a mechanism that is used to achieve complete abstraction. 
@@ -871,23 +870,195 @@ object class methods ?
 __________________________________________________________________________________________________________________________________________________________________________
 
 
+SOLID PRINCIPLES 
+
+S -> Single Responsibility Principle
+O -> Open & Close principle
+L -> Leskov's Substitution principle
+I -> Interface Segregation principle
+D -> Dependency Inversion Principle
+
+Solid principles are the design principles  that enable us to manage most of the software problems.
+
+Single Responsibility Principle (SRP) :
+-> the srp states that every java class must perform a single functionality. 
+-> Implementation of multiple functionalities in a single class mashup the code.
+
+Open closed principle (OCP) : 
+-> the opc states that according to new requirements the module should be open for extension but closed for modification. 
+
+Liskov Substitution Prinicipal (LSP) : 
+-> It applies to inheritance in such a way that the derived classes must be completely substitutable for their base classes. 
+-> In other words, if class A is sub type of class B, then we should be able to replace B with A without interupting the behaviour of programme.
+
+Interface Segregation Principal (ISP) :
+-> Clients should not be forced to depend on interfaces they do not use. 
+-> This principle promotes the idea of creating specific, focused interfaces rather than large, monolithic interfaces.
+-> It aims to avoid "fat" interfaces with unnecessary methods and reduces the coupling between clients and implementations.
+
+Dependency Inversion Principle (DIP): 
+-> High-level modules should not depend on low-level modules. Both should depend on abstractions. 
+-> This principle encourages the use of dependency injection and inversion of control to decouple modules and reduce direct dependencies. 
+-> It promotes the use of interfaces and abstract classes to define contracts and allow for flexibility and easier testing.
+_______________________________________________________________________________________________________________________________________________________________________
 
 
+Shallow copy vs Deep Copy ?
+
+SHALLOW COPY :
 
 
+A shallow copy creates a new object and copies the reference of the original object into it. It means that both the original object and the copied object will point to the same memory location. Any changes made to the original object will be reflected in the copied object and vice versa. In other words, a shallow copy creates a new object but shares the internal references with the original object.
+
+To perform a shallow copy in Java, you can use the clone() method or copy constructors. However, it's important to note that for the clone() method to work properly, the class must implement the Cloneable interface.
+
+Here's an example of a shallow copy using the clone() method:
 
 
+class MyClass implements Cloneable {
+    private int value;
+
+    public MyClass(int value) {
+        this.value = value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyClass original = new MyClass(10);
+
+        try {
+            MyClass shallowCopy = (MyClass) original.clone();
+
+            System.out.println(original.getValue());     // Output: 10
+            System.out.println(shallowCopy.getValue());  // Output: 10
+
+            original.setValue(20);
+
+            System.out.println(original.getValue());     // Output: 20
+            System.out.println(shallowCopy.getValue());  // Output: 20 (both values changed)
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+    }
+}
 
 
+Deep Copy:
+
+A deep copy creates a new object and recursively copies all the fields of the original object into the new object. It means that even if the original object changes, the copied object remains unaffected. In other words, a deep copy creates a new object and copies all the internal references, recursively, so that both objects are completely independent.
 
 
+class MyClass implements Cloneable {
+    private int value;
+
+    public MyClass(int value) {
+        this.value = value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        MyClass cloned = (MyClass) super.clone();
+        // Perform deep copy for any mutable fields
+        // In this case, there are no mutable fields, so no further action is needed
+        return cloned;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyClass original = new MyClass(10);
+
+        try {
+            MyClass deepCopy = (MyClass) original.clone();
+
+            System.out.println(original.getValue());  // Output: 10
+            System.out.println(deepCopy.getValue());  // Output: 10
+
+            original.setValue(20);
+
+            System.out.println(original.getValue());  // Output: 20
+            System.out.println(deepCopy.getValue());  // Output: 10 (deep copy remains unchanged)
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+__________________________________________________________________________________________________________________________________________________________________________
+
+Why do we use Design Patterns ?
+
+-> Design patterns are a set of proven solutions to common software design problems. 
+
+-> They provide standardized approaches for designing software systems that are reusable, maintainable, and scalable. 
+
+-> Java, being an object-oriented programming language, is well-suited for implementing design patterns.
+__________________________________________________________________________________________________________________________________________________________________________
+
+Design Patterns in java ?
 
 
+Certainly! There are several design patterns commonly used in Java. Here are some of the most well-known design patterns in Java:
+
+Creational Patterns:
+
+-> Singleton: Ensures that a class has only one instance and provides a global point of access to it.
+
+-> Factory Method: Defines an interface for creating objects, but lets subclasses decide which class to instantiate.
+
+-> Abstract Factory: Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
+
+-> Builder: Separates the construction of a complex object from its representation, allowing the same construction process to create different representations.
+
+-> Prototype: Creates new objects by cloning existing ones, avoiding the need for complex initialization.
 
 
+Structural Patterns:
+
+-> Adapter: Allows objects with incompatible interfaces to work together by converting the interface of one class into another.
+
+-> Decorator: Dynamically adds new behaviors to an object without changing its existing code.
+
+-> Composite: Represents a group of objects as a single object, treating individual and composite objects uniformly.
+
+-> Proxy: Provides a surrogate or placeholder for another object to control access to it.
+
+-> Facade: Provides a simplified interface to a complex subsystem, making it easier to use.
 
 
+Behavioral Patterns:
 
+-> Observer: Defines a one-to-many dependency between objects, so that when one object changes state, all its dependents are notified and updated automatically.
+
+-> Strategy: Encapsulates a family of algorithms and makes them interchangeable, allowing clients to switch between algorithms at runtime.
+
+-> Command: Encapsulates a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.
+
+-> Template Method: Defines the skeleton of an algorithm in a base class, allowing subclasses to provide specific implementations of certain steps.
+
+-> Iterator: Provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
+__________________________________________________________________________________________________________________________________________________________________________
 
 
 
