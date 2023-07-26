@@ -5,10 +5,36 @@ this is tosay, once a string is created, it cannot be changed, if any changes it
 
 __________________________________________________________________________________________________________________________________________________________________________
 
+What are wrapper classes in java ?
+
+-> Wrapper classes in Java are a set of classes that allow you to convert primitive data types into objects and vice versa.
+
+-> Wrapper classes provide a way to treat these primitive types as objects and enable various utility methods to be applied to them.
+
+The following are the wrapper classes in Java for each primitive data type:
+
+Integer: Wrapper for int
+Long: Wrapper for long
+Short: Wrapper for short
+Byte: Wrapper for byte
+Float: Wrapper for float
+Double: Wrapper for double
+Character: Wrapper for char
+Boolean: Wrapper for boolean
+
+__________________________________________________________________________________________________________________________________________________________________________
+
  Exception Heriarchy ?
 
 https://media.geeksforgeeks.org/wp-content/uploads/20220120111809/Group21-660x330.jpg
 
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is the purpose of native method in Java?
+
+-> In Java, a native method is a method whose implementation is provided in a language other than Java.
+
+-> These methods are declared with the native keyword and serve as a bridge between Java code and code written in other programming languages, such as C or C++.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is Iterator?
@@ -396,6 +422,12 @@ What is the difference between HashMap and TreeMap?
 -> HashMap may contain a null key with multiple null values whereas TreeMap cannot hold a null key but can have multiple null values.
 __________________________________________________________________________________________________________________________________________________________________________
 
+what is flatmap ?
+
+-> Java flatMap is a method that, when applied to a stream of values, maps each value to some required output value.
+
+__________________________________________________________________________________________________________________________________________________________________________
+
 What is the difference between Collection and Collections?
 
 -> The differences between the Collection and Collections are given below.
@@ -408,6 +440,13 @@ What is the difference between Collection and Collections?
 
 -> The Collection interface provides the methods that can be used for data structure
    whereas Collections class provides the static methods which can be used for various operation on a collection.
+_________________________________________________________________________________________________________________________________________________________________________
+
+what is difference between AL, LL, VECTOR ?
+
+-> ArrayList provides fast random access, LinkedList is efficient for frequent insertions and deletions, and Vector is synchronized for thread safety (but slower). 
+
+-> The choice between them depends on the specific requirements and usage patterns of your application.
 __________________________________________________________________________________________________________________________________________________________________________
 
  What is the difference between Comparable and Comparator?
@@ -498,6 +537,13 @@ What is thread safe in java ?
 Thread safety in java is the process to make our program safe to use in multithreaded environmentthere are different ways through which we can make our program thread safe. Synchronization is the easiest and most widely used tool for thread safety in java.
 __________________________________________________________________________________________________________________________________________________________________________
 
+What is serialistion in java ?
+
+-> serialisation is a process that converting an object's state in a format that can be easily sorted, transmitted, or reconstructed later.
+
+-> In java, serialisation is commonly used to persist object to files, send objects over a network, storing objects in db.
+__________________________________________________________________________________________________________________________________________________________________________
+
 what is aggregation and composition in java ?
 
 A) 
@@ -508,6 +554,73 @@ Aggregation:
 -> Aggregation is a relationship between two classes where one class contains a reference to another class as a member variable.
 
 -> An example of aggregation is a university containing multiple departments, where each department can exist independently of the university.
+
+------------------
+class Department {
+    private String name;
+    private String code;
+
+    public Department(String name, String code) {
+        this.name = name;
+        this.code = code;
+    }
+}
+
+class University {
+    private String name;
+    private String location;
+    private List<Department> departments; // Aggregation: University has-a list of departments.
+
+    public University(String name, String location) {
+        this.name = name;
+        this.location = location;
+        this.departments = new ArrayList<>();
+    }
+
+    public void addDepartment(Department department) {
+        departments.add(department);
+    }
+}
+
+// Usage:
+Department dept1 = new Department("Computer Science", "CS");
+Department dept2 = new Department("Physics", "PHYS");
+
+University university = new University("ABC University", "City XYZ");
+university.addDepartment(dept1);
+university.addDepartment(dept2);
+--------------
+
+
+class Engine {
+    private int horsepower;
+
+    public Engine(int horsepower) {
+        this.horsepower = horsepower;
+    }
+}
+
+class Car {
+    private String make;
+    private String model;
+    private Engine engine; // Composition: Car has-a Engine.
+
+    public Car(String make, String model, int horsepower) {
+        this.make = make;
+        this.model = model;
+        this.engine = new Engine(horsepower);
+    }
+
+    public int getHorsepower() {
+        return engine.getHorsepower();
+    }
+}
+
+// Usage:
+Car car = new Car("Toyota", "Camry", 200);
+int horsepower = car.getHorsepower();
+
+----------------
 
 Composition:
 
@@ -825,6 +938,35 @@ Ans: An interface in Java is a mechanism that is used to achieve complete abstra
 ->  It is basically a kind of class that contains only constants and abstract methods.
 __________________________________________________________________________________________________________________________________________________________________________
 
+Difference between interface and abstarct class ?
+
+INTERFACE :                                                                            
+
+1. If we dont have anything about implementation just we have requirement specification then we should go for interface.
+2. Inside interface every method is abstract and public. Hence we acheive 100% abstraction.
+3. Abstract class can have abstract and non-abstract methods.
+4. Abstract class doesn't support multiple inheritance.
+5. Abstract class can have final, non-final, static and non-static variables.
+6. Abstract class can provide the implementation of interface.
+7. The abstract keyword is used to declare abstract class.
+8. An abstract class can be extended using keyword "extends".
+9. A Java abstract class can have class members like private, protected, etc.
+
+ ABSTRACT CLASS :
+
+1. If we are talking about implementation but not completely then we should go for abstract class.
+2. Every method present in abstract class need to be abstract and public. we can also have concrete methods also.
+3. Interface can have only abstract methods. Since Java 8, it can have default and static methods also.
+4. Interface supports multiple inheritance.
+5. Interface has only static and final variables.
+6. Interface can't provide the implementation of abstract class.
+7. The interface keyword is used to declare interface.
+8. An interface can be implemented using keyword "implements".
+9. Members of a Java interface are public by default.
+
+-> Simply, abstract class achieves partial abstraction (0 to 100%) whereas interface achieves fully abstraction (100%).
+________________________________________________________________________________________________________________________________________________________________________
+
 Can we define private and protected modifiers for data members (fields) in interfaces?
 
 Ans: No, we cannot define private and protected modifiers for variables in interface because the fields (data members) declared in an interface are by default public,     
@@ -855,7 +997,8 @@ Difference between Abstraction and Encapsulation ?
 -> We can implement abstraction using abstract class and interfaces.
 __________________________________________________________________________________________________________________________________________________________________________
 
-object class methods ?
+
+ class methods ?
 
 -> Object() - constructor 
 1. getClass()
@@ -1059,7 +1202,6 @@ Behavioral Patterns:
 
 -> Iterator: Provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
 __________________________________________________________________________________________________________________________________________________________________________
-
 
 
 

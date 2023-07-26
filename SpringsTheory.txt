@@ -19,7 +19,7 @@ explain this code ?
 -> The main method is the starting point of application. it calls the run method of spring application class 
 -> the run method starts the application and performs various intialisation tasks like it sets up spring application context, loads, configurers beans and startsthe     
    emebeded tomcat server.
--> by running this class it starts the spring boot applocation that listens the incomming http requests and handles them using restful principles.
+-> by running this class it starts the spring boot application that listens the incomming http requests and handles them using restful principles.
 _______________________________________________________________________________________________________________________________________________________________________
 
 Hibernate Framework:
@@ -51,7 +51,7 @@ What is Hibernate first level and second level cache?
 the first level caching is only associated with session level and accessable only at the session level.
 
 where as second level caching is associated with session factory and it is available to all the sessions.
-________________________________________________________________________________________________________________________________________________________
+__________________________________________________________________________________________________________________________________________________________________________
 
 What is the benefit of using Hibernate?
 
@@ -64,9 +64,11 @@ ________________________________________________________________________________
 
 Explain Flow of Spring MVC ?
 
-Ans. The DispatcherServlet configured in web.xml file receives the request.
+Ans.
 
- The DispatcherServlet finds the appropriate Controller with the help of HandlerMapping and then invokes associated Controller.
+The DispatcherServlet configured in web.xml file receives the request.
+
+The DispatcherServlet finds the appropriate Controller with the help of HandlerMapping and then invokes associated Controller.
 
 Then the Controller executes the logic business logic and then returns ModelAndView object to the DispatcherServlet.
 
@@ -128,6 +130,35 @@ How does Spring handle bean initialization and destruction in IOC?
 -> For initialization, you can use the @PostConstruct annotation on a method, or implement the InitializingBean interface and override the afterPropertiesSet() method. 
 
 -> For destruction, you can use the @PreDestroy annotation on a method, or implement the DisposableBean interface and override the destroy() method.
+__________________________________________________________________________________________________________________________________________________________________________
+
+how to interact with rest API ?
+
+-> Step #1 – Enter the URL of the API in the textbox of the tool.
+
+-> Step #2 – Select the HTTP method used for this API (GET, POST, PATCH, etc).
+
+-> Step #3 – Enter any headers if they are required in the Headers textbox.
+
+-> Step #4 – Pass the request body of the API in a key-value pair.
+__________________________________________________________________________________________________________________________________________________________________________
+
+what is difference between HTTP Request and Response ?
+
+-> HTTP works as a request-response protocol between a client and server.
+
+-> Example: A client (browser) sends an HTTP request to the server; then the server returns a response to the client. 
+
+-> The response contains status information about the request and may also contain the requested content.
+__________________________________________________________________________________________________________________________________________________________________________
+
+Difference between rest template and web client ?
+
+-> RestTemplate uses Java Servlet API and is therefore synchronous and blocking. 
+
+-> Conversely, WebClient is asynchronous and will not block the executing thread while waiting for the response to come back. 
+
+-> For web client we need to include web-flux dependency but for rest template is not needed.
 __________________________________________________________________________________________________________________________________________________________________________
 
 Can you explain the bean lifecycle in Spring IOC?
@@ -237,17 +268,16 @@ ________________________________________________________________________________
 
 What is criteria query ?
 
--> Criteria Query in hibernate is used for join queries for joining multiple tables, criteria queries are more flexible and provide better support to for writing dynamic queries as compared to HQL. 
+-> Criteria Query in hibernate is used for join queries for joining multiple tables, criteria queries are more flexible and provide better support to for writing dynamic   
+   queries as compared to HQL. 
 
 -> useful methods for hibernate criteria join are createAlias(), setFetchMode(), and setProtection().
 __________________________________________________________________________________________________________________________________________________________________________
-
 
 What is pagenation ?
 
 -> Pagenation is a process that is used to divide a large dataset into smaller chunks.
 -> paging and sorting interfaces of a spring data provides methods for paging and sorting.
-
 __________________________________________________________________________________________________________________________________________________________________________
 
 Exception Handling - Spring Boot 
@@ -529,6 +559,93 @@ public class Item{
 	private Set<Customer> customer = new HashSet<>()
 }
 __________________________________________________________________________________________________________________________________________________________________________
+
+In spring boot, how to intialise servlet and configuration? what are all the annotations used ?
+
+-> In Spring Boot, you can initialize a servlet and configure it using annotations. The specific annotations you'll use depend on the functionality you want to achieve. 
+
+-> @WebServlet: This annotation is used to declare a servlet and map it to a specific URL pattern. It is part of the Java Servlet API and can be used in Spring Boot   
+                applications as well.
+
+-> @ServletComponentScan: This annotation is used to enable scanning for servlets, filters, and listeners in the specified package(s). It is typically placed on the main 
+                application class.
+
+-> @WebFilter: This annotation is used to declare a servlet filter and map it to specific URL patterns. It allows you to intercept and process requests and responses  
+               before they reach the servlet.
+
+-> @WebListener: This annotation is used to declare a listener class. Listeners are used to respond to events in a servlet container, such as startup, shutdown, and 
+               7attribute changes.
+__________________________________________________________________________________________________________________________________________________________________________
+
+what is actuator in spring boot ?
+
+-> To enable Spring Boot actuator endpoints to your Spring Boot application, we need to add the Spring Boot Starter actuator dependency in our build configuration file.
+
+-> Actuator is mainly used to expose operational information about the running application — health, metrics, info, dump, env, etc.
+
+-> It uses HTTP endpoints or JMX beans to enable us to interact with it. 
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is Spring Boot, and how does it differ from the traditional Spring Framework?
+
+-> Spring Boot is a framework that simplifies the development of Spring-based applications by providing a set of defaults, conventions, and auto-configurations.
+
+-> Spring Framework, which requires explicit configuration for various components, Spring Boot automatically configures many aspects of the application, reducing 
+   boilerplate code and making development faster and easier.
+__________________________________________________________________________________________________________________________________________________________________________
+
+Explain the concept of "auto-configuration" in Spring Boot. How does it simplify application setup?
+
+-> Auto-configuration in Spring Boot refers to the mechanism by which the framework automatically configures beans based on the classpath dependencies and the   
+   environment. 
+__________________________________________________________________________________________________________________________________________________________________________
+
+How does Spring Boot handle external configurations, and what are the different sources of configuration?
+
+-> Spring Boot supports various sources for external configuration, including properties files, YAML files, environment variables, command-line arguments, and more.
+__________________________________________________________________________________________________________________________________________________________________________
+
+Discuss the importance of the Spring Boot Starter concept and provide an example of creating a custom Starter.
+
+-> Spring Boot Starters are a set of dependencies that simplify the inclusion of common features or technologies in the application.
+
+-> For example, including the spring-boot-starter-web will automatically configure the application with everything needed to build a web application. 
+
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is the purpose of the Spring Boot Actuator module? How does it help in managing and monitoring applications?
+
+-> The Spring Boot Actuator module provides various production-ready features for managing and monitoring applications.
+
+->  It exposes endpoints that can be used to check application health, view metrics, gather application info, manage log levels, and much more
+
+-> These features are useful in production environments for monitoring and managing applications effectively.
+__________________________________________________________________________________________________________________________________________________________________________
+
+How can you customize the logging configuration in Spring Boot applications?
+
+1`
+
+__________________________________________________________________________________________________________________________________________________________________________
+
+Explain the role of the Spring Boot DevTools. How do they enhance the development experience?
+How can you deploy a Spring Boot application to an external application server like Tomcat or Jetty?
+Discuss the different ways to handle database migrations in Spring Boot projects.
+What are the advantages of using Spring Boot's reactive programming support with WebFlux?
+How do you perform unit testing and integration testing in Spring Boot applications?
+Explain the concept of Spring Boot's "fat JAR" and its advantages and disadvantages.
+What is the significance of the Spring Boot Actuator Health Check endpoint, and how can you customize its behavior?
+How does Spring Boot support caching, and what caching providers does it offer integration with?
+Discuss the process of monitoring and managing Spring Boot applications using Spring Cloud Data Flow.
+
+
+
+
+
+
+
+
+
 
 
 
