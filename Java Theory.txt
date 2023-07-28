@@ -2,7 +2,15 @@ Why String is Immutable ?
 
 string with the same content share the same storage in a string pool to minimize the copy of the same variable.
 this is tosay, once a string is created, it cannot be changed, if any changes it it will lead to creation of new strings.
+This design decision was made for several reasons, including:
 
+String Pooling: Java maintains a string pool (also known as the string constant pool) to store unique string literals. When you create a string literal, Java checks if an identical string already exists in the pool. If it does, the existing instance is returned instead of creating a new one. This saves memory and improves performance.
+
+Security: Strings are often used as parameters in many Java classes, including those representing network connections, database connections, and files. By making strings immutable, the risk of data tampering is reduced.
+
+Thread Safety: Immutable objects are inherently thread-safe. Since strings cannot be modified after creation, multiple threads can safely share the same string without synchronization issues.
+
+Performance: Immutability makes strings more predictable and allows certain optimizations to be applied by the Java Virtual Machine (JVM), leading to potential performance improvements.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What are wrapper classes in java ?
@@ -28,6 +36,19 @@ ________________________________________________________________________________
 
 https://media.geeksforgeeks.org/wp-content/uploads/20220120111809/Group21-660x330.jpg
 
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is ClassLoader in java ?
+
+-> In Java, class loaders are a fundamental part of the Java Runtime Environment (JRE) responsible for loading classes and resources at runtime.
+
+-> The primary purpose of class loaders is to dynamically find and load Java class files into memory when they are needed by the Java program.
+
+-> Java class loaders form a hierarchy and work together to load classes as needed. There are three main types of class loaders in Java:
+
+Bootstrap Class Loader:
+Extensions Class Loader:
+System Class Loader (also known as Application Class Loader):
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is the purpose of native method in Java?
@@ -822,6 +843,8 @@ What is the difference between String, StringBuilder, and StringBuffer in Java?
    thread-safe, while StringBuffer is thread-safe.
 
 -> If you need a mutable string and don't require thread safety, use StringBuilder. If you need thread safety, use StringBuffer.
+
+-> StringBuffer is thread-safe and synchronized whereas StringBuilder is not. That's why StringBuilder is faster than StringBuffer.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What are checked and unchecked exceptions in Java?
@@ -856,7 +879,7 @@ ________________________________________________________________________________
 
 What is the purpose of the static keyword in Java?
 
-The static keyword is used to define a class-level member that belongs to the class itself rather than to an instance of the class.
+The static keyword is used to define a class-level member that belongs to the class itself rather than to an instance of the class. 
 __________________________________________________________________________________________________________________________________________________________________________
 
 what are intermediate and terminal operations in java 8?
@@ -931,6 +954,12 @@ public class ParallelStreamExample {
    produce incorrect results when executed in parallel.
 __________________________________________________________________________________________________________________________________________________________________________
 
+What is Abstraction ?
+
+
+
+__________________________________________________________________________________________________________________________________________________________________________
+
 What is an interface in Java?
 
 Ans: An interface in Java is a mechanism that is used to achieve complete abstraction. 
@@ -944,6 +973,19 @@ INTERFACE :
 
 1. If we dont have anything about implementation just we have requirement specification then we should go for interface.
 2. Inside interface every method is abstract and public. Hence we acheive 100% abstraction.
+3. Interface can have only abstract methods. Since Java 8, it can have default and static methods also.
+4. Interface supports multiple inheritance.
+5. Interface has only static and final variables.
+6. Interface can't provide the implementation of abstract class.
+7. The interface keyword is used to declare interface.
+8. An interface can be implemented using keyword "implements".
+9. Members of a Java interface are public by default.
+
+
+ABSTRACT CLASS :
+
+1. If we are talking about implementation but not completely then we should go for abstract class.
+2. Every method present in abstract class need to be abstract and public. we can also have concrete methods also.
 3. Abstract class can have abstract and non-abstract methods.
 4. Abstract class doesn't support multiple inheritance.
 5. Abstract class can have final, non-final, static and non-static variables.
@@ -952,17 +994,7 @@ INTERFACE :
 8. An abstract class can be extended using keyword "extends".
 9. A Java abstract class can have class members like private, protected, etc.
 
- ABSTRACT CLASS :
 
-1. If we are talking about implementation but not completely then we should go for abstract class.
-2. Every method present in abstract class need to be abstract and public. we can also have concrete methods also.
-3. Interface can have only abstract methods. Since Java 8, it can have default and static methods also.
-4. Interface supports multiple inheritance.
-5. Interface has only static and final variables.
-6. Interface can't provide the implementation of abstract class.
-7. The interface keyword is used to declare interface.
-8. An interface can be implemented using keyword "implements".
-9. Members of a Java interface are public by default.
 
 -> Simply, abstract class achieves partial abstraction (0 to 100%) whereas interface achieves fully abstraction (100%).
 ________________________________________________________________________________________________________________________________________________________________________

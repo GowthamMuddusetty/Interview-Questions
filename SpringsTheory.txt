@@ -314,7 +314,7 @@ what is difference between controller and restcontroller ?
 
 -> The main difference between Controller and RestController Annotation is ResponseBody Annotation.
 
-->Controller annotation does not call @ResponseBody to all Controller's method itself. 
+-> Controller annotation does not call @ResponseBody to all Controller's method itself. 
 
 -> Whereas @RestController combines Controller and @ResponseBody, which use @ResponseBody to all its methods by default.
 __________________________________________________________________________________________________________________________________________________________________________
