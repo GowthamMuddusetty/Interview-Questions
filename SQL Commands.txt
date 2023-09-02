@@ -1,0 +1,179 @@
+1. create database databasename;
+
+2. drop database databasename;
+__________________________________________________________________________________________________________________________________________________________________________
+
+3. command to create table :
+
+create table employee(
+
+e_id int not null,
+e_name varchar(20),
+e_salary int not null,
+e_age int not null,
+e_gender varchar(15),
+e_dept varchar(20),
+primary key(e_id)
+);
+__________________________________________________________________________________________________________________________________________________________________________
+
+insert data into table :
+
+insert into employee values(
+1,'Sam',95000, 45, 'Male','Operations'
+);
+
+insert into employee values(
+2,'Bob',80000, 21, 'Male','Support'
+);
+
+insert into employee values(
+3,'Anne',125000, 25, 'Female','Analytics'
+);
+
+insert into employee values(
+4,'Julia',73000, 30, 'female','Analytics'
+);
+
+insert into employee values(
+5,'Matt',159000, 33, 'Male','Sales'
+);
+
+insert into employee values(
+6,'Jeff',112000, 27, 'Malale','Operations'
+);
+__________________________________________________________________________________________________________________________________________________________________________
+
+select distinct values from a column :
+
+select distinct e_age from spartaa.employee;
+__________________________________________________________________________________________________________________________________________________________________________
+
+where clause :
+
+select * from spartaa.employee where e_gender='female';
+__________________________________________________________________________________________________________________________________________________________________________
+
+And operator :
+
+select * from spartaa.employee where e_gender='male' and e_age <= 30;
+__________________________________________________________________________________________________________________________________________________________________________
+
+Like operator :
+
+select * from spartaa.employee where e_name like 'j%';
+__________________________________________________________________________________________________________________________________________________________________________
+
+between operator :
+
+select * from spartaa.employee where e_age between 20 and 30;
+__________________________________________________________________________________________________________________________________________________________________________
+
+Basic functions in sql :
+
+min ()
+
+select min(e_age) as min_Age from spartaa.employee 
+
+max ()
+
+select max(e_age) as min_Age from spartaa.employee 
+
+count()
+
+select count(*) from spartaa.employee where e_gender='male'; 
+
+sum()
+
+select sum(e_salary) from spartaa.employee ; 
+__________________________________________________________________________________________________________________________________________________________________________
+
+kamal sir given questions
+
+SELECT * FROM spartaa.employee;
+-- Write a query to find out how many number of employees not getting commission
+-- select * from employee where commission is null;
+
+-- Write a query to find out total amount of salary paying by company for each job wise.
+-- select sum(salary) as 'total sum of salary' ,job from employee group by job
+
+-- Write a query to find the final salary for each employee after adding the commission with Salary
+-- SELECT  emp_no,e_name, sum(salary + commission) as total_salary FROM    employee group by employee.emp_no
+-- SELECT *, (salary + commission) AS Sum FROM employee
+
+-- Write a query to find out the 5th or nth maximum salary.
+-- SELECT * FROM (
+--   SELECT emp_no,e_name,salary, DENSE_RANK() OVER (ORDER BY salary DESC) AS r
+--   FROM employee
+-- ) AS subquery
+-- WHERE r = 3;
+
+-- Write a query to find out the 5th or nth avg salary.
+-- WITH avg_salaries_per_job AS (
+--     SELECT job, AVG(salary) AS avg_salary, DENSE_RANK() OVER (ORDER BY AVG(salary) DESC) AS r
+--     FROM employee
+--     GROUP BY job
+-- )
+-- USING LIMIT CLAUSE
+-- SELECT distinct(salary) from employee order by salary desc
+-- limit 4,1;
+
+-- SELECT job, avg_salary AS nth_highest_avg_salary
+-- FROM avg_salaries_per_job
+-- WHERE r = 2;
+
+-- without limit clause
+-- select salary from employee e1 where 4-1 = 
+-- (select count(distinct salary) from employee e2
+-- where e2.salary > e1.salary);
+
+
+-- Write a query to find out the employees who don’t have any subordinates (reportees) i.e. the employees who are not the managers.
+-- select * from employee where job  <> 'Manager';
+
+
+-- Write a query to find out the employees who are getting the maximum salary in their departments.
+-- SELECT e1.e_name, e1.job, e1.salary
+-- FROM employee e1
+-- JOIN (
+--     SELECT job, MAX(salary) AS max_salary
+--     FROM employee
+--     GROUP BY job
+-- ) e2 ON e1.job = e2.job AND e1.salary = e2.max_salary;
+
+
+-- Write a query to find out department-wise minimum salary, maximum salary, total salary, and average salary.
+-- select max(salary) as max_salary, min(salary) as min_salary, sum(salary) as total_salary , avg(salary) as avg_salary, job
+-- from employee group by job
+
+
+-- Write a query to find out the employees drawing salary more than their managers.
+-- select e1.emp_no,e1.e_name,e1.salary from employee as e1
+-- join employee as e2 on e1.manager = e2.emp_no 
+-- where e2.salary < e1.salary
+
+__________________________________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

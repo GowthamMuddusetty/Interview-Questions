@@ -1,3 +1,55 @@
+What is java ?
+
+➳ Java is a programming language and a platform. Java is a high-level, robust, object oriented and secured programming language.
+__________________________________________________________________________________________________________________________________________________________________________
+
+Tell me some features of java ?
+
+➳ Simple : Java is very easy to learn, and its syntax is simple, clean and easy to understand
+
+➳ Object-oriented: Java is an object-oriented programming language. Everything in Java is an object. Object-oriented means we organize our software as a combination of   
+                    different types of objects that incorporate both data and behavior.
+
+➳ Platform Independent :Java is platform independent because it is different from other languages like C, C++, etc. which are compiled into platform specific machines 
+                         while Java is a write once, run anywhere language.
+
+➳ Secured : Java is best known for its security. With Java, we can develop virus-free systems. Java is secured because:
+             No explicit pointer
+             Java Programs run inside a virtual machine sandbox
+
+➳ Robust : The English mining of Robust is strong. Java is robust because:
+	    It uses strong memory management.
+            There is a lack of pointers that avoids security problems.
+
+➳ Portable : Java is portable because it facilitates you to carry the Java bytecode to any platform. It doesn't require any implementation.
+
+➳ High-performance : Java is faster than other traditional interpreted programming languages because Java bytecode is "close" to native code.
+
+➳ Distributed : Java is distributed because it facilitates users to create distributed applications in Java.
+
+➳ Multi-threaded : A thread is like a separate program, executing concurrently. We can write Java programs that deal with many tasks at once by defining multiple 
+                    threads.
+__________________________________________________________________________________________________________________________________________________________________________
+
+Data Types and size of DT ?
+
+➳ Byte  - 1(byte)
+
+➳ Short - 2 bytes
+
+➳ Int  -  4 bytes 
+
+➳ Long  -  8 bytes
+
+➳ Float  - 4 bytes 
+
+➳ Double  - 8 bytes
+
+➳ Char  -  2 bytes
+
+➳ Boolean  - 1 bit
+__________________________________________________________________________________________________________________________________________________________________________
+
 Why String is Immutable ?
 
 string with the same content share the same storage in a string pool to minimize the copy of the same variable.
@@ -15,9 +67,9 @@ ________________________________________________________________________________
 
 What are wrapper classes in java ?
 
--> Wrapper classes in Java are a set of classes that allow you to convert primitive data types into objects and vice versa.
+➳ Wrapper classes in Java are a set of classes that allow you to convert primitive data types into objects and vice versa.
 
--> Wrapper classes provide a way to treat these primitive types as objects and enable various utility methods to be applied to them.
+➳ Wrapper classes provide a way to treat these primitive types as objects and enable various utility methods to be applied to them.
 
 The following are the wrapper classes in Java for each primitive data type:
 
@@ -29,10 +81,64 @@ Float: Wrapper for float
 Double: Wrapper for double
 Character: Wrapper for char
 Boolean: Wrapper for boolean
+__________________________________________________________________________________________________________________________________________________________________________
+
+how to you convert primitive data type into wrapper class in java
+
+➳ In Java, you can convert a primitive data type into its corresponding wrapper class using a process called "boxing" or "wrapping."
+
+int primitiveInt = 42;
+Integer wrappedInt = Integer.valueOf(primitiveInt); // Using valueOf()
+// or
+Integer wrappedInt = new Integer(primitiveInt); // Using constructor (deprecated in Java 9+)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+➳ Also, Java provides a feature called "autoboxing," where the Java compiler automatically converts primitive types to their corresponding wrapper classes when  
+   necessary, and "unboxing," where the wrapper objects are automatically converted back to their primitive types.
+
+int primitiveInt = 42;
+Integer wrappedInt = primitiveInt; // Autoboxing
+
+int unwrappedInt = wrappedInt; // Unboxing
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is polymorphism ?
+
+-> Polymorphism is the ability to present the same interface for differing underlying forms (data types).
+
+-> Types of Polymorphism IMP 
+   1. Compile Time Polymorphism (Static) 
+   2. Runtime Polymorphism (Dynamic) 
+
+-> Compile Time Polymorphism : The polymorphism which is implemented at the compile time is known as compile-time polymorphism. Example - Method Overloading 
+
+-> Method Overloading : Method overloading is a technique which allows you to have more than one function with the same function name but with different functionality.      
+   Method overloading can be possible on the following basis: 
+   1. The type of the parameters passed to the function. 
+   2. The number of parameters passed to the function.
+
+-> Runtime Polymorphism : Runtime polymorphism is also known as dynamic polymorphism. Function overriding is an example of runtime polymorphism. 
+-> Function overriding means when the child class contains the method which is already present in the parent class. Hence, the child class overrides the method of the   
+   parent class. 
+
+In case of function overriding, parent and child classes both contain the same function with a different definition. The call to the function is determined at runtime is known as runtime polymorphism.
 
 __________________________________________________________________________________________________________________________________________________________________________
 
- Exception Heriarchy ?
+Why Multiple inheritance is not supported in java ?
+
+-> To reduce the complexity and simplify the language, multiple inheritannce is not supported in java.
+
+-> Consider a scenario where A,B and C are three classes. The C class inherits A and B classes. if A and B classes have the same method and you called it from child class    
+   object, there will be ambiguity to call the methof of A or B.
+
+-> Since compile time errors are better than run time errors, java renders compile time error if u inherit 2 classes.	
+__________________________________________________________________________________________________________________________________________________________________________
+
+Exception Heriarchy ?
+
+-> Exception is an event that disturbs the normal flow of the programme. It is an object which is thrown at run time.
+
+-> Exception handling is an mechanism that handles the compile & run time errors.
 
 https://media.geeksforgeeks.org/wp-content/uploads/20220120111809/Group21-660x330.jpg
 
@@ -40,25 +146,36 @@ ________________________________________________________________________________
 
 What is ClassLoader in java ?
 
--> In Java, class loaders are a fundamental part of the Java Runtime Environment (JRE) responsible for loading classes and resources at runtime.
+➳ In Java, class loaders are a fundamental part of the Java Runtime Environment (JRE) responsible for loading classes and resources at runtime.
 
--> The primary purpose of class loaders is to dynamically find and load Java class files into memory when they are needed by the Java program.
+➳ The primary purpose of class loaders is to dynamically find and load Java class files into memory when they are needed by the Java program.
 
--> Java class loaders form a hierarchy and work together to load classes as needed. There are three main types of class loaders in Java:
+➳ Java class loaders form a hierarchy and work together to load classes as needed. There are three main types of class loaders in Java:
 
 Bootstrap Class Loader:
 Extensions Class Loader:
 System Class Loader (also known as Application Class Loader):
 __________________________________________________________________________________________________________________________________________________________________________
 
-What is the purpose of native method in Java?
+How many types of memory areas are allocated by JVM?
 
--> In Java, a native method is a method whose implementation is provided in a language other than Java.
+➳ JVM Is the actual one that calls the main method in java application. it is a part of jre.
 
--> These methods are declared with the native keyword and serve as a bridge between Java code and code written in other programming languages, such as C or C++.
+Class(Method) Area
+Heap
+Stack
+Program Counter Register
+Native Method Stack
 __________________________________________________________________________________________________________________________________________________________________________
 
-What is Iterator?
+What is the purpose of native method in Java?
+
+➳ In Java, a native method is a method whose implementation is provided in a language other than Java.
+
+➳ These methods are declared with the native keyword and serve as a bridge between Java code and code written in other programming languages, such as C or C++.
+__________________________________________________________________________________________________________________________________________________________________________
+
+ What is Iterator?
 
 A:) In Java, an iterator is an interface defined in the java.util package that provides a way to iterate over the elements of a collection in a sequential manner. 
 hasNext(): returns true if there is at least one more element in the collection, otherwise false.
@@ -66,11 +183,20 @@ next(): returns the next element in the collection.
 remove(): removes the last element returned by the iterator from the collection.
 __________________________________________________________________________________________________________________________________________________________________________
 
-Does set allows null and duplicate values?
+Collections Heirarchy ?
 
-A:) In Java, a Set is a collection that does not allow duplicate elements. That means that if you try to add an element to a Set that already exists in the Set, the new element will not be added.
-HashSet and LinkedHashSet both allow null values.
-TreeSet does not allow null values. If you try to add a null value to a TreeSet, it will throw a NullPointerException.
+➳ https://data-flair.training/blogs/wp-content/uploads/sites/2/2018/03/hierarchy-of-collection-framework-in-java.webp
+
+__________________________________________________________________________________________________________________________________________________________________________
+
+ Does set allows null and duplicate values?
+
+➳ In Java, a Set is a collection that does not allow duplicate elements. That means that if you try to add an element to a Set that already exists in the Set, the new  
+   element will not be added.
+
+➳ HashSet and LinkedHashSet both allow null values.
+
+➳ TreeSet does not allow null values. If you try to add a null value to a TreeSet, it will throw a NullPointerException.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is Map in java?
@@ -78,15 +204,16 @@ What is Map in java?
 A:)In Java, a Map is a collection that maps keys to values, where each key can only be associated with a single value. 
 Map does not allow duplicate keys, but it does allow null values.
 
--> you can have a null value associated with a key in a Map, but you cannot have two keys with the same value. If you try to put a value into a Map using a key that already exists in the Map, the new value will replace the old value associated with that key.
+➳ you can have a null value associated with a key in a Map, but you cannot have two keys with the same value. If you try to put a value into a Map using a key that already exists in the Map, the new value will replace the old value associated with that key.
 __________________________________________________________________________________________________________________________________________________________________________
 
 what is a survlet?
 
-A:)  A servlet is a Java program that runs on a web server and handles client requests and responses over the HTTP protocol.
- Servlets are used to build web applications that can dynamically generate content and respond to user requests.
+➳ A servlet is a Java program that runs on a web server and handles client requests and responses over the HTTP protocol.
+ 
+➳ Servlets are used to build web applications that can dynamically generate content and respond to user requests.
 
--> Servlets can handle various types of HTTP requests such as GET, POST, PUT, and DELETE
+➳ Servlets can handle various types of HTTP requests such as GET, POST, PUT, and DELETE.
 _________________________________________________________________________________________________________________________________________________________________________
 
 Call BY Value?
@@ -132,30 +259,27 @@ public class Example {
 ________________________________________________________________________________________________________________________________________________________________________
 
 What are Cookies ?
-
-A:) 
--> A cookie is a small piece of information that is persisted between the multiple client requests. 
+ 
+➳ A cookie is a small piece of information that is persisted between the multiple client requests. 
    A cookie has a name, a single value, and optional attributes.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is Entry in Java?
  
-A:)
-->	Entry interface enables you to work with a map entry. The entrySet( ) method declared by the Map interface returns a Set containing the map entries. Each of these 	set elements is a Map. Entry object.
+➳ Entry interface enables you to work with a map entry. The entrySet( ) method declared by the Map interface returns a Set containing the map entries. Each of these set   
+   elements is a Map. Entry object.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is RowSet ?
 
-A:) 
-
 Rowset Interface is basically an extension of JDBC ResultSet and is part of the java.sql.package
 There are 2 types of RowSet Connected and Dis-Connected.
 
--> Connected Rowset are those which establish connection and retain until the apllication termiantes.
+➳ Connected Rowset are those which establish connection and retain until the application termiantes.
 
--> DisConnected rowset perfoms or establishes a connection, executues a query such as retreiveing data from the database and closes the connection.
+➳ DisConnected rowset perfoms or establishes a connection, executues a query such as retreiveing data from the database and closes the connection.
 
--> According to the implementation of rowset there are 5 types of implemenatations
+➳ According to the implementation of rowset there are 5 types of implemenatations
 
  1. JdbcRowset 
  2. Cached Rowset
@@ -166,44 +290,57 @@ ________________________________________________________________________________
 
 What is Servlet ?
 
-A:) 
--> A servlet is generally a java-based programme that runs on web server and process client requests and generates dynamic web pages,process and respond to
-HTTP requests.
+➳ A servlet is generally a java-based programme that runs on web server and process client requests and generates dynamic web pages,process and respond to HTTP requests.
 
--> When a client sends a HTTP request to the server, the servelet container recieves the request and pass it to appropriate servlet. 
--> The servelt then process the request and sends the http response back to the client.
+➳ When a client sends a HTTP request to the server, the servelet container recieves the request and pass it to appropriate servlet. 
+
+➳ The servelt then process the request and sends the http response back to the client.
 
 __________________________________________________________________________________________________________________________________________________________________________
 
 How many types of servlets ?
 
-A:) 
+➳ There are basically 2 types of servelets. HTTP & Generic Type servelets. we can use Constructor to intialise servelet with the help of init() method and 
+   descructor method to remove the servelet from the resources using destroy().
 
--> There are basically 2 types of servelets. HTTP & Generic Type servelets. we can use Constructor to intialise servelet with the help of init() method and 
-descructor method to remove the servelet from the resources using destroy().
+➳ There are basically two types of servelts based on the interface they implement.
+    Generic Survlet : It is a abstract class that implements the Servlet, Servlet-Config. It provides a generic implementation of the servlet interface.
 
--> There are basically two types of servelts based on the interface they implement.
-Generic Survlet : It is a abstract class that implements the Servlet, Servlet-Config. It provides a generic implementation of the servlet interface.
+➳ HTTP Servlet : It is a abstract class that extends Generic servlet and provides Http specific functionality. 
+   It implements doGet(), doPost(), doPut(), doDelete() and other methods to handle HTTP requests and responses.
 
-HTTP Servlet : It is a abstract class that extends Generic servlet and provides Http specific functionality. 
-It implements doGet(), doPost(), doPut(), doDelete() and other methods to handle HTTP requests and responses.
+➳ Both servlets are used to process client  requsts and generate dynamic responses. 
 
--> Both servlets are used to process client  requsts and generate dynamic responses. 
+➳ HTTP servlets are most commonly used in creating web applications that work with http requests and responses.
 
--> HTTP servlets are most commonly used in creating web applications that work with http requests and responses.
+➳ While Generic servets are more commonly used in creating custom survlets that work with other protocals and data formats.
+__________________________________________________________________________________________________________________________________________________________________________
 
--> While Generic servets are more commonly used in creating custom survlets that work with other protocals and data formats.
+What is flow of servlets ? 
 
+➳ First the server checks if the servlet is requested for the first time.
+
+➳ if 	Yes, web container does the following task:
+
+➳ Loads the servlet class
+
+➳ Instantiates the servlet class
+
+➳ Calls the init method passing the servlet config object.
+
+➳ else calls the service method passing request and response object.
+
+➳ The web container calls the destroy method when it needs to remove the servlet such as at time of stopping server or undeploying the project.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What are the 3 main methods of a servlet class?
 
--> The init, service and destroy are the life cycle methods of servlet.
+➳ The init, service and destroy are the life cycle methods of servlet.
 _________________________________________________________________________________________________________________________________________________________________________
 
--> In method overloading the return type doesnt matters. what matters is only the type of parameters and the no of parameters.
+➳ In method overloading the return type doesnt matters. what matters is only the type of parameters and the no of parameters.
 
--> ServletConfig is used for sharing init parameters specific to a servlet while ServletContext is for sharing init parameters within any Servlet within a web
+➳ ServletConfig is used for sharing init parameters specific to a servlet while ServletContext is for sharing init parameters within any Servlet within a web
    application.
 __________________________________________________________________________________________________________________________________________________________________________
 
@@ -216,18 +353,19 @@ ExecuteUpdate(): This method is used for execution of DML Statements(Insert,  Up
 ExecuteQuery(): This method is used for retreiving data from database and this method returns ResultSet Object and that returns the data according to the query.
 __________________________________________________________________________________________________________________________________________________________________________
 
- What are the life-cycle methods for a servlet?
+What are the life-cycle methods for a servlet?
 
-public void init(ServletConfig config)  :  It is invoked only once when first request comes for the servlet. It is used to initialize the servlet.
+➳ public void init(ServletConfig config)  :  It is invoked only once when first request comes for the servlet. It is used to initialize the servlet.
 
-public void service(ServletRequest request,ServletResponse)throws ServletException,IOException : It is invoked at each request.The service() method is used to service the request.
+➳ public void service(ServletRequest request,ServletResponse)throws ServletException,IOException : It is invoked at each request.The service() method is used to service    
+   the request.
 
-public void destroy() : It is invoked only once when servlet is unloaded.
+➳ public void destroy() : It is invoked only once when servlet is unloaded.
 __________________________________________________________________________________________________________________________________________________________________________
 
- Who is responsible to create the object of servlet?
+Who is responsible to create the object of servlet?
 
-The web container or servlet container.
+➳ The web container or servlet container.
 __________________________________________________________________________________________________________________________________________________________________________
 
  What is difference between Get and Post method?
@@ -243,8 +381,9 @@ ________________________________________________________________________________
 
 What is ConcurrentHashMap used for?
 
-ConcurrentHashMap is the Map implementation that allows us to modify the Map while iteration. 
-The ConcurrentHashMap operations are thread-safe. ConcurrentHashMap doesn't allow null for keys and values.
+➳ ConcurrentHashMap is the Map implementation that allows us to modify the Map while iteration. 
+
+➳ The ConcurrentHashMap operations are thread-safe. ConcurrentHashMap doesn't allow null for keys and values.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What are new features introduced with Java 8 ?
@@ -252,37 +391,21 @@ What are new features introduced with Java 8 ?
 Ans. Lambda Expressions , Interface Default and Static Methods , Method Reference , Parameters Name , Optional , Streams, Concurrency.
 __________________________________________________________________________________________________________________________________________________________________________
 
-What is flow of servlets ? 
-
--> First the server checks if the servlet is requested for the first time.
-
--> if 	Yes, web container does the following task:
-
--> Loads the servlet class
-../
--> Instantiates the servlet class
-
--> Calls the init method passing the servlet config object.
-
--> else calls the service method passing request and response object.
-
--> The web container calls the destroy method when it needs to remove the servlet such as at time of stopping server or undeploying the project.
-__________________________________________________________________________________________________________________________________________________________________________
-
 Difference between ConcurrentHashMap, Hashtable and Synchronized Map in Java
 
--> The difference between Hashtable and ConcurrentHashMap, both can be used in the multithreaded environment,
+➳ The difference between Hashtable and ConcurrentHashMap, both can be used in the multithreaded environment,
    but once the size of Hashtable becomes considerable large performance degrade because for iteration it has to be locked for a longer duration.
 
--> Since ConcurrentHashMap introduced the concept of segmentation, how large it becomes only certain part of it get locked to provide thread safety 
+➳ Since ConcurrentHashMap introduced the concept of segmentation, how large it becomes only certain part of it get locked to provide thread safety 
    so many other readers can still access map without waiting for iteration to complete. 
 
--> In Summary, ConcurrentHashMap only locked certain portion of Map while Hashtable locks full map while doing iteration.
+➳ In Summary, ConcurrentHashMap only locked certain portion of Map while Hashtable locks full map while doing iteration.
 __________________________________________________________________________________________________________________________________________________________________________
 
 explain about 4 types of Functional Interfaces in java 8?
 
-->  In Java 8, a functional interface is an interface that has only one abstract method. This concept is important in the context of lambda expressions, which are a new                    language feature introduced in Java 8 for writing concise and expressive code.
+➳  In Java 8, a functional interface is an interface that has only one abstract method. This concept is important in the context of lambda expressions, which are a new                       
+    language feature introduced in Java 8 for writing concise and expressive code.
 
 Here are the four types of functional interfaces in Java 8:
 
@@ -295,33 +418,41 @@ Predicate: The Predicate interface represents a boolean-valued function of one a
 Function: The Function interface represents a function that takes one argument and returns a value. Its functional method is called apply().
 __________________________________________________________________________________________________________________________________________________________________________
 
+what is the reason for introducing functional interface after java 8 ?
+
+➳ Functional Interfaces introduced in Java 8 allow us to use a lambda expression to initiate the interface's method and avoid using lengthy codes for the anonymous class   
+   implementation.
+
+➳ Various built-in interfaces were declared with @FunctionalInterface annotation and made functional from Java 8.
+__________________________________________________________________________________________________________________________________________________________________________
+
 What is Stream?
 
--> Stream represents a sequence of objects from a source, which supports aggregate operations. 
+➳ Stream represents a sequence of objects from a source, which supports aggregate operations. 
 __________________________________________________________________________________________________________________________________________________________________________
 
 What are JDBC steps ? 
 
--> import ---> java.sql
+➳ import ---> java.sql
 
--> Register and load driver.
+➳ Register and load driver.
 
--> Create connection 
+➳ Create connection 
 
--> Create Statement 
+➳ Create Statement 
 
--> Execute Query 
+➳ Execute Query 
 
--> process the results 
+➳ process the results 
 
--> close.
+➳ close.
 __________________________________________________________________________________________________________________________________________________________________________
 
 How Java provide high Performance ?
 
-Ans. Java uses Just-In-Time compiler to enable high performance. 
+➳ Java uses Just-In-Time compiler to enable high performance. 
 
-Just-In-Time compiler is a program that turns Java bytecode into instructions that can be sent directly to the processor.
+➳ Just-In-Time compiler is a program that turns Java bytecode into instructions that can be sent directly to the processor.
 __________________________________________________________________________________________________________________________________________________________________________
 
 How to implement an immutable class ?
@@ -348,49 +479,49 @@ ________________________________________________________________________________
 
 What is meant by constructor chaining?
 
--> Constructor chaining is the process of calling a sequence of constructors. 
+➳ Constructor chaining is the process of calling a sequence of constructors. 
 
--> We can do it in two ways: by using this() keyword for chaining constructors in the same class.
+➳ We can do it in two ways: by using this() keyword for chaining constructors in the same class.
 
--> by using super() keyword for chaining constructors from the parent class.
+➳ by using super() keyword for chaining constructors from the parent class.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is Enumeration ? 
 
--> An enumeration (enum for short) in Java is a special data type which contains a set of predefined constants.
+➳ An enumeration (enum for short) in Java is a special data type which contains a set of predefined constants.
 __________________________________________________________________________________________________________________________________________________________________________
 
 what is PreparedStatement and Statement in jdbc?
 
-->  In JDBC, both Statement and PreparedStatement are interfaces used to execute SQL queries against a database. 
+➳  In JDBC, both Statement and PreparedStatement are interfaces used to execute SQL queries against a database. 
     However, they have some differences in their functionality and usage.
 
--> Statement is a basic interface in JDBC that is used to execute 
+➳ Statement is a basic interface in JDBC that is used to execute 
 
--> Statement is an interface in JDBC that is used to execute a static SQL statement and return the results. 
+➳ Statement is an interface in JDBC that is used to execute a static SQL statement and return the results. 
    Static SQL statements are those whose values are hard-coded at the time of execution.
 
--> PreparedStatement is used for dynamic SQL statements with parameters, while Statement is used for static SQL statements.
+➳ PreparedStatement is used for dynamic SQL statements with parameters, while Statement is used for static SQL statements.
 
--> PreparedStatement provides protection against SQL injection attacks, while Statement does not.
+➳ PreparedStatement provides protection against SQL injection attacks, while Statement does not.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is the difference between Iterator and ListIterator?
 
--> Iterator traverses the elements in the forward direction only whereas ListIterator traverses the elements into forward and backward direction.
+➳ Iterator traverses the elements in the forward direction only whereas ListIterator traverses the elements into forward and backward direction.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is the difference between List and Set?
 
--> The List and Set both extend the collection interface. However, there are some differences between the both which are listed below.
+➳ The List and Set both extend the collection interface. However, there are some differences between the both which are listed below.
 
--> The List can contain duplicate elements whereas Set includes unique items.
+➳ The List can contain duplicate elements whereas Set includes unique items.
 
--> The List is an ordered collection which maintains the insertion order whereas Set is an unordered collection which does not preserve the insertion order.
+➳ The List is an ordered collection which maintains the insertion order whereas Set is an unordered collection which does not preserve the insertion order.
 
--> The List interface contains a single legacy class which is Vector class whereas Set interface does not have any legacy class.
+➳ The List interface contains a single legacy class which is Vector class whereas Set interface does not have any legacy class.
 
--> The List interface can allow n number of null values whereas Set interface only allows a single null value.
+➳ The List interface can allow n number of null values whereas Set interface only allows a single null value.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is the difference between HashSet and TreeSet?
@@ -399,7 +530,7 @@ What is the difference between HashSet and TreeSet?
 
 -> HashSet maintains no order whereas TreeSet maintains ascending order.
 
--> HashSet impended by hash table whereas TreeSet implemented by a Tree structure.
+-> HashSet implemented by hash table whereas TreeSet implemented by a Tree structure.
 
 -> HashSet performs faster than TreeSet.
 
@@ -445,79 +576,85 @@ ________________________________________________________________________________
 
 what is flatmap ?
 
--> Java flatMap is a method that, when applied to a stream of values, maps each value to some required output value.
-
+➳ Java flatMap is a method that, when applied to a stream of values, maps each value to some required output value.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is the difference between Collection and Collections?
 
--> The differences between the Collection and Collections are given below.
+➳ The differences between the Collection and Collections are given below.
 
--> The Collection is an interface whereas Collections is a class.
+➳ The Collection is an interface whereas Collections is a class.
 
--> The Collection interface provides the standard functionality of data structure to List, Set, and Queue.
+➳ The Collection in Java is a framework that provides an architecture to store and manipulate the group of objects.
 
-->  However, Collections class is to sort and synchronize the collection elements.
+➳ The Collection interface provides the standard functionality of data structure to List, Set, and Queue.
 
--> The Collection interface provides the methods that can be used for data structure
+➳  However, Collections class is to sort and synchronize the collection elements.
+
+➳ The Collection interface provides the methods that can be used for data structure
    whereas Collections class provides the static methods which can be used for various operation on a collection.
+_________________________________________________________________________________________________________________________________________________________________________
+
+Tell methods of Collection interface ?
+
+1. add
+2. add all
+3. remove
+4. remove all
+5. remove if
+6. retain all
+7. size
+8. clear
+9. contains
+10. containsAll
+11. toArray
+12. isEmpty
+13. stream
+_________________________________________________________________________________________________________________________________________________________________________
+
+What is the difference between Java collection and Java collections?
+
+➳ Collection is a interface where you group objects in to single unit.
+
+➳ Collections is a utility class that has some set of operations you perform on collection.
+
+➳ Collection doesnt have all static methods in it, where Collections consist methods that are all static.
 _________________________________________________________________________________________________________________________________________________________________________
 
 what is difference between AL, LL, VECTOR ?
 
--> ArrayList provides fast random access, LinkedList is efficient for frequent insertions and deletions, and Vector is synchronized for thread safety (but slower). 
+➳ ArrayList provides fast random access, LinkedList is efficient for frequent insertions and deletions, and Vector is synchronized for thread safety (but slower). 
 
--> The choice between them depends on the specific requirements and usage patterns of your application.
+➳ The choice between them depends on the specific requirements and usage patterns of your application.
 __________________________________________________________________________________________________________________________________________________________________________
 
  What is the difference between Comparable and Comparator?
 
--> Comparable provides only one sort of sequence.	                        -> The Comparator provides multiple sorts of sequences.
+➳ Comparable provides only one sort of sequence.	                        ➳ The Comparator provides multiple sorts of sequences.
 
--> It provides one method named compareTo().	                               -> It provides one method named compare().
+➳ It provides one method named compareTo().	                                ➳ It provides one method named compare().
 
--> If we implement the Comparable interface, The actual class is modified.   -> The actual class is not changed.
+➳ If we implement the Comparable interface, The actual class is modified.      ➳ The actual class is not changed.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is Servlet Context and Servlet Config ?
 
-A)  -> ServletConfig is used for sharing init parameters specific to a servlet.
+ ➳ ServletConfig is used for sharing init parameters specific to a servlet.
 
-    -> Where as ServletContext is for sharing init parameters within any servlet with in a web application.
-__________________________________________________________________________________________________________________________________________________________________________
-
-Data Types and size of DT ?
-
-A) 
-
--> Byte  - 1(byte)
-
--> Short - 2 bytes
-
--> Int  -  4 bytes 
-
--> Long  -  8 bytes
-
--> Float  - 4 bytes 
-
--> Double  - 8 bytes
-
--> Char  -  2 bytes
-
--> Boolean  - 1 bit
+ ➳ Where as ServletContext is for sharing init parameters within any servlet with in a web application.
 __________________________________________________________________________________________________________________________________________________________________________
 
 Threads in java ?
 
--> In java, a thread is a unit of execution that allows a programme to perform multiple tasks concurrently.
+➳ In java, a thread is a unit of execution that allows a programme to perform multiple tasks concurrently.
 
--> Java provides a buiult-in support for multi-threading the the "java.lang.Thread" class.
+➳ Java provides a buiult-in support for multi-threading the the "java.lang.Thread" class.
 
--> A thread is created by instantiating an object of the "Thread" class and calling its method start().
+➳ A thread is created by instantiating an object of the "Thread" class and calling its method start().
 
--> when the start() method is called, a new thread is created and its run() method is invoked in separated flow of execution.
+➳ when the start() method is called, a new thread is created and its run() method is invoked in separated flow of execution.
 
--> Multithreading is commonly used in Java for tasks that require parallel processing,
+➳ Multithreading is commonly used in Java for tasks that require parallel processing,
    such as running multiple background tasks, performing I/O operations, and handling user interface events. 
 
 
@@ -553,12 +690,24 @@ class MyThread extends Thread {
 
 _________________________________________________________________________________________________________________________________________________________________________
 
+Lifecycle and States of a Thread in Java
+
+-> New State
+-> Runnable State
+-> Blocked State
+-> Waiting state
+-> Time waiting state
+-> Terminate state
+_________________________________________________________________________________________________________________________________________________________________________
+
 What is thread safe in java ?
 
-Thread safety in java is the process to make our program safe to use in multithreaded environmentthere are different ways through which we can make our program thread safe. Synchronization is the easiest and most widely used tool for thread safety in java.
+Thread safety in java is the process to make our program safe to use in multithreaded environment there are different ways through which we can make our program thread safe. Synchronization is the easiest and most widely used tool for thread safety in java.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is serialistion in java ?
+
+-> serialization is the conversion of a Java object into a static stream (sequence) of bytes, which we can then save to a database or transfer over a network.
 
 -> serialisation is a process that converting an object's state in a format that can be easily sorted, transmitted, or reconstructed later.
 
@@ -847,6 +996,17 @@ What is the difference between String, StringBuilder, and StringBuffer in Java?
 -> StringBuffer is thread-safe and synchronized whereas StringBuilder is not. That's why StringBuilder is faster than StringBuffer.
 __________________________________________________________________________________________________________________________________________________________________________
 
+List some string builder methods ?
+
+1. charAt
+2. setCharAt
+3. insert
+4. deleteCharAt
+5. append
+6. reverse
+7. length
+__________________________________________________________________________________________________________________________________________________________________________
+
 What are checked and unchecked exceptions in Java?
 
 -> Checked exceptions are exceptions that need to be declared in the method signature using the throws keyword or handled using a try-catch block. 
@@ -880,6 +1040,10 @@ ________________________________________________________________________________
 What is the purpose of the static keyword in Java?
 
 The static keyword is used to define a class-level member that belongs to the class itself rather than to an instance of the class. 
+
+The static keyword in Java is mainly used for memory management.
+
+Less memory consumption since they are allocated memory only once when the class is being loaded.
 __________________________________________________________________________________________________________________________________________________________________________
 
 what are intermediate and terminal operations in java 8?
@@ -956,7 +1120,27 @@ ________________________________________________________________________________
 
 What is Abstraction ?
 
+-> Abstraction in Java is a process of hiding the implementation details from the user and showing only the functionality to the user.
 
+-> In java abstraction is achieved through abstract classes and interfaces. 
+
+-> An abstract class in Java is a class that cannot be instantiated directly, meaning you cannot create objects of that class. 
+
+-> Instead, it serves as a blueprint for other classes to extend and implement. 
+
+-> Abstract classes can contain both abstract methods (methods without a body) and concrete methods (methods with a body).
+
+-> Abstract methods must be implemented by the concrete subclasses that extend the abstract class.
+
+abstract class Shape {
+    // Abstract method - no method body
+    public abstract double calculateArea();
+
+    // Concrete method
+    public void display() {
+        System.out.println("This is a shape.");
+    }
+}
 
 __________________________________________________________________________________________________________________________________________________________________________
 
@@ -999,10 +1183,16 @@ ABSTRACT CLASS :
 -> Simply, abstract class achieves partial abstraction (0 to 100%) whereas interface achieves fully abstraction (100%).
 ________________________________________________________________________________________________________________________________________________________________________
 
+can we override static method in multiple inheritance in java ?
+
+-> In Interface, these static methods contain the complete definition of the function and since the definition is complete and the method is static, therefore these     
+   methods cannot be overridden or changed in the implementation class.
+________________________________________________________________________________________________________________________________________________________________________
+
 Can we define private and protected modifiers for data members (fields) in interfaces?
 
-Ans: No, we cannot define private and protected modifiers for variables in interface because the fields (data members) declared in an interface are by default public,     
-    static, and final.
+ No, we cannot define private and protected modifiers for variables in interface because the fields (data members) declared in an interface are by default public,     
+ static, and final.
 __________________________________________________________________________________________________________________________________________________________________________
 
 How HashMap internally works?
@@ -1017,18 +1207,24 @@ Collections heirarchy ?
 https://data-flair.training/blogs/wp-content/uploads/sites/2/2018/03/hierarchy-of-collection-framework-in-java.webp
 __________________________________________________________________________________________________________________________________________________________________________
 
-what is   lock ?
+what is dead lock ?
 
 dead lock in java is a situation that occur when thread is waiting for an object lock, that is acquired by another thread and second thread is waiting for an object lock that is acquired by th first thread, since both the threads are waiting for each other to release the lock simultaneously this condition is called dead lock.
 __________________________________________________________________________________________________________________________________________________________________________
 
 Difference between Abstraction and Encapsulation ? 
 
--> Abstraction is the method of hiding the unwanted information.
--> Whereas encapsulation is a method to hide the data in a single entity or unit along with a method to protect information from outside. 
--> We can implement abstraction using abstract class and interfaces.
+➳ Abstraction is the method of hiding the unwanted information.
+➳ Whereas encapsulation is a method to hide the data in a single entity or unit along with a method to protect information from outside. 
+➳ We can implement abstraction using abstract class and interfaces.
 __________________________________________________________________________________________________________________________________________________________________________
 
+what is log4j ?
+
+➳ log4j is a reliable, fast and flexible logging framework (APIs) written in Java, which is distributed under the Apache Software License.
+
+➳ log4j is a popular logging package written in Java.
+__________________________________________________________________________________________________________________________________________________________________________
 
  class methods ?
 
@@ -1043,7 +1239,6 @@ ________________________________________________________________________________
 8. equals()
 9. hashcode()
 __________________________________________________________________________________________________________________________________________________________________________
-
 
 SOLID PRINCIPLES 
 
@@ -1076,7 +1271,6 @@ Dependency Inversion Principle (DIP):
 -> This principle encourages the use of dependency injection and inversion of control to decouple modules and reduce direct dependencies. 
 -> It promotes the use of interfaces and abstract classes to define contracts and allow for flexibility and easier testing.
 _______________________________________________________________________________________________________________________________________________________________________
-
 
 Shallow copy vs Deep Copy ?
 
@@ -1138,7 +1332,7 @@ A deep copy creates a new object and recursively copies all the fields of the or
 
 
 class MyClass implements Cloneable {
-    private int value;
+    private int value;u
 
     public MyClass(int value) {
         this.value = value;

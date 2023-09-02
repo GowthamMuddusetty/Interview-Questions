@@ -1,0 +1,140 @@
+ 1. What is Selenium ?
+
+-> Selenium is a open sourse tool used for automating web applications.
+__________________________________________________________________________________________________________________________________________________________________________
+
+2. what are selenium components ?
+
+-> Selenium IDE
+-> Selenium RC
+-> Selenium Grid
+-> Selenium Web Driver
+__________________________________________________________________________________________________________________________________________________________________________
+
+3. What are locators in selenium ?
+
+-> Locators are components of Selenium infrastructure, which help Selenium scripts in uniquely identifying the WebElements(such as text box, button, etc.) present of the web page. 
+
+-> There are 8 types of locators :
+
+1. ID                :  Identify the WebElement using the ID attribute.  ||  driver.findElement(By.id(“IdValue”));
+
+2. NAME              :  Identify the WebElement using the Name attribute.|| driver.findElement(By.name(“nameValue”));
+
+3. CLASS NAME        :  Use the Class attribute for identifying the object. || driver.findElement(By.className(“classValue”));
+
+4. LINK TEST         :  Use the text in hyperlinks to locate the WebElement. || driver.findElement(By.linkText(“textofLink”));
+
+5. PARTIAL LINK TEST : Use a part of the text in hyperlinks to locate the desired WebElement. || driver.findElement(By.partialLinkText(“PartialTextofLink”));
+
+6. TAG NAME          : Use the TagName to locate the desired WebElement. || driver.findElement(By.tagName(“htmlTag”));
+
+7. XPATH             : Use XPath to locate the WebElement || driver.findElement(By.xpath(“xpathValue”));
+
+8. CSS SELECTOR      : 	CSS used to create style rules in web page is leveraged to locate the desired WebElement || driver.findElement(By.cssSelector(“cssValue”));
+__________________________________________________________________________________________________________________________________________________________________________
+
+4. What is Software Test Life Cycle (STLC) ?
+
+-> It is a systematic approach to testing a application to ensure that it meets the requirements and is free of defects. 	
+__________________________________________________________________________________________________________________________________________________________________________
+
+5. What is software testing ?
+
+➳ Software testing can be stated as the process of verifying and validating whether a software or application is bug-free, meets the technical requirements. 
+
+➳ Software testing is a process that involves evaluating and examining computer software or applications to ensure they function correctly and meet the desired 
+   requirements.
+
+➳  It involves identifying any errors, gaps, or missing requirements that may negatively affect the software’s performance, usability, functionality, or security.
+
+➳ Software testing can be stated as the process of verifying and validating whether a software or application is bug-free, meets the technical requirements 
+
+➳ Verification: it refers to the set of tasks that ensure that the software correctly implements a specific function. 
+
+➳ Validation: it refers to a different set of tasks that ensure that the software that has been built is traceable to customer requirements. 
+__________________________________________________________________________________________________________________________________________________________________________
+
+6. Types of software testing ?
+
+➳ Manual testing is the process of verifying an application’s functionality in accordance with client requirements without using any automated techniques.
+
+➳ Manual testing is further divided into three types of testing :
+
+White box testing
+Black box testing
+Grey box testing
+
+➳ With the use of automation tools or a programming language referred to as automation testing, any manual test cases may be converted into test scripts.
+__________________________________________________________________________________________________________________________________________________________________________
+
+7. STLC life cycle ?
+
+➳ requirement analysis : Requirement Analysis is the first step of the Software Testing Life Cycle (STLC). In this phase quality assurance team understands the requirements like what is to be tested. If anything is missing or not understandable then the quality assurance team meets with the stakeholders to better understand the detailed knowledge of requirements. 
+
+➳ test planning : Test Planning is the most efficient phase of the software testing life cycle where all testing plans are defined. In this phase manager of the testing, team calculates the estimated effort and cost for the testing work.
+
+➳ test case development : The test case development phase gets started once the test planning phase is completed. In this phase testing team notes down the detailed test cases. The testing team also prepares the required test data for the testing. 
+
+➳ test environment setup : the test environment decides the conditions on which software is tested.In this process, the testing team is not involved. either the developer or the customer creates the testing environment.
+
+➳ test execution :  After the test case development and test environment setup test execution phase gets started. In this phase testing team starts executing test cases based on prepared test cases in the earlier step.
+
+➳ test closure : Test closure is the final stage of the Software Testing Life Cycle (STLC) where all testing-related activities are completed and documented. The main objective of the test closure stage is to ensure that all testing-related activities have been completed and that the software is ready for release.
+__________________________________________________________________________________________________________________________________________________________________________
+ 
+what is x path ?
+
+➳ xpath (Xml path language) is a query language used for selecting nodes from an xml document
+
+➳ Or finding elements in html document.
+
+➳ It was defined by w3c organisation.
+__________________________________________________________________________________________________________________________________________________________________________
+
+how many types of xpath are there ?
+
+
+There are two types of XPath available:
+1) Absolute XPath
+2) Relative XPath
+
+➳ Absolute XPath
+It starts with the root element of the document.
+
+Example:
+ /html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div[1]/div[1]/input
+
+
+
+➳ Relative XPath
+It starts from any point in the document based on the search criteria.
+
+Example:
+ //input[@id=‘abcd’]
+__________________________________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
