@@ -1,0 +1,346 @@
+						                	HIBERNATE INTERVIEW QS :
+
+
+
+
+Hibernate Framework:
+
+Hibernate is a Java framework that simplifies the development of Java application to interact with the database. It is an open source, lightweight, ORM (Object Relational Mapping) tool. Hibernate implements the specifications of JPA (Java Persistence API) for data persistence.
+
+➳ Hybernet is one of the best ORM framework availabe for java.
+_________________________________________________________________________________________________________________________________________________________________________
+
+What is ORM Hibernate ?
+
+➳ Hibernate orm stands for (object relational mapping). 
+
+➳ this tool is mainly used for converting data in rdbms to an object used in object oriented programming constructs.
+
+➳ it greatly helps in simplifying data retrieval, creation and manipulation.
+_________________________________________________________________________________________________________________________________________________________________________
+
+What are some of the important interfaces of Hibernate framework?
+
+Hibernate core interfaces are:
+
+➳ Configuration
+
+➳ SessionFactory
+
+➳ Session
+
+➳ Criteria
+
+➳ Query
+
+➳ Transaction
+_________________________________________________________________________________________________________________________________________________________________________
+
+What is Session and Session Factory in Hibernate ? 
+
+➳ The Session Factory in Hibernate is responsible for creating of session objects. The Hibernate Session provides methods such as Update, Delete, Post, Get all, all the 
+   Crud based operations on database to which the session factory is connected.
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is Hibernate first level and second level cache?
+
+➳ The main difference between session and session factory is :
+
+the first level caching is only associated with session level and accessable only at the session level.
+
+where as second level caching is associated with session factory and it is available to all the sessions.
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is the benefit of using Hibernate?
+
+➳ Some of the important advantages of Hibernate framework over JDBC are: 
+
+➳ Hibernate removes a lot of boiler-plate code that comes with JDBC API, the code looks more cleaner and readable.  
+
+➳ Hibernate supports inheritance, associations and collections. These features are not present with JDBC API.
+__________________________________________________________________________________________________________________________________________________________________________
+
+//@ManyToMany(mappedBy = "admins", cascade = CascadeType.ALL)
+    @ManyToMany( cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @JoinTable(name = "property_admin", joinColumns = {
+            @JoinColumn(name = "property_id") }, inverseJoinColumns = {
+                    @JoinColumn(name = "admin_id") })
+    
+   //@Column(nullable = true)
+    //@JsonIgnore
+    @JsonBackReference
+    private List<Property> properties;
+
+what is cascade and fetch?
+
+In the code snippet you provided, cascade and fetch are annotations used in the context of JPA (Java Persistence API) to define the behavior of a many-to-many relationship between two entities.
+
+cascade = CascadeType.ALL: The cascade attribute specifies how operations (such as persist, merge, remove, etc.) should be cascaded from one entity to another. In this case, CascadeType.ALL means that all operations performed on the owning entity (the one where this annotation is defined) will be cascaded to the associated entities. So if an operation like persist or remove is performed on the owning entity, the same operation will be applied to the associated entities.
+
+fetch = FetchType.LAZY: The fetch attribute determines how the associated entities should be loaded from the database. In this case, FetchType.LAZY indicates that the associated entities should be loaded lazily, meaning they will be fetched from the database only when explicitly accessed. This is useful when you have large collections of associated entities, and you want to avoid fetching them all at once, which could impact performance.
+
+Regarding the other annotations in your code snippet:
+
+@JoinTable: Specifies the details of the join table used to store the many-to-many relationship between the entities.
+@JoinColumn: Specifies the column used for joining the owning entity with the associated entity in the join table.
+@JsonBackReference (from Jackson library): Indicates that the annotated property should be ignored during JSON serialization to prevent circular references when serializing bidirectional relationships.
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is criteria query ?
+
+➳ Criteria Query in hibernate is used for join queries for joining multiple tables, criteria queries are more flexible and provide better support to for writing dynamic   
+   queries as compared to HQL. 
+➳ useful methods for hibernate criteria join are createAlias(), setFetchMode(), and setProtection().
+➳ The Hibernate Criteria Query Language (HCQL) is used to fetch the records based on the specific criteria.
+➳The Criteria interface provides methods to apply criteria such as retreiving all the records of table whose salary is greater than 50000 etc.
+__________________________________________________________________________________________________________________________________________________________________________
+
+what is cascade types ?
+
+➳It is an annotation used to specify the cascade operations that should be applied to associated entities when an operation is performed on the owning entity. 
+
+
+
+HIBERNATE MAPPINGS
+
+ONE TO ONE MAPPINGS :
+
+in one directional way :
+
+public class customer {
+	private int id;
+
+	private string name;
+
+	@onetoone(cascade = cascadetype.all)
+	private Item item;
+	
+	// GETTERS AND SETTERS & constructor
+}
+
+
+public class Item{
+
+	private int Id;
+	private string name;
+}
+
+-------------------------
+for bi-directional way :
+
+public class customer {
+	private int id;
+
+	private string name;
+
+	@onetoone(cascade = cascadetype.all)
+	private Item item;
+	
+	// GETTERS AND SETTERS & constructor
+}
+
+
+public class Item{
+
+	private int Id;
+	private string name;
+	
+	@onetoone(cascade = cascadeType.all, mappedby = item)
+	private Customer customer;
+
+}
+
+case 3 : what if u wanted to define joining table? 
+
+public class customer {
+	private int id;
+
+	private string name;
+
+	@onetoone(cascade = cascadetype.all)
+	@Jointable(name = "customer_item",
+			join columns = {@Join column(name = "customer_id)},
+			inversejoincolumns = {@Joincolumn(name = "item_id)})
+	private Item item;
+	
+	// GETTERS AND SETTERS & constructor
+}
+
+public class Item{
+
+	private int Id;
+	private string name;
+
+}
+__________________________________________________________________________________________________________________________________________________________________________
+
+ONE TO MANY & MANY TO ONE :
+
+case 1: 
+
+
+public class customer {
+	private int id;
+
+	private string name;
+
+	@onetomany(cascade = cascadetype.all)
+	private List<Item> items = new ArrayList<>();
+	
+	// GETTERS AND SETTERS & constructor
+}
+
+
+public class Item{
+
+	private int Id;
+	private string name;
+
+}
+
+-> this will create 3 tables , customer & item & customer_items
+---------------------
+
+case 2 :
+
+
+public class customer {
+	private int id;
+
+	private string name;
+
+	@onetomany(cascade = cascadetype.all)
+	@joincolumn(name = "customer_id")
+	private List<Item> items = new ArrayList<>();
+	
+	// GETTERS AND SETTERS & constructor
+}
+
+
+public class Item{
+
+	private int Id;
+	private string name;
+
+}
+
+-> this will create 2 tables only customer & item.  in item u will have customer_id, this is one to many.
+-------------------------
+
+
+case 3 :
+
+if you want to have many to one in bi-directional way also 
+
+
+public class customer {
+	private int id;
+
+	private string name;
+
+	@onetomany(cascade = cascadetype.all, mappedby="customer")
+	private List<Item> items = new ArrayList<>();
+	
+	// GETTERS AND SETTERS & constructor
+}
+
+
+public class Item{
+
+	private int Id;
+	private string name;
+	
+	@Many2one(cascade = cascadetype.all)
+	@JoinColumn(name="customer_id")
+	private Customer customer;
+
+}
+
+-> u have to set items to customer and also have to set customer to items, this is how bidirectional works.
+-> 2 tables will be shown, customer, item, in items u will have fk.
+__________________________________________________________________________________________________________________________________________________________________________
+
+MANY 2 MANY :
+
+CASE 1:
+
+public class customer {
+	private int id;
+
+	private string name;
+
+	@manytomany(cascade = cascadetype.all)
+	private Set<Item> items = new HashSet<>();
+	
+	// GETTERS AND SETTERS & constructor
+}
+
+
+public class Item{
+
+	private int Id;
+	private string name;
+}
+
+-> this will create 3 tables customer,item,customer_item
+----------------------------
+
+case 2 : BI-Directional
+
+
+public class customer {
+	private int id;
+
+	private string name;
+
+	@manytomany(cascade = cascadetype.all)
+	@JoinTable(name = "customer_item,
+		joincolumns={ @joincolumn(name = "customer_id")},
+		inversejoincolumn = { @joincolumn = "item_id)})
+	private Set<Item> items = new HashSet<>();
+	
+	// GETTERS AND SETTERS & constructor
+}
+
+
+public class Item{
+
+	private int Id;
+	private string name;
+	
+	@many2many(cascade = cascadetype.all, mappedby = "items")
+	private Set<Customer> customer = new HashSet<>()
+}
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is JPA?
+
+➳ Java Persistence API (JPA) is a Java specification that provides certain functionality and standard to ORM tools. The javax.persistence package contains the JPA classes and interfaces.
+__________________________________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

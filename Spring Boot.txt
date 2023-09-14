@@ -1,0 +1,315 @@
+
+
+
+							SPRING BOOT INTERVIEW QS :
+
+
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+
+why this dependency is added in pom.xml ?
+
+➳ starter of Spring web uses Spring MVC, REST and Tomcat as a default embedded server. The single spring-boot-starter-web dependency transitively pulls in all dependencies related to web development.
+__________________________________________________________________________________________________________________________________________________________________________
+
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-devtools</artifactId>
+	<scope>runtime</scope>
+	<optional>true</optional>
+</dependency>
+
+why this dependency is added in pom.xml ?
+
+➳ The aim of the module is to try and improve the development time while working with the Spring Boot application. 
+➳ Spring Boot DevTools pick up the changes and restart the application.
+➳ Spring Boot DevTools provides the following features:
+
+Property Defaults
+Automatic Restart
+LiveReload
+Remote Debug Tunneling
+Remote Update and Restart
+__________________________________________________________________________________________________________________________________________________________________________
+
+what does @service do in spring boot ?
+
+➳ It is used to mark the class as a service provider. 
+➳ @Service annotation is used with classes that provide some business functionalities.
+➳ Spring context will autodetect these classes when annotation-based configuration and classpath scanning is used.
+__________________________________________________________________________________________________________________________________________________________________________
+
+➳ Introduction to RESTful Web Services
+
+REST stands for Representational State Transfer. It is developed by Roy Thomas Fielding, who also developed HTTP.
+The main goal of RESTful web services is to make web services more effective.
+
+➳ It does not define the standard message exchange format. We can build REST services with both XML and JSON. 
+   JSON is more popular format with REST. The key abstraction is a resource in REST. 
+__________________________________________________________________________________________________________________________________________________________________________
+
+Advantages of RESTful web services:
+
+➳ RESTful web services are platform-independent.
+ 
+➳ It can be written in any programming language and can be executed on any platform.
+
+➳ It provides different data format like JSON, text, HTML, and XML.
+
+➳ It is fast in comparison to SOAP because there is no strict specification like SOAP.
+
+➳ These are reusable.
+
+➳ They are language neutral.
+__________________________________________________________________________________________________________________________________________________________________________
+
+how to interact with rest API ?
+
+-> Step #1 – Enter the URL of the API in the textbox of the tool.
+
+-> Step #2 – Select the HTTP method used for this API (GET, POST, PATCH, etc).
+
+-> Step #3 – Enter any headers if they are required in the Headers textbox.
+
+-> Step #4 – Pass the request body of the API in a key-value pair.
+__________________________________________________________________________________________________________________________________________________________________________
+
+what is difference between HTTP Request and Response ?
+
+-> HTTP works as a request-response protocol between a client and server.
+
+-> Example: A client (browser) sends an HTTP request to the server; then the server returns a response to the client. 
+
+-> The response contains status information about the request and may also contain the requested content.
+__________________________________________________________________________________________________________________________________________________________________________
+
+Difference between rest template and web client ?
+
+-> RestTemplate uses Java Servlet API and is therefore synchronous and blocking. 
+
+-> Conversely, WebClient is asynchronous and will not block the executing thread while waiting for the response to come back. 
+
+-> For web client we need to include web-flux dependency but for rest template is not needed.
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is an API-Gate way and why it is used ?
+
+-> An API is an single point of entry to the clients of an application. It sits between the clients and collection of backend services for the application. 
+
+-> It provides several important functions, some of the commonly used are :
+
+1. Authentication and security policy entertainments.
+2. Local balancing and circuit breaking.
+3. Protocol translation and service discovery
+4. Monitoring, logging, analytics and billing
+5. Caching
+
+Step 1: The client sends request to the API gate way.
+Step 2: The API gateway validates the HTTP request.
+Step 3: The API gateway checks the callers IP address and other HTTP headers against its allow-list and deny-list.
+Step 4: The API gateway passses the request to the identity provider for authentication and authorisation.
+Step 5: A higher level rate limit check is applied against the authenticated session. If it is over a limit the request is rejected at this point.
+Step 6&7 : With the help of a service discovery component, the api gate way locates the appropriate backend service to handle the request by path matching.
+Step 8: The API gateway transforms the request into the appropriate protocal and sends the transformed request to the backend service.
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is Authentication and Authorisation in Spring Security ?
+
+Authentication is the process of identifying and knowing the user that wants to access. 
+
+Authorisation is the process to allow authority to perform actions in application.
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is Eureka Server in Spring Boot ?
+
+-> Eureka server is an application that holds all the information about the client-service applications.
+
+-> Every Micro service registers in the eureka, so that eureka server knows all the client applications running on ports and its Ip address.
+__________________________________________________________________________________________________________________________________________________________________________
+
+SDLC (SOFTWARE DEVELOPMENTLIFE CYCLE)
+
+1. Requirement Gathering
+2. Analysis & 	Planning 
+3. Design & Prototype (Blue print)
+4. Development 
+5. Testing 
+6. Integration & Deployment 
+7. Maintanence
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is Rest template in microservices ?
+
+Rest Template is a class responsible for mapping http requests and map the response for you. It is synchronous.
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is Spring Security ?
+
+-> Spring Security is a frame work that provides a strong ability for both authentication and authorisation
+
+Feautures : 
+
+-> support for authentication and authorisation
+-> protection against attacks like clickjacking, session fixation, cross site request forgery
+-> it provides integration of survlet with api
+-> Optional integration with spring mvc
+__________________________________________________________________________________________________________________________________________________________________________
+
+what is maven ?
+
+-> Maven is a build automation tool used primarily for Java projects. Maven can also be used to build and manage projects written in C#, Ruby, Scala, and other languages.
+
+-> Maven is chiefly used for Java-based projects, helping to download dependencies, which refers to the libraries or JAR files. 
+__________________________________________________________________________________________________________________________________________________________________________
+
+
+What is pagenation ?
+
+-> Pagenation is a process that is used to divide a large dataset into smaller chunks.
+-> paging and sorting interfaces of a spring data provides methods for paging and sorting.
+__________________________________________________________________________________________________________________________________________________________________________
+
+Exception Handling - Spring Boot 
+
+https://www.geeksforgeeks.org/spring-boot-exception-handling/
+_________________________________________________________________________________________________________________________________________________________________________
+
+what is @exceptionhandler annotation ?
+
+-> it is a part of spring mvc module and is used with in the context of controller class
+
+-> When an exception occurs during the execution of a request handling method in Spring MVC, 
+   the @ExceptionHandler annotation allows you to define a method that will handle that specific type of exception. 
+
+-> By annotating a method with @ExceptionHandler, you are essentially declaring it as an exception handler method for the associated controller class.
+
+@Controller
+public class MyController {
+
+  @ExceptionHandler(Exception.class)
+  public ModelAndView handleException(Exception ex) {
+    // Handle the exception
+    ModelAndView modelAndView = new ModelAndView();
+    modelAndView.setViewName("error");
+    modelAndView.addObject("errorMessage", "An error occurred: " + ex.getMessage());
+    return modelAndView;
+  }
+
+  // Other request handling methods...
+}
+__________________________________________________________________________________________________________________________________________________________________________
+
+what is difference between controller and restcontroller ?
+
+-> The main difference between Controller and RestController Annotation is ResponseBody Annotation.
+
+-> Controller annotation does not call @ResponseBody to all Controller's method itself. 
+
+-> Whereas @RestController combines Controller and @ResponseBody, which use @ResponseBody to all its methods by default.
+__________________________________________________________________________________________________________________________________________________________________________
+
+what is Response Body ?
+
+-> @ResponseBody. The @ResponseBody annotation tells a controller that the object returned is automatically serialized into JSON 
+   and passed back into the HttpResponse object.
+__________________________________________________________________________________________________________________________________________________________________________
+
+what is Response Entity ?
+
+-> ResponseEntity is a class provided by Spring Framework that represents an HTTP response. It allows you to customize the response status, headers, and body.
+
+
+In the context of the save method:
+
+public ResponseEntity<Course> save(@RequestBody Course course) {
+    service.save(course);
+    return ResponseEntity.ok().body(course);
+}
+
+ResponseEntity<Course>: This is the return type of the method, indicating that the response will be wrapped in a ResponseEntity object containing a Course object as the response body.
+
+ResponseEntity.ok(): This is a static factory method of the ResponseEntity class. It creates a new ResponseEntity with a response status of 200 OK. It indicates that the request was successful.
+
+body(course): This method is called on the ResponseEntity object to set the response body as the provided course object.
+__________________________________________________________________________________________________________________________________________________________________________
+
+
+In spring boot, how to intialise servlet and configuration? what are all the annotations used ?
+
+-> In Spring Boot, you can initialize a servlet and configure it using annotations. The specific annotations you'll use depend on the functionality you want to achieve. 
+
+-> @WebServlet: This annotation is used to declare a servlet and map it to a specific URL pattern. It is part of the Java Servlet API and can be used in Spring Boot   
+                applications as well.
+
+-> @ServletComponentScan: This annotation is used to enable scanning for servlets, filters, and listeners in the specified package(s). It is typically placed on the main 
+                application class.
+
+-> @WebFilter: This annotation is used to declare a servlet filter and map it to specific URL patterns. It allows you to intercept and process requests and responses  
+               before they reach the servlet.
+
+-> @WebListener: This annotation is used to declare a listener class. Listeners are used to respond to events in a servlet container, such as startup, shutdown, and 
+               7attribute changes.
+__________________________________________________________________________________________________________________________________________________________________________
+
+what is actuator in spring boot ?
+
+-> To enable Spring Boot actuator endpoints to your Spring Boot application, we need to add the Spring Boot Starter actuator dependency in our build configuration file.
+
+-> Actuator is mainly used to expose operational information about the running application — health, metrics, info, dump, env, etc.
+
+-> It uses HTTP endpoints or JMX beans to enable us to interact with it. 
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is Spring Boot, and how does it differ from the traditional Spring Framework?
+
+-> Spring Boot is a framework that simplifies the development of Spring-based applications by providing a set of defaults, conventions, and auto-configurations.
+
+-> Spring Framework, which requires explicit configuration for various components, Spring Boot automatically configures many aspects of the application, reducing 
+   boilerplate code and making development faster and easier.
+__________________________________________________________________________________________________________________________________________________________________________
+
+Explain the concept of "auto-configuration" in Spring Boot. How does it simplify application setup?
+
+-> Auto-configuration in Spring Boot refers to the mechanism by which the framework automatically configures beans based on the classpath dependencies and the   
+   environment. 
+__________________________________________________________________________________________________________________________________________________________________________
+
+How does Spring Boot handle external configurations, and what are the different sources of configuration?
+
+-> Spring Boot supports various sources for external configuration, including properties files, YAML files, environment variables, command-line arguments, and more.
+__________________________________________________________________________________________________________________________________________________________________________
+
+Discuss the importance of the Spring Boot Starter concept and provide an example of creating a custom Starter.
+
+-> Spring Boot Starters are a set of dependencies that simplify the inclusion of common features or technologies in the application.
+
+-> For example, including the spring-boot-starter-web will automatically configure the application with everything needed to build a web application. 
+
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is the purpose of the Spring Boot Actuator module? How does it help in managing and monitoring applications?
+
+-> The Spring Boot Actuator module provides various production-ready features for managing and monitoring applications.
+
+->  It exposes endpoints that can be used to check application health, view metrics, gather application info, manage log levels, and much more
+
+-> These features are useful in production environments for monitoring and managing applications effectively.
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is the use of Spring WebFlux?
+
+Spring WebFlux is the alternative to Spring MVC module. 
+Spring WebFlux is used to create fully asynchronous and non-blocking application built on event-loop execution model.
+__________________________________________________________________________________________________________________________________________________________________________
+
+Explain the role of the Spring Boot DevTools. How do they enhance the development experience?
+How can you deploy a Spring Boot application to an external application server like Tomcat or Jetty?
+Discuss the different ways to handle database migrations in Spring Boot projects.
+What are the advantages of using Spring Boot's reactive programming support with WebFlux?
+How do you perform unit testing and integration testing in Spring Boot applications?
+Explain the concept of Spring Boot's "fat JAR" and its advantages and disadvantages.
+What is the significance of the Spring Boot Actuator Health Check endpoint, and how can you customize its behavior?
+How does Spring Boot support caching, and what caching providers does it offer integration with?
+Discuss the process of monitoring and managing Spring Boot applications using Spring Cloud Data Flow.

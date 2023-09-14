@@ -1,0 +1,108 @@
+                                                                          SPRING IOC QUESTIONS : 
+
+
+What is IOC (Inversion of Control) and how does it relate to the Spring framework?
+
+➳ IOC is a design principle in which the control of object creation and management is transferred to a container or framework. 
+   
+➳ In the case of Spring, it manages the objects (beans) and their dependencies. Spring IOC allows you to decouple the dependencies between components and makes your code       more flexible and testable.
+__________________________________________________________________________________________________________________________________________________________________________
+
+what is spring bean ?
+
+➳ Spring Bean is nothing special, any object in the Spring framework that we initialize through Spring container is called Spring Bean. 
+__________________________________________________________________________________________________________________________________________________________________________
+
+what is bean scope in spring ioc ?
+
+➳ Bean Scopes refers to the lifecycle of Bean that means when the object of Bean will be instantiated, how long does that object live, and how many objects will be   
+   created for that bean throughout. 
+
+➳ Basically, it controls the instance creation of the bean and it is managed by the spring container.
+__________________________________________________________________________________________________________________________________________________________________________
+
+Can you explain the bean lifecycle in Spring IOC?
+
+➳ The bean lifecycle in Spring IOC consists of several phases: instantiation, population of properties, and initialization. 
+
+➳ After the initialization phase, the bean is ready to be used. 
+
+➳ When the application context is shut down, the destruction phase begins, and the bean's resources are released. The lifecycle is managed by the Spring container.
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is the difference between singleton and prototype scope in Spring IOC?
+
+➳ In Spring, singleton scope (default) means that only one instance of a bean is created and shared throughout the application. 
+
+➳ Prototype scope, on the other hand, creates a new instance of the bean whenever requested. Singleton beans are created once and stored in the container, while   prototype beans are created each time they are requested.
+__________________________________________________________________________________________________________________________________________________________________________
+
+Explain the concept of dependency injection in Spring IOC.
+
+➳ Dependency injection is a key aspect of Spring IOC. It is a process in which the dependencies of a class are provided externally rather than the class creating them itself.
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is Spring Framework?
+
+➳ Spring is a powerful open-source, loosely coupled (It means one object is not totally dependent on another object, It may get replaced), lightweight, java framework    
+   meant for reducing the complexity of developing enterprise-level applications.                                                                       
+
+➳ One of the major feauters of Spring framework is dependency injection. It helps makes things simplier by allowing us to develop loosely coupled applications.
+__________________________________________________________________________________________________________________________________________________________________________
+
+How does Spring handle bean initialization and destruction in IOC?
+
+➳ Spring provides different lifecycle methods to handle bean initialization and destruction. 
+
+➳ For initialization, you can use the @PostConstruct annotation on a method, or implement the InitializingBean interface and override the afterPropertiesSet() method. 
+
+➳ For destruction, you can use the @PreDestroy annotation on a method, or implement the DisposableBean interface and override the destroy() method.
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is Bean ?
+
+➳ In spring, the objects that form the backbone of your application & are managed by spring ioc container are called as beans.
+__________________________________________________________________________________________________________________________________________________________________________
+
+what is container ?
+
+➳ The spring container is responsible for managing the life cycle of beans.
+
+types of ioc containers :
+
+Bean Factory : Bean factory will create a bean object when getBean() is called thus making it lazy intialisation. through bean factory we can configure only xml based configurations.
+
+Application context :
+
+__________________________________________________________________________________________________________________________________________________________________________
+
+Explain Flow of Spring MVC ?
+
+Ans.
+
+➳ The DispatcherServlet configured in web.xml file receives the request.
+
+➳ The DispatcherServlet finds the appropriate Controller with the help of HandlerMapping and then invokes associated Controller.
+
+➳ Then the Controller executes the logic business logic and then returns ModelAndView object to the DispatcherServlet.
+
+➳ The DispatcherServlet determines the view from the ModelAndView object.
+
+➳ Then the DispatcherServlet passes the model object to the View.
+
+➳ The View is rendered and the Dispatcher Servlet sends the output to the Servlet container. Finally Servlet Container sends the result back to the user.
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is Model and View Object ? 
+
+➳ The model job is to manage the data of the application. It recieves user input from the controller.
+
+➳ The view renders the presentation of the model in the particular format.
+_________________________________________________________________________________________________________________________________________________________________________
+
+what is maven ?
+
+-> Maven is a build automation tool used primarily for Java projects. Maven can also be used to build and manage projects written in C#, Ruby, Scala, and other languages.
+
+-> Maven is chiefly used for Java-based projects, helping to download dependencies, which refers to the libraries or JAR files. 
+__________________________________________________________________________________________________________________________________________________________________________

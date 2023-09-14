@@ -31,6 +31,26 @@ Tell me some features of java ?
                     threads.
 __________________________________________________________________________________________________________________________________________________________________________
 
+Difference between JDK, JRE, & JVM ?
+
+JVM :
+
+➳ JVM is an abstract machine. It is called as virual matchine bcs it does not physically exists.
+➳ It is a specification that provides runtime environment.
+
+JRE :
+
+➳ JRE is a acronym for java run time environment. It is a set of software tools that is used for developing java applications.
+➳ It is used to provide the run time environment.
+
+
+JDK :
+
+➳ JDK is an acronym for java development kit.  
+➳ the JDK is an software development environment which is used to develop java application & applets.
+➳ it contains JRE + development tools.
+__________________________________________________________________________________________________________________________________________________________________________
+
 Data Types and size of DT ?
 
 ➳ Byte  - 1(byte)
@@ -48,6 +68,13 @@ Data Types and size of DT ?
 ➳ Char  -  2 bytes
 
 ➳ Boolean  - 1 bit
+__________________________________________________________________________________________________________________________________________________________________________
+
+Explain system.out.println ?
+
+➳ main represents the starting point of program.
+➳ string args[] or string[] args are used for command line argument.
+➳ system.out.println is used to print statement. here system is a class, out is a object of the print stream class, println is a method of PrintStream class.
 __________________________________________________________________________________________________________________________________________________________________________
 
 Why String is Immutable ?
@@ -126,10 +153,10 @@ ________________________________________________________________________________
 
 Why Multiple inheritance is not supported in java ?
 
--> To reduce the complexity and simplify the language, multiple inheritannce is not supported in java.
+ -> To reduce the complexity and simplify the language, multiple inheritannce is not supported in java.
 
 -> Consider a scenario where A,B and C are three classes. The C class inherits A and B classes. if A and B classes have the same method and you called it from child class    
-   object, there will be ambiguity to call the methof of A or B.
+   object, there will be ambiguity to call the method of A or B.
 
 -> Since compile time errors are better than run time errors, java renders compile time error if u inherit 2 classes.	
 __________________________________________________________________________________________________________________________________________________________________________
@@ -211,7 +238,7 @@ what is a survlet?
 
 ➳ A servlet is a Java program that runs on a web server and handles client requests and responses over the HTTP protocol.
  
-➳ Servlets are used to build web applications that can dynamically generate content and respond to user requests.
+➳  Servlets are used to build web applications that can dynamically generate content and respond to user requests.
 
 ➳ Servlets can handle various types of HTTP requests such as GET, POST, PUT, and DELETE.
 _________________________________________________________________________________________________________________________________________________________________________
@@ -275,6 +302,8 @@ What is RowSet ?
 Rowset Interface is basically an extension of JDBC ResultSet and is part of the java.sql.package
 There are 2 types of RowSet Connected and Dis-Connected.
 
+➳ A RowSet object may make a connection with a data source and maintain that connection throughout its life cycle, in which case it is called a connected rowset. 
+
 ➳ Connected Rowset are those which establish connection and retain until the application termiantes.
 
 ➳ DisConnected rowset perfoms or establishes a connection, executues a query such as retreiveing data from the database and closes the connection.
@@ -282,7 +311,7 @@ There are 2 types of RowSet Connected and Dis-Connected.
 ➳ According to the implementation of rowset there are 5 types of implemenatations
 
  1. JdbcRowset 
- 2. Cached Rowset
+ 2. Cached Rowset 
  3. WebRowset 
  4. Filetered rowset 
  5. Join Rowset
@@ -295,7 +324,6 @@ What is Servlet ?
 ➳ When a client sends a HTTP request to the server, the servelet container recieves the request and pass it to appropriate servlet. 
 
 ➳ The servelt then process the request and sends the http response back to the client.
-
 __________________________________________________________________________________________________________________________________________________________________________
 
 How many types of servlets ?
@@ -495,8 +523,6 @@ what is PreparedStatement and Statement in jdbc?
 
 ➳  In JDBC, both Statement and PreparedStatement are interfaces used to execute SQL queries against a database. 
     However, they have some differences in their functionality and usage.
-
-➳ Statement is a basic interface in JDBC that is used to execute 
 
 ➳ Statement is an interface in JDBC that is used to execute a static SQL statement and return the results. 
    Static SQL statements are those whose values are hard-coded at the time of execution.

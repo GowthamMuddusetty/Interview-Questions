@@ -1,0 +1,179 @@
+What is Angular?
+
+Angular is a popular open-source web development framework created and maintained by Google. 
+It is used for building dynamic and responsive web applications.
+__________________________________________________________________________________________________________________________________________________________________________
+
+Why were client-side frameworks like Angular introduced?
+
+➳ AngularJS started out as a pure client-side framework.
+
+➳It was developed by Google to solve the problem of creating a web application in JavaScript and make it easier to write single-page applications. 
+
+➳ Angular is a structural framework for dynamic web apps that can run on any browser or device.
+
+__________________________________________________________________________________________________________________________________________________________________________
+
+What are the features of Angular?
+
+Angular has many features including:
+
+Two-way data binding
+MVC architecture
+Dependency injection
+Templating
+Directives
+Services
+Routing
+Animations
+Forms
+__________________________________________________________________________________________________________________________________________________________________________
+
+How to create an angular app ?
+
+-> ng new first-angular-app
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is the difference between AngularJS and Angular?
+
+AngularJS is the first version of Angular released in 2010, while Angular is the newer and more advanced version. 
+Angular is a complete rewrite of AngularJS, with better performance, improved scalability, and a more modular architecture.
+Angular also uses TypeScript instead of JavaScript.
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is TypeScript?
+
+TypeScript is a superset of JavaScript that adds optional static typing, classes, interfaces, and other features to JavaScript.
+TypeScript is used by Angular for its type checking and class-based object-oriented programming features.
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is Angular CLI?
+
+Angular CLI (Command Line Interface) is a command-line tool used for generating, building, and testing Angular applications.
+It provides a set of predefined commands that help you create and manage Angular projects more efficiently.
+__________________________________________________________________________________________________________________________________________________________________________
+
+What does [( ngModel )] mean?
+
+-> The ng-model directive binds the value of HTML controls (input, select, text-area) to application data. 
+-> It is a part of the FormsModule.
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is a module in Angular?
+
+A module in Angular is a container that encapsulates related components, directives, services, and other code. 
+It helps to organize your code and provides a way to reuse code across different parts of your application.
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is a component in Angular?
+
+A component in Angular is a building block of the user interface that consists of a template, styles, and logic.
+A component can interact with other components, services, and directives to create a dynamic and responsive user interface.
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is data binding in Angular?
+
+Data binding in Angular is a mechanism for synchronizing data between the model (data) and the view (UI). 
+Angular supports two-way data binding, where changes in the model update the view and changes in the view update the model.
+__________________________________________________________________________________________________________________________________________________________________________
+
+What are the types of data binding in Angular?
+
+Angular supports three types of data binding:
+
+Interpolation (one-way binding)
+Property binding (one-way binding)
+Event binding (one-way binding)
+Two-way binding
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is dependency injection in Angular?
+
+Dependency injection in Angular is a design pattern used for providing dependencies (services, objects, or values) to components, modules, and other parts of your application. It helps to decouple your code and makes it more modular and testable.
+__________________________________________________________________________________________________________________________________________________________________________
+
+What are services in Angular?
+
+Services in Angular are reusable code components that provide a specific functionality (e.g., data retrieval, logging, or authentication) to different parts of your application. They are typically used for business logic and can be injected into components and other services using dependency injection.
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is a directive in Angular?
+
+A directive in Angular is a marker on a DOM element that tells Angular to attach a specific behavior or functionality to that element.
+Directives can be used to manipulate the DOM, add event handlers, create custom components, and more.
+__________________________________________________________________________________________________________________________________________________________________________
+
+What are pipes in Angular?
+
+Pipes in Angular are a way to transform data before displaying it in the view. They take in data as input, perform an operation on that data,
+and return the transformed data to be displayed. Pipes can be used for formatting dates, numbers, currency, and more.
+
+
+Angular provides a set of built-in pipes that cover common use cases. Some of the commonly used built-in pipes include uppercase, lowercase, currency, date, json, slice, and async. However, you can also create custom pipes to perform specific transformations on your data.
+
+-> Custom pipes are created using the @Pipe decorator in Angular. You define the pipe class and implement the PipeTransform interface. 
+
+->This allows you to create reusable and configurable pipes for your specific needs.
+
+Here's an example of creating a custom pipe called reverse:
+
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({ name: 'reverse' })
+export class ReversePipe implements PipeTransform {
+  transform(value: string): string {
+    return value.split('').reverse().join('');
+  }
+}
+
+
+In the above example, the ReversePipe class implements the PipeTransform interface, which requires the implementation of the transform method. The transform method takes an input value and returns the transformed output value.
+
+Once the custom pipe is defined, you can use it in your templates:
+
+<p>{{ 'Hello' | reverse }}</p> <!-- Output: olleH --> 
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is RxJS in Angular?
+
+RxJS (Reactive Extensions for JavaScript) is a library for reactive programming using Observables, which are a way to represent asynchronous data streams.
+RxJS is used extensively in Angular for handling events, managing data streams, and making HTTP requests.
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is NgZone in Angular?
+
+NgZone in Angular is a service that provides a way to manage and optimize the performance of the Angular application. It allows you to run certain code outside of the Angular zone, which helps to prevent unnecessary change detection and improves the overall performance of the application. NgZone is particularly useful for applications that need to handle large amounts of data or frequent updates.
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is a template in Angular?
+
+A template in Angular is an HTML file that contains the view of a component. 
+It defines how data should be presented to the user and includes bindings to component properties and methods.
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is an NgModule in Angular?
+
+An NgModule in Angular is a container for a group of related components, directives, pipes, and services. 
+It helps to organize and manage your application by providing a way to configure and import reusable code.
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is the difference between NgModule and Component in Angular?
+
+A component in Angular is a building block of the user interface that consists of a template, styles, and logic. An NgModule is a container for a group of related components, directives, pipes, and services. While a component defines the view and behavior of a single part of the UI, an NgModule defines the configuration and dependencies of a group of related components.
+__________________________________________________________________________________________________________________________________________________________________________
+
+Angular Tutorial - 4
+
+-> COmponenets are building blocks which contains a class, a decorator and template which represents the view 	
+-> Any new component should be added to the module in the declarations array
+
+__________________________________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
