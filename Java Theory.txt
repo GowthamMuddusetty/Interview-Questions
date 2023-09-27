@@ -933,6 +933,13 @@ what is thread pool in java ?
 A thread pool reuses previously created threads to execute current tasks and offers a solution to the problem of thread cycle overhead and resource thrashing. 
 _________________________________________________________________________________________________________________________________________________________________________
 
+what is executor service in java ?
+
+The Java ExecutorService is the interface which allows us to execute tasks on threads asynchronously. 
+The Java ExecutorService interface is present in the java. util. concurrent package. 
+The ExecutorService helps in maintaining a pool of threads and assigns them tasks.  
+_________________________________________________________________________________________________________________________________________________________________________
+
 What is thread safe in java ?
 
 Thread safety in java is the process to make our program safe to use in multithreaded environment there are different ways through which we can make our program thread safe. Synchronization is the easiest and most widely used tool for thread safety in java.
