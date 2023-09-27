@@ -11,86 +11,12 @@ what is spring mvc ?
 ➳ It follows the Model-View-Controller design pattern. It implements all the basic features of a core spring framework like Inversion of Control, Dependency Injection.
 __________________________________________________________________________________________________________________________________________________________________________
 
-what is spring data jpa ?
-
-➳ Spring Data JPA aims to significantly improve the implementation of data access layers by reducing the effort to the amount that's actually needed. 
-
-➳ As a developer you write your repository interfaces, including custom finder methods, and Spring will provide the implementation automatically.
-__________________________________________________________________________________________________________________________________________________________________________
-
-How does Spring Boot works?
-
-➳ Spring Boot automatically configures your application based on the dependencies you have added to the project by using annotation. 
-
-➳ The entry point of the spring boot application is the class that contains @SpringBootApplication annotation and the main method.
-
-➳ Spring Boot automatically scans all the components included in the project by using @ComponentScan annotation
-__________________________________________________________________________________________________________________________________________________________________________
-
-what is springboot frame work and how is it different from the spring framework ?
-
-➳ Spring boot is a frame work that simplifies the development of spring based applications.
-
-➳ rememeber that spring boot is created over spring frame work.
-
-➳ it was difficult to create and develop an end to end project using spring frame work.
-
-➳ spring boot provides many features that makes easier to devlop an stand alone applications such as:
-	auto-configuration
-	started dependencies
-	embedded servers
-	metrics and health check
-__________________________________________________________________________________________________________________________________________________________________________
-
-what is the purpose of @SpringBootApplication Annotation in a spring boot application ? 
-
-➳ the main class is annoted with @SpringBootApplication 
-
-➳ it is used to mark a configuration class that declares one or more @Bean methods and also triggers auto-configuration and component scanning. 
-
-➳ it is equal to a class that is annoted with @componentscan , @Configuration and @Enableautoconfiguration.
-
-➳ @componentscan : this annotation tells spring boot to scan current package and its sub packages in order to configure them as spring beans.
-
-➳ @configuration : this annotation designates a class as configuration class for java configuring.
-
-➳ @Enableautoconfiguration : this enables spring boot autoconfiguration mechanism. it refers to creating beans automatically by scanning the class path.
-__________________________________________________________________________________________________________________________________________________________________________
-
-@SpringBootApplication
-public class SpringBootRestApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(SpringBootRestApplication.class, args);
-	}
-}
-
-explain this code ?
-
-➳ The SpringBootApplication is a meta annotation that combines several annotation into one. It is commonly used to annotate the main class of a spring boot application.
-➳ The main method is the starting point of application. it calls the run method of spring application class 
-➳ the run method starts the application and performs various intialisation tasks like it sets up spring application context, loads, configurers beans and startsthe     
-   emebeded tomcat server.
-➳ by running this class it starts the spring boot application that listens the incomming http requests and handles them using restful principles.
-_______________________________________________________________________________________________________________________________________________________________________
-
-What are the Spring Boot key components?
- 
-➳ Spring Boot Auto Configuration
-
-➳ Spring Boot CLI
-
-➳ Spring Boot POMs
-
-➳ Spring Boot Acutator
-_______________________________________________________________________________________________________________________________________________________________________
-
 What is Spring Initializer ?
 
 ➳ Spring Initializer is a web application that helps you to create an initial spring boot project structure and provides a maven or gradle file to build your code. 
 
 ➳ It solves the problem of setting up a framework when you are starting a project from scratch.
-_______________________________________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________________________________________
 
 Explain Flow of Spring MVC ?
 
@@ -122,4 +48,53 @@ what is maven ?
 
 -> Maven is chiefly used for Java-based projects, helping to download dependencies, which refers to the libraries or JAR files. 
 __________________________________________________________________________________________________________________________________________________________________________
+
+what does @ModelAttribute annotation do ?
+
+In Spring MVC, the @ModelAttribute annotation is used to bind a method parameter or method-level attribute to a model attribute.
+It's commonly used to prepare data that should be added to the model before rendering a view.
+
+1. Method-Level @ModelAttribute:
+
+
+@Controller
+public class MyController {
+
+    @ModelAttribute("countries")
+    public List<String> getCountries() {
+        // Retrieve a list of countries from a database or other source
+        List<String> countries = someService.retrieveCountries();
+        return countries;
+    }
+
+    @GetMapping("/myPage")
+    public String myPage() {
+        // The "countries" model attribute is automatically added to the model
+        return "myPage";
+    }
+}
+
+In this example, the getCountries method annotated with @ModelAttribute retrieves a list of countries and adds it to the model with the name "countries." The data is then accessible in the "myPage" view.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. Method Parameter @ModelAttribute:
+
+
+@Controller
+public class MyController {
+
+    @GetMapping("/editUser")
+    public String editUser(@ModelAttribute("user") User user) {
+        // This method receives a "user" parameter from the model
+        // The "user" object is automatically populated with data from the model
+        return "editUser";
+    }
+}
+
+In this example, the editUser method has a @ModelAttribute("user") parameter. Spring MVC populates the "user" object with data from the model, making it available for use in the "editUser" view.
+__________________________________________________________________________________________________________________________________________________________________________
+
+
+
 

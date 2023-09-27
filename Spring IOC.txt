@@ -1,4 +1,4 @@
-                                                                          SPRING IOC QUESTIONS : 
+                                                                           SPRING IOC QUESTIONS : 
 
 
 What is IOC (Inversion of Control) and how does it relate to the Spring framework?
@@ -28,6 +28,13 @@ Can you explain the bean lifecycle in Spring IOC?
 ➳ After the initialization phase, the bean is ready to be used. 
 
 ➳ When the application context is shut down, the destruction phase begins, and the bean's resources are released. The lifecycle is managed by the Spring container.
+
+The Spring bean lifecycle consists of the following stages:
+Instantiation: The container creates an instance of the bean.
+Population of properties: Dependencies and values are injected into the bean.
+Initialization: Initialization methods (e.g., @PostConstruct) are called.
+Use: The bean is used by the application.
+Destruction: Destruction methods (e.g., @PreDestroy) are called when the bean is removed from the container.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is the difference between singleton and prototype scope in Spring IOC?
@@ -40,6 +47,15 @@ ________________________________________________________________________________
 Explain the concept of dependency injection in Spring IOC.
 
 ➳ Dependency injection is a key aspect of Spring IOC. It is a process in which the dependencies of a class are provided externally rather than the class creating them itself.
+__________________________________________________________________________________________________________________________________________________________________________
+
+What are the different types of Dependency Injection supported by Spring?
+
+Spring supports three types of Dependency Injection:
+
+➳ Constructor Injection: Dependencies are injected through a constructor.
+➳ Setter Injection: Dependencies are injected using setter methods.
+➳ Interface Injection: Dependencies are injected through interfaces implemented by the class.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is Spring Framework?
@@ -67,42 +83,98 @@ ________________________________________________________________________________
 what is container ?
 
 ➳ The spring container is responsible for managing the life cycle of beans.
+➳ It creates the objects, configures and assembles their dependencies, manages their entire life cycle. 
 
 types of ioc containers :
 
 Bean Factory : Bean factory will create a bean object when getBean() is called thus making it lazy intialisation. through bean factory we can configure only xml based configurations.
 
-Application context :
+Application context : ApplicationContext is the sub-interface of BeanFactory.
+➳ BeanFactory provides basic functionalities and is recommended to use for lightweight applications like mobile and applets.
+➳ ApplicationContext is an advanced container that extends BeanFactory with features like internationalization, event propagation, and more.
+➳ There are different types of Application containers provided by Spring for different requirements as listed below 
 
+1. AnnotationConfigApplicationContext container 
+2. AnnotationConfigWebApplicationContext
+3. XmlWebApplicationContext
 __________________________________________________________________________________________________________________________________________________________________________
-
-Explain Flow of Spring MVC ?
-
-Ans.
-
-➳ The DispatcherServlet configured in web.xml file receives the request.
-
-➳ The DispatcherServlet finds the appropriate Controller with the help of HandlerMapping and then invokes associated Controller.
-
-➳ Then the Controller executes the logic business logic and then returns ModelAndView object to the DispatcherServlet.
-
-➳ The DispatcherServlet determines the view from the ModelAndView object.
-
-➳ Then the DispatcherServlet passes the model object to the View.
-
-➳ The View is rendered and the Dispatcher Servlet sends the output to the Servlet container. Finally Servlet Container sends the result back to the user.
-__________________________________________________________________________________________________________________________________________________________________________
-
-What is Model and View Object ? 
-
-➳ The model job is to manage the data of the application. It recieves user input from the controller.
-
-➳ The view renders the presentation of the model in the particular format.
-_________________________________________________________________________________________________________________________________________________________________________
-
+  
 what is maven ?
 
--> Maven is a build automation tool used primarily for Java projects. Maven can also be used to build and manage projects written in C#, Ruby, Scala, and other languages.
+➳ Maven is a build automation tool used primarily for Java projects. Maven can also be used to build and manage projects written in C#, Ruby, Scala, and other languages.
+➳ Maven is chiefly used for Java-based projects, helping to download dependencies, which refers to the libraries or JAR files. 
+__________________________________________________________________________________________________________________________________________________________________________
 
--> Maven is chiefly used for Java-based projects, helping to download dependencies, which refers to the libraries or JAR files. 
+what does @component do in spring ?
+
+➳ @Component is an annotation that allows Spring to detect our custom beans automatically.
+➳ In other words, without having to write any explicit code, Spring will: Scan our application for classes annotated with @Component. Instantiate them and inject any 
+   specified dependencies into them.
+__________________________________________________________________________________________________________________________________________________________________________
+
+what does @Required annotation do ?
+
+1. The @Required annotation is used to indicate that a particular bean property must be set during configuration. It is used on a setter method or a property declaration within a bean class.
+
+2. If a bean is configured with a property marked as @Required, Spring will throw an exception during context initialization if the property is not set. This helps ensure that mandatory dependencies are injected.
+
+Example :
+
+public class MyBean {
+    private MyDependency dependency;
+
+    @Required
+    public void setDependency(MyDependency dependency) {
+        this.dependency = dependency;
+    }
+}
+__________________________________________________________________________________________________________________________________________________________________________
+
+what does @Qualifier annotation do ?
+
+1. The @Qualifier annotation is used in conjunction with @Autowired to specify which bean should be injected when there are multiple beans of the same type.
+
+2. When you have multiple beans of the same type and you want to disambiguate them, you can use @Qualifier with the name of the target bean.
+
+Example :
+
+public class MyService {
+    private final MyRepository repository;
+
+    @Autowired
+    @Qualifier("myRepositoryImpl")
+    public MyService(MyRepository repository) {
+        this.repository = repository;
+    }
+}
+__________________________________________________________________________________________________________________________________________________________________________
+
+what does @Primary annotation do ?
+
+1. The @Primary annotation is used to indicate that a particular bean should be considered the primary candidate when multiple beans of the same type are available for injection.
+
+2. If you have multiple beans of the same type and one of them is marked with @Primary, Spring will inject the primary bean by default when @Autowired is used.
+
+Example :
+
+@Service
+@Primary
+public class MyPrimaryService implements MyService {
+    // ...
+}
+__________________________________________________________________________________________________________________________________________________________________________
+
+what does @value annotation do ?
+
+1. The @Value annotation is used to inject values from properties files, environment properties, or expressions into a bean's property or constructor parameter.
+2. You can use @Value to inject properties or literals into Spring-managed beans, such as specifying database connection details, URLs, or other configuration values.
+
+@Service
+public class MyService {
+    @Value("${my.property}")
+    private String myProperty;
+
+    // ...
+}
+ 
 __________________________________________________________________________________________________________________________________________________________________________

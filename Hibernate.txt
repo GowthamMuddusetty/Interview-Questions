@@ -36,6 +36,26 @@ Hibernate core interfaces are:
 ➳ Transaction
 _________________________________________________________________________________________________________________________________________________________________________
 
+what is configuration ?
+
+➳ The purpose of configuration interface is to configure hibernate settings and mappings.
+
+Example :
+
+Configuration configuration = new Configuration();
+configuration.configure("hibernate.cfg.xml"); // Load configuration from XML file
+SessionFactory sessionFactory = configuration.buildSessionFactory();
+
+➳ The configuration interface serves as the starting point for setting up hibernate in your application 
+➳ It plays a vital role in defining how your Java objects are persisted and retrieved from the database.
+_________________________________________________________________________________________________________________________________________________________________________
+
+what is transaction ?
+
+➳ In the context of Hibernate and database management, a transaction refers to a sequence of one or more database operations that are executed as a single, atomic unit of work. 
+➳ The purpose of a transaction is to ensure that a series of database operations either all succeed (commit) or all fail (rollback) 
+_________________________________________________________________________________________________________________________________________________________________________
+
 What is Session and Session Factory in Hibernate ? 
 
 ➳ The Session Factory in Hibernate is responsible for creating of session objects. The Hibernate Session provides methods such as Update, Delete, Post, Get all, all the 
@@ -46,9 +66,15 @@ What is Hibernate first level and second level cache?
 
 ➳ The main difference between session and session factory is :
 
-the first level caching is only associated with session level and accessable only at the session level.
+➳ the first level caching is only associated with session level and accessable only at the session level.
 
-where as second level caching is associated with session factory and it is available to all the sessions.
+➳ where as second level caching is associated with session factory and it is available to all the sessions.
+__________________________________________________________________________________________________________________________________________________________________________
+
+what is caching in hibernate ?
+
+➳ Caching is a mechanism to enhance the performance of an application.
+➳ caching is used to reduce the number of database queries.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is the benefit of using Hibernate?
@@ -77,6 +103,18 @@ In the code snippet you provided, cascade and fetch are annotations used in the 
 
 cascade = CascadeType.ALL: The cascade attribute specifies how operations (such as persist, merge, remove, etc.) should be cascaded from one entity to another. In this case, CascadeType.ALL means that all operations performed on the owning entity (the one where this annotation is defined) will be cascaded to the associated entities. So if an operation like persist or remove is performed on the owning entity, the same operation will be applied to the associated entities.
 
+CascadeType.ALL: This option cascades all operations (persist, merge, remove, refresh) from the parent entity to the associated entities. Any change in the parent entity will be propagated to the associated entities.
+
+CascadeType.PERSIST: This option cascades the persist operation from the parent entity to the associated entities. When you save the parent entity, the associated entities will also be saved if they are not already persistent.
+
+CascadeType.MERGE: This option cascades the merge operation from the parent entity to the associated entities. Changes to the parent entity will be merged into the associated entities when you merge the parent entity.
+
+CascadeType.REMOVE: This option cascades the remove operation from the parent entity to the associated entities. When you delete the parent entity, the associated entities will also be deleted.
+
+CascadeType.REFRESH: This option cascades the refresh operation from the parent entity to the associated entities. It refreshes the state of the associated entities with the current state from the database.
+
+
+
 fetch = FetchType.LAZY: The fetch attribute determines how the associated entities should be loaded from the database. In this case, FetchType.LAZY indicates that the associated entities should be loaded lazily, meaning they will be fetched from the database only when explicitly accessed. This is useful when you have large collections of associated entities, and you want to avoid fetching them all at once, which could impact performance.
 
 Regarding the other annotations in your code snippet:
@@ -92,13 +130,90 @@ What is criteria query ?
    queries as compared to HQL. 
 ➳ useful methods for hibernate criteria join are createAlias(), setFetchMode(), and setProtection().
 ➳ The Hibernate Criteria Query Language (HCQL) is used to fetch the records based on the specific criteria.
-➳The Criteria interface provides methods to apply criteria such as retreiving all the records of table whose salary is greater than 50000 etc.
+➳ The Criteria interface provides methods to apply criteria such as retreiving all the records of table whose salary is greater than 50000 etc.
+__________________________________________________________________________________________________________________________________________________________________________
+
+what is HQL ?
+
+➳ Hibernate Query Language (HQL) is an object-oriented query language, similar to SQL, but instead of operating on tables and columns, HQL works with persistent objects  
+   and their properties. 
+➳ HQL queries are translated by Hibernate into conventional SQL queries, which in turns perform action on database.
+__________________________________________________________________________________________________________________________________________________________________________
+
+what is native query in jpa ?
+
+➳ A native query is a SQL statement that is specific to a particular database like MySQL. 
+➳ It varies a little from JPQL (Java Persistence Query Language) which is used by Spring Data JPA by default.
+__________________________________________________________________________________________________________________________________________________________________________
+
+what is difference b/w native query & criteria query ?
+
+➳ the main difference between native SQL queries and Criteria queries in Hibernate is that native SQL queries are written as plain SQL strings and offer more flexibility  
+   in terms of using database-specific features.
+➳ while Criteria queries are constructed using Java API methods and provide type safety and a more object-oriented approach to query construction.
+➳ The choice between them depends on your specific requirements and the level of abstraction and type safety you prefer in your code.
+__________________________________________________________________________________________________________________________________________________________________________
+
+what are the states of object in hibernate ?
+
+➳ There are mainly four states of the Hibernate Lifecycle :
+
+   Transient State.
+   Persistent State.
+   Detached State.
+   Removed State.
+
+State 1: Transient State :
+
+➳ The transient state is the first state of an entity object. When we instantiate an object of a POJO class using the new operator then the object is in the transient  
+   state. This object is not connected with any hibernate session.
+
+State 2: Persistent State :
+
+➳ Once the object is connected with the Hibernate Session then the object moves into the Persistent State. So, there are two ways to convert the Transient State to the 
+
+Persistent State :
+
+Using the hibernated session, save the entity object into the database table.
+Using the hibernated session, load the entity object into the database table.
+
+Following are the methods given for the persistent state:
+
+session.persist(e);
+session.save(e);
+session.saveOrUpdate(e);
+session.update(e);
+session.merge(e);
+session.lock(e);
+
+
+State 3: Detached State
+
+For converting an object from Persistent State to Detached State, we either have to close the session or we have to clear its cache. As the session is closed here or the cache is cleared, then any changes made to the data will not affect the database table.
+Whenever needed, the detached object can be reconnected to a new hibernate session. To reconnect the detached object to a new hibernate session, we will use the following methods as follows:
+
+merge()
+update()
+load()
+refresh()
+save()
+update()
+
+Following are the methods used for the detached state :
+
+session.detach(e);
+session.evict(e);
+session.clear();
+session.close();
+
+State 4: Removed State 
+
+In the hibernate lifecycle it is the last state. In the removed state, when the entity object is deleted from the database then the entity object is known to be in the removed state. It is done by calling the delete() operation.
 __________________________________________________________________________________________________________________________________________________________________________
 
 what is cascade types ?
 
 ➳It is an annotation used to specify the cascade operations that should be applied to associated entities when an operation is performed on the owning entity. 
-
 
 
 HIBERNATE MAPPINGS
@@ -317,30 +432,3 @@ What is JPA?
 
 ➳ Java Persistence API (JPA) is a Java specification that provides certain functionality and standard to ORM tools. The javax.persistence package contains the JPA classes and interfaces.
 __________________________________________________________________________________________________________________________________________________________________________
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
