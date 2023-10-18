@@ -164,6 +164,8 @@ What are wrapper classes in java ?
 
 ➳ Wrapper classes provide a way to treat these primitive types as objects and enable various utility methods to be applied to them.
 
+➳ wrapper classes are immutable classes.
+
 The following are the wrapper classes in Java for each primitive data type:
 
 Integer: Wrapper for int
@@ -353,7 +355,67 @@ What is the purpose of native method in Java?
 ➳ These methods are declared with the native keyword and serve as a bridge between Java code and code written in other programming languages, such as C or C++.
 __________________________________________________________________________________________________________________________________________________________________________
 
- What is Iterator?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+									COLLECTION FRAMEWORK
+
+
+
+
+What is the difference between Java collection and Java collections?
+
+➳ Collection is a interface where you group objects in to single unit.
+
+➳ Collections is a utility class that has some set of operations you perform on collection.
+
+➳ Collection doesnt have all static methods in it, where Collections consist methods that are all static.
+_________________________________________________________________________________________________________________________________________________________________________
+
+What is the difference between Collection and Collections?
+
+➳ The differences between the Collection and Collections are given below.
+
+➳ The Collection is an interface whereas Collections is a class.
+
+➳ The Collection in Java is a framework that provides an architecture to store and manipulate the group of objects.
+
+➳ The Collection interface provides the standard functionality of data structure to List, Set, and Queue.
+
+➳  However, Collections class is to sort and synchronize the collection elements.
+
+➳ The Collection interface provides the methods that can be used for data structure
+   whereas Collections class provides the static methods which can be used for various operation on a collection.
+_________________________________________________________________________________________________________________________________________________________________________
+
+What is Iterator?
 
 A:) In Java, an iterator is an interface defined in the java.util package that provides a way to iterate over the elements of a collection in a sequential manner. 
 hasNext(): returns true if there is at least one more element in the collection, otherwise false.
@@ -368,9 +430,13 @@ ________________________________________________________________________________
 
 How HashMap internally works?
 
--> A hashmap uses a hashtable, however it internally implemented by 2 data structutres namely arrays and linked list. 
+➳ A hashmap uses a hashtable, however it internally implemented by 2 data structutres namely arrays and linked list. 
 
--> When ever you declare a hashmap, internally it will create an array of buckets. The buckets are reffered to as nodes or you can say as list.
+➳ When ever you declare a hashmap, internally it will create an array of buckets. The buckets are reffered to as nodes or you can say as list.
+
+➳ Internally HashMap uses a hashCode of the key Object and this hashCode is further used by the hash function to find the index of the bucket where the new entry can be added. 
+
+➳ HashMap uses multiple buckets and each bucket points to a Singly Linked List where the entries (nodes) are stored.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is the difference between ArrayList and LinkedList?
@@ -491,22 +557,6 @@ What is the difference between HashMap and TreeMap?
 -> HashMap may contain a null key with multiple null values whereas TreeMap cannot hold a null key but can have multiple null values.
 __________________________________________________________________________________________________________________________________________________________________________
 
-What is the difference between Collection and Collections?
-
-➳ The differences between the Collection and Collections are given below.
-
-➳ The Collection is an interface whereas Collections is a class.
-
-➳ The Collection in Java is a framework that provides an architecture to store and manipulate the group of objects.
-
-➳ The Collection interface provides the standard functionality of data structure to List, Set, and Queue.
-
-➳  However, Collections class is to sort and synchronize the collection elements.
-
-➳ The Collection interface provides the methods that can be used for data structure
-   whereas Collections class provides the static methods which can be used for various operation on a collection.
-_________________________________________________________________________________________________________________________________________________________________________
-
 Tell methods of Collection interface ?
 
 1. add
@@ -522,15 +572,6 @@ Tell methods of Collection interface ?
 11. toArray
 12. isEmpty
 13. stream
-_________________________________________________________________________________________________________________________________________________________________________
-
-What is the difference between Java collection and Java collections?
-
-➳ Collection is a interface where you group objects in to single unit.
-
-➳ Collections is a utility class that has some set of operations you perform on collection.
-
-➳ Collection doesnt have all static methods in it, where Collections consist methods that are all static.
 _________________________________________________________________________________________________________________________________________________________________________
 
 what is difference between AL, LL, VECTOR ?
@@ -864,6 +905,42 @@ what is flatmap ?
 
 ➳ Java flatMap is a method that, when applied to a stream of values, maps each value to some required output value.
 __________________________________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+									MULTI THREADING
+
+
+
+
+
+
 
 Threads in java ?
 
@@ -1515,6 +1592,17 @@ public class Main {
         }
     }
 }
+__________________________________________________________________________________________________________________________________________________________________________
+
+what is marker interface in java ?
+
+
+
+
+
+
+
+
 __________________________________________________________________________________________________________________________________________________________________________
 
 Why do we use Design Patterns ?

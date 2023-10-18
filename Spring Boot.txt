@@ -370,68 +370,73 @@ ResponseEntity.ok(): This is a static factory method of the ResponseEntity class
 body(course): This method is called on the ResponseEntity object to set the response body as the provided course object.
 __________________________________________________________________________________________________________________________________________________________________________
 
+What is the use of @RequestBody annotation in Spring boot?
+
+➳ The @RequestBody annotation indicates that Spring should deserialize a request body into an object.
+
+➳  This object is passed as a parameter in the handler method. 
+__________________________________________________________________________________________________________________________________________________________________________
 
 In spring boot, how to intialise servlet and configuration? what are all the annotations used ?
 
--> In Spring Boot, you can initialize a servlet and configure it using annotations. The specific annotations you'll use depend on the functionality you want to achieve. 
+➳ In Spring Boot, you can initialize a servlet and configure it using annotations. The specific annotations you'll use depend on the functionality you want to achieve. 
 
--> @WebServlet: This annotation is used to declare a servlet and map it to a specific URL pattern. It is part of the Java Servlet API and can be used in Spring Boot   
+➳ @WebServlet: This annotation is used to declare a servlet and map it to a specific URL pattern. It is part of the Java Servlet API and can be used in Spring Boot   
                 applications as well.
 
--> @ServletComponentScan: This annotation is used to enable scanning for servlets, filters, and listeners in the specified package(s). It is typically placed on the main 
+➳ @ServletComponentScan: This annotation is used to enable scanning for servlets, filters, and listeners in the specified package(s). It is typically placed on the main 
                 application class.
 
--> @WebFilter: This annotation is used to declare a servlet filter and map it to specific URL patterns. It allows you to intercept and process requests and responses  
+➳ @WebFilter: This annotation is used to declare a servlet filter and map it to specific URL patterns. It allows you to intercept and process requests and responses  
                before they reach the servlet.
 
--> @WebListener: This annotation is used to declare a listener class. Listeners are used to respond to events in a servlet container, such as startup, shutdown, and 
+➳ @WebListener: This annotation is used to declare a listener class. Listeners are used to respond to events in a servlet container, such as startup, shutdown, and 
                7attribute changes.
 __________________________________________________________________________________________________________________________________________________________________________
 
 what is actuator in spring boot ?
 
--> To enable Spring Boot actuator endpoints to your Spring Boot application, we need to add the Spring Boot Starter actuator dependency in our build configuration file.
+➳ To enable Spring Boot actuator endpoints to your Spring Boot application, we need to add the Spring Boot Starter actuator dependency in our build configuration file.
 
--> Actuator is mainly used to expose operational information about the running application — health, metrics, info, dump, env, etc.
+➳ Actuator is mainly used to expose operational information about the running application — health, metrics, info, dump, env, etc.
 
--> It uses HTTP endpoints or JMX beans to enable us to interact with it. 
+➳ It uses HTTP endpoints or JMX beans to enable us to interact with it. 
 __________________________________________________________________________________________________________________________________________________________________________
 
 How does Spring Boot handle external configurations, and what are the different sources of configuration?
 
--> Spring Boot supports various sources for external configuration, including properties files, YAML files, environment variables, command-line arguments, and more.
+➳ Spring Boot supports various sources for external configuration, including properties files, YAML files, environment variables, command-line arguments, and more.
 __________________________________________________________________________________________________________________________________________________________________________
 
 Discuss the importance of the Spring Boot Starter concept and provide an example of creating a custom Starter.
 
--> Spring Boot Starters are a set of dependencies that simplify the inclusion of common features or technologies in the application.
+➳ Spring Boot Starters are a set of dependencies that simplify the inclusion of common features or technologies in the application.
 
--> For example, including the spring-boot-starter-web will automatically configure the application with everything needed to build a web application. 
-
-__________________________________________________________________________________________________________________________________________________________________________
+➳ For example, including the spring-boot-starter-web will automatically configure the application with everything needed to build a web application. 
+________________________________________________________________________________________________________________________________________________________________________
 
 What is the purpose of the Spring Boot Actuator module? How does it help in managing and monitoring applications?
 
--> The Spring Boot Actuator module provides various production-ready features for managing and monitoring applications.
+➳ The Spring Boot Actuator module provides various production-ready features for managing and monitoring applications.
 
-->  It exposes endpoints that can be used to check application health, view metrics, gather application info, manage log levels, and much more
+➳  It exposes endpoints that can be used to check application health, view metrics, gather application info, manage log levels, and much more
 
--> These features are useful in production environments for monitoring and managing applications effectively.
+➳ These features are useful in production environments for monitoring and managing applications effectively.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is the use of Spring WebFlux?
 
-Spring WebFlux is the alternative to Spring MVC module. 
-Spring WebFlux is used to create fully asynchronous and non-blocking application built on event-loop execution model.
+➳ Spring WebFlux is the alternative to Spring MVC module. 
+➳ Spring WebFlux is used to create fully asynchronous and non-blocking application built on event-loop execution model.
 __________________________________________________________________________________________________________________________________________________________________________
 
 what does @builder annotation do in spring boot ?
 
-In Spring Boot, the @Builder annotation is not a standard annotation provided by Spring Framework itself. Instead, it's typically associated with Lombok, a library that helps reduce boilerplate code in Java classes. 
+➳ In Spring Boot, the @Builder annotation is not a standard annotation provided by Spring Framework itself. Instead, it's typically associated with Lombok, a library that helps reduce boilerplate code in Java classes. 
 
-Lombok provides a set of annotations that automatically generate common code, such as getters, setters, constructors, and builders, during compile time.
+➳ Lombok provides a set of annotations that automatically generate common code, such as getters, setters, constructors, and builders, during compile time.
 
-The @Builder annotation in Lombok is used to generate a builder pattern for a class. A builder pattern is a creational design pattern that allows you to construct objects step by step, often with a fluent and expressive syntax. 
+➳The @Builder annotation in Lombok is used to generate a builder pattern for a class. A builder pattern is a creational design pattern that allows you to construct objects step by step, often with a fluent and expressive syntax. 
 __________________________________________________________________________________________________________________________________________________________________________
 
 Explain the role of the Spring Boot DevTools. How do they enhance the development experience?

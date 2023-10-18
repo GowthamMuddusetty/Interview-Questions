@@ -7,7 +7,7 @@ Hibernate Framework:
 
 Hibernate is a Java framework that simplifies the development of Java application to interact with the database. It is an open source, lightweight, ORM (Object Relational Mapping) tool. Hibernate implements the specifications of JPA (Java Persistence API) for data persistence.
 
-➳ Hybernet is one of the best ORM framework availabe for java.
+➳ Hibernate is one of the best ORM framework availabe for java.
 _________________________________________________________________________________________________________________________________________________________________________
 
 What is ORM Hibernate ?
@@ -50,6 +50,7 @@ SessionFactory sessionFactory = configuration.buildSessionFactory();
 ➳ It plays a vital role in defining how your Java objects are persisted and retrieved from the database.
 _________________________________________________________________________________________________________________________________________________________________________
 
+ 
 what is transaction ?
 
 ➳ In the context of Hibernate and database management, a transaction refers to a sequence of one or more database operations that are executed as a single, atomic unit of work. 
@@ -62,19 +63,17 @@ What is Session and Session Factory in Hibernate ?
    Crud based operations on database to which the session factory is connected.
 __________________________________________________________________________________________________________________________________________________________________________
 
-What is Hibernate first level and second level cache?
-
-➳ The main difference between session and session factory is :
-
-➳ the first level caching is only associated with session level and accessable only at the session level.
-
-➳ where as second level caching is associated with session factory and it is available to all the sessions.
-__________________________________________________________________________________________________________________________________________________________________________
-
 what is caching in hibernate ?
 
 ➳ Caching is a mechanism to enhance the performance of an application.
 ➳ caching is used to reduce the number of database queries.
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is Hibernate first level and second level cache?
+
+➳ the first level caching is only associated with session level and accessable only at the session level.
+
+➳ where as second level caching is associated with session factory and it is available to all the sessions.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is the benefit of using Hibernate?
@@ -432,3 +431,33 @@ What is JPA?
 
 ➳ Java Persistence API (JPA) is a Java specification that provides certain functionality and standard to ORM tools. The javax.persistence package contains the JPA classes and interfaces.
 __________________________________________________________________________________________________________________________________________________________________________
+
+What's the difference between Hibernate and Spring Data JPA ?
+
+➳ Hibernate is a JPA implementation, while Spring Data JPA is a JPA data access abstraction. Spring Data JPA cannot work without a JPA provider. 
+__________________________________________________________________________________________________________________________________________________________________________
+
+what is difference between load and get method in hibernate ?
+
+1. Get ():
+
+➳ It is used to retrieve an object based on its identifier (primary key) from the database.
+➳ It returns null if the object is not found in the database.
+➳ It hits the database immediately to fetch the actual object. It's suitable when you are not sure whether the object exists and you want to handle the null case  
+   explicitly.
+
+2. Load () :
+
+➳ It is used to retrieve an object based on its identifier (primary key) from the database.
+➳ It returns a proxy (a placeholder) without hitting the database immediately. The actual object is loaded from the database only when it's accessed for the first time.
+➳ If the object doesn't exist in the database, it throws an ObjectNotFoundException (a subclass of HibernateException) when you try to access the object.
+➳ It's suitable when you are certain that the object exists, and you want to retrieve it efficiently.
+__________________________________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
