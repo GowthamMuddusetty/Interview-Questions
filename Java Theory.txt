@@ -12,6 +12,7 @@ Tell me some features of java ?
 
 ➳ Platform Independent :Java is platform independent because it is different from other languages like C, C++, etc. which are compiled into platform specific machines 
                          while Java is a write once, run anywhere language.
+
 ➳ Compile and Interpreted : Java Language offers both compilation and interpretation of programs. when java program is created the java compiler compiles the source code   
                              into byte code. the java interpreter converts java byte code into machine code.
 
@@ -87,7 +88,7 @@ Stack Memory:
 The stack is a region of memory used for storing method call frames, local variables, and method call information.
 Each thread in a Java program has its own stack, which stores data related to the methods being executed by that thread.
 __________________________________________________________________________________________________________________________________________________________________________
-
+ 
 Data Types and size of DT ?
 
 ➳ Byte  - 1(byte)
@@ -234,10 +235,8 @@ ________________________________________________________________________________
 Why Multiple inheritance is not supported in java ?
 
 ➳ To reduce the complexity and simplify the language, multiple inheritannce is not supported in java.
-
 ➳ Consider a scenario where A,B and C are three classes. The C class inherits A and B classes. if A and B classes have the same method and you called it from child class    
    object, there will be ambiguity to call the method of A or B.
-
 ➳ Since compile time errors are better than run time errors, java renders compile time error if u inherit 2 classes.	
 __________________________________________________________________________________________________________________________________________________________________________
 
@@ -334,24 +333,23 @@ ________________________________________________________________________________
 
 What is the difference between throw and throws in Java?
 
--> The throw keyword is used to explicitly throw an exception in a method or block of code.
-
--> The throws keyword is used in the method signature to indicate that the method may throw one or more exceptions and that the caller of the method needs to handle or       propagate those exceptions.
+➳ The throw keyword is used to explicitly throw an exception in a method or block of code.
+➳ The throws keyword is used in the method signature to indicate that the method may throw one or more exceptions and that the caller of the method needs to handle or        
+   propagate those exceptions.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What are checked and unchecked exceptions in Java?
 
--> Checked exceptions are exceptions that need to be declared in the method signature using the throws keyword or handled using a try-catch block. 
+➳ Checked exceptions are exceptions that need to be declared in the method signature using the throws keyword or handled using a try-catch block. 
    Examples include    IOException, SQLException,ClassNotFoundException, SocketException, FileNotFoundException etc.
 
--> Unchecked exceptions, also known as runtime exceptions, do not need to be declared or caught explicitly. They are subclasses of RuntimeException or Error. 
+➳ Unchecked exceptions, also known as runtime exceptions, do not need to be declared or caught explicitly. They are subclasses of RuntimeException or Error. 
    Examples   include NullPointerException, ArrayIndexOutOfBoundsException, etc.
 _________________________________________________________________________________________________________________________________________________________________________
 
 What is the purpose of native method in Java?
 
 ➳ In Java, a native method is a method whose implementation is provided in a language other than Java.
-
 ➳ These methods are declared with the native keyword and serve as a bridge between Java code and code written in other programming languages, such as C or C++.
 __________________________________________________________________________________________________________________________________________________________________________
 
@@ -388,8 +386,6 @@ ________________________________________________________________________________
 									COLLECTION FRAMEWORK
 
 
-
-
 What is the difference between Java collection and Java collections?
 
 ➳ Collection is a interface where you group objects in to single unit.
@@ -402,7 +398,7 @@ ________________________________________________________________________________
 What is the difference between Collection and Collections?
 
 ➳ The differences between the Collection and Collections are given below.
-
+ 
 ➳ The Collection is an interface whereas Collections is a class.
 
 ➳ The Collection in Java is a framework that provides an architecture to store and manipulate the group of objects.
@@ -441,11 +437,11 @@ ________________________________________________________________________________
 
 What is the difference between ArrayList and LinkedList?
 
--> ArrayList is implemented as a resizable array and provides fast random access but slower insertion and deletion of elements in the middle of the list.
+➳ ArrayList is implemented as a resizable array and provides fast random access but slower insertion and deletion of elements in the middle of the list.
 
--> LinkedList is implemented as a doubly-linked list and provides fast insertion and deletion of elements but slower random access.
+➳ LinkedList is implemented as a doubly-linked list and provides fast insertion and deletion of elements but slower random access.
 
--> Use ArrayList when you need fast access to elements and LinkedList when you frequently need to add or remove elements from the list.
+➳ Use ArrayList when you need fast access to elements and LinkedList when you frequently need to add or remove elements from the list.
 __________________________________________________________________________________________________________________________________________________________________________
 
  Does set allows null and duplicate values?
@@ -475,7 +471,7 @@ ________________________________________________________________________________
 
 What are new features introduced with Java 8 ?
 
-Ans. Lambda Expressions , Interface Default and Static Methods , Method Reference , Parameters Name , Optional , Streams, Concurrency.
+➳ Lambda Expressions , Interface Default and Static Methods , Method Reference , Parameters Name , Optional , Streams, Concurrency.
 __________________________________________________________________________________________________________________________________________________________________________
 
 Difference between ConcurrentHashMap, Hashtable and Synchronized Map in Java
@@ -509,52 +505,41 @@ ________________________________________________________________________________
 
 What is the difference between HashSet and TreeSet?
 
--> The HashSet and TreeSet, both classes, implement Set interface. The differences between the both are listed below.
+➳ The HashSet and TreeSet, both classes, implement Set interface. The differences between the both are listed below.
 
--> HashSet maintains no order whereas TreeSet maintains ascending order.
+➳ HashSet maintains no order whereas TreeSet maintains ascending order.
 
--> HashSet implemented by hash table whereas TreeSet implemented by a Tree structure.
+➳ HashSet implemented by hash table whereas TreeSet implemented by a Tree structure.
 
--> HashSet performs faster than TreeSet.
+➳ HashSet performs faster than TreeSet.
 
--> HashSet is backed by HashMap whereas TreeSet is backed by TreeMap.
+➳ HashSet is backed by HashMap whereas TreeSet is backed by TreeMap.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is the difference between Set and Map?
 
--> The differences between the Set and Map are given below.
-
--> Set contains values only whereas Map contains key and values both.
-
--> Set contains unique values whereas Map can contain unique Keys with duplicate values.
-
--> Set holds a single number of null value whereas Map can include a single null key with n number of null values.
+➳ The differences between the Set and Map are given below.
+➳ Set contains values only whereas Map contains key and values both.
+➳ Set contains unique values whereas Map can contain unique Keys with duplicate values.
+➳ Set holds a single number of null value whereas Map can include a single null key with n number of null values.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is the difference between HashSet and HashMap?
 
--> The differences between the HashSet and HashMap are listed below.
-
--> HashSet contains only values whereas HashMap includes the entry (key, value). HashSet can be iterated, but HashMap needs to convert into Set to be iterated.
-
--> HashSet implements Set interface whereas HashMap implements the Map interface
-
--> HashSet cannot have any duplicate value whereas HashMap can contain duplicate values with unique keys.
-
--> HashSet contains the only single number of null value whereas HashMap can hold a single null key with n number of null values.
+➳ The differences between the HashSet and HashMap are listed below.
+➳ HashSet contains only values whereas HashMap includes the entry (key, value). HashSet can be iterated, but HashMap needs to convert into Set to be iterated.
+➳ HashSet implements Set interface whereas HashMap implements the Map interface
+➳ HashSet cannot have any duplicate value whereas HashMap can contain duplicate values with unique keys.
+➳ HashSet contains the only single number of null value whereas HashMap can hold a single null key with n number of null values.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is the difference between HashMap and TreeMap?
 
--> The differences between the HashMap and TreeMap are given below.
-
--> HashMap maintains no order, but TreeMap maintains ascending order.
-
--> HashMap is implemented by hash table whereas TreeMap is implemented by a Tree structure.
-
--> HashMap can be sorted by Key or value whereas TreeMap can be sorted by Key.
-
--> HashMap may contain a null key with multiple null values whereas TreeMap cannot hold a null key but can have multiple null values.
+➳ The differences between the HashMap and TreeMap are given below.
+➳ HashMap maintains no order, but TreeMap maintains ascending order.
+➳ HashMap is implemented by hash table whereas TreeMap is implemented by a Tree structure.
+➳ HashMap can be sorted by Key or value whereas TreeMap can be sorted by Key.
+➳ HashMap may contain a null key with multiple null values whereas TreeMap cannot hold a null key but can have multiple null values.
 __________________________________________________________________________________________________________________________________________________________________________
 
 Tell methods of Collection interface ?
@@ -577,16 +562,13 @@ ________________________________________________________________________________
 what is difference between AL, LL, VECTOR ?
 
 ➳ ArrayList provides fast random access, LinkedList is efficient for frequent insertions and deletions, and Vector is synchronized for thread safety (but slower). 
-
 ➳ The choice between them depends on the specific requirements and usage patterns of your application.
 __________________________________________________________________________________________________________________________________________________________________________
 
  What is the difference between Comparable and Comparator?
 
 ➳ Comparable provides only one sort of sequence.	                        ➳ The Comparator provides multiple sorts of sequences.
-
 ➳ It provides one method named compareTo().	                                ➳ It provides one method named compare().
-
 ➳ If we implement the Comparable interface, The actual class is modified.      ➳ The actual class is not changed.
 __________________________________________________________________________________________________________________________________________________________________________
 
@@ -646,31 +628,22 @@ ________________________________________________________________________________
 
 What are JDBC steps ? 
 
-➳ import ---> java.sql
-
-➳ Register and load driver.
-
-➳ Create connection 
-
-➳ Create Statement 
-
-➳ Execute Query 
-
-➳ process the results 
-
-➳ close.
+1. import ---> java.sql
+2. Register and load driver.
+3. Create connection 
+4. Create Statement 
+5. Execute Query 
+6. process the results 
+7. close.
 __________________________________________________________________________________________________________________________________________________________________________
 
 what is PreparedStatement and Statement in jdbc?
 
 ➳  In JDBC, both Statement and PreparedStatement are interfaces used to execute SQL queries against a database. 
     However, they have some differences in their functionality and usage.
-
 ➳ Statement is an interface in JDBC that is used to execute a static SQL statement and return the results. 
    Static SQL statements are those whose values are hard-coded at the time of execution.
-
 ➳ PreparedStatement is used for dynamic SQL statements with parameters, while Statement is used for static SQL statements.
-
 ➳ PreparedStatement provides protection against SQL injection attacks, while Statement does not.
 __________________________________________________________________________________________________________________________________________________________________________
 
@@ -704,11 +677,8 @@ Rowset Interface is basically an extension of JDBC Set and is part of the java.s
 There are 2 types of RowSet Connected and Dis-Connected.
 
 ➳ A RowSet object may make a connection with a data source and maintain that connection throughout its life cycle, in which case it is called a connected rowset. 
-
 ➳ Connected Rowset are those which establish connection and retain until the application termiantes.
-
 ➳ DisConnected rowset perfoms or establishes a connection, executues a query such as retreiveing data from the database and closes the connection.
-
 ➳ According to the implementation of rowset there are 5 types of implemenatations
 
  1. JdbcRowset 
@@ -727,18 +697,14 @@ ________________________________________________________________________________
 What is Servlet ?
 
 ➳ A servlet is generally a java-based programme that runs on web server and process client requests and generates dynamic web pages,process and respond to HTTP requests.
-
 ➳ When a client sends a HTTP request to the server, the servelet container recieves the request and pass it to appropriate servlet. 
-
 ➳ The servelt then process the request and sends the http response back to the client.
 __________________________________________________________________________________________________________________________________________________________________________
 
 what is a survlet?
 
 ➳ A servlet is a Java program that runs on a web server and handles client requests and responses over the HTTP protocol.
- 
-➳  Servlets are used to build web applications that can dynamically generate content and respond to user requests.
-
+➳ Servlets are used to build web applications that can dynamically generate content and respond to user requests.
 ➳ Servlets can handle various types of HTTP requests such as GET, POST, PUT, and DELETE.
 _________________________________________________________________________________________________________________________________________________________________________
 
@@ -746,41 +712,29 @@ How many types of servlets ?
 
 ➳ There are basically 2 types of servelets. HTTP & Generic Type servelets. we can use Constructor to intialise servelet with the help of init() method and 
    descructor method to remove the servelet from the resources using destroy().
-
 ➳ There are basically two types of servelts based on the interface they implement.
     Generic Survlet : It is a abstract class that implements the Servlet, Servlet-Config. It provides a generic implementation of the servlet interface.
-
 ➳ HTTP Servlet : It is a abstract class that extends Generic servlet and provides Http specific functionality. 
    It implements doGet(), doPost(), doPut(), doDelete() and other methods to handle HTTP requests and responses.
-
-➳ Both servlets are used to process client  requsts and generate dynamic responses. 
-
+➳ Both servlets are used to process client requests and generate dynamic responses. 
 ➳ HTTP servlets are most commonly used in creating web applications that work with http requests and responses.
-
 ➳ While Generic servlets are more commonly used in creating custom survlets that work with other protocals and data formats.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is Servlet Context and Servlet Config ?
 
  ➳ ServletConfig is used for sharing init parameters specific to a servlet.
-
  ➳ Where as ServletContext is for sharing init parameters within any servlet with in a web application.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is flow of servlets ? 
 
 ➳ First the server checks if the servlet is requested for the first time.
-
 ➳ if Yes, web container does the following task:
-
 ➳ Loads the servlet class
-
 ➳ Instantiates the servlet class
-
 ➳ Calls the init method passing the servlet config object.
-
 ➳ else calls the service method passing request and response object.
-
 ➳ The web container calls the destroy method when it needs to remove the servlet such as at time of stopping server or undeploying the project.
 __________________________________________________________________________________________________________________________________________________________________________
 
@@ -792,10 +746,8 @@ ________________________________________________________________________________
 What are the life-cycle methods for a servlet?
 
 ➳ public void init(ServletConfig config)  :  It is invoked only once when first request comes for the servlet. It is used to initialize the servlet.
-
 ➳ public void service(ServletRequest request,ServletResponse)throws ServletException,IOException : It is invoked at each request.The service() method is used to service    
    the request.
-
 ➳ public void destroy() : It is invoked only once when servlet is unloaded.
 __________________________________________________________________________________________________________________________________________________________________________
 
@@ -827,13 +779,10 @@ ________________________________________________________________________________
 
  What is difference between Get and Post method?
 
-1) Limited amount of data can be sent because data is sent in header.     1> Large amount of data can be sent because data is sent in body.
-
-2) Not Secured because data is exposed in URL bar.                        2> Secured because data is not exposed in URL bar.
-
-3> Can be bookmarked                                                      3> Cannot be bookmarked.
-
-4>  Idempotent                                                            4> Non-idempotent
+1) Limited amount of data can be sent because data is sent in header.     1) Large amount of data can be sent because data is sent in body.
+2) Not Secured because data is exposed in URL bar.                        2) Secured because data is not exposed in URL bar.
+3) Can be bookmarked                                                      3) Cannot be bookmarked.
+4)  Idempotent                                                            4) Non-idempotent
 __________________________________________________________________________________________________________________________________________________________________________
 
 explain about 4 types of Functional Interfaces in java 8?
@@ -844,11 +793,8 @@ explain about 4 types of Functional Interfaces in java 8?
 Here are the four types of functional interfaces in Java 8:
 
 Consumer: The Consumer interface represents an operation that takes a single argument and returns no result. Its functional method is called accept().
-
 Supplier: The Supplier interface represents an operation that takes no arguments and returns a value. Its functional method is called get().
-
 Predicate: The Predicate interface represents a boolean-valued function of one argument. Its functional method is called test().
-
 Function: The Function interface represents a function that takes one argument and returns a value. Its functional method is called apply().
 __________________________________________________________________________________________________________________________________________________________________________
 
@@ -856,9 +802,13 @@ what is the reason for introducing functional interface after java 8 ?
 
 ➳ Functional Interfaces introduced in Java 8 allow us to use a lambda expression to initiate the interface's method and avoid using lengthy codes for the anonymous class   
    implementation.
-
 ➳ Various built-in interfaces were declared with @FunctionalInterface annotation and made functional from Java 8.
 __________________________________________________________________________________________________________________________________________________________________________
+
+why functional interface in java has one abstract method
+
+➳ The functional interface also known as Single Abstract Method Interface was introduced to facilitate Lambda functions.
+➳ Since a lambda function can only provide the implementation for 1 method it is mandatory for the functional interface to have ONLY one abstract method.__________________________________________________________________________________________________________________________________________________________________________
 
 What is Stream?
 
@@ -890,9 +840,7 @@ ________________________________________________________________________________
 What is meant by constructor chaining?
 
 ➳ Constructor chaining is the process of calling a sequence of constructors. 
-
 ➳ We can do it in two ways: by using this() keyword for chaining constructors in the same class.
-
 ➳ by using super() keyword for chaining constructors from the parent class.
 __________________________________________________________________________________________________________________________________________________________________________
 
@@ -945,13 +893,9 @@ ________________________________________________________________________________
 Threads in java ?
 
 ➳ In java, a thread is a unit of execution that allows a programme to perform multiple tasks concurrently.
-
 ➳ Java provides a buiult-in support for multi-threading the the "java.lang.Thread" class.
-
 ➳ A thread is created by instantiating an object of the "Thread" class and calling its method start().
-
 ➳ when the start() method is called, a new thread is created and its run() method is invoked in separated flow of execution.
-
 ➳ Multithreading is commonly used in Java for tasks that require parallel processing,
    such as running multiple background tasks, performing I/O operations, and handling user interface events. 
 
@@ -990,12 +934,13 @@ ________________________________________________________________________________
 
 What is the difference between extending Thread and implementing Runnable for thread creation?
 
-Answer: When extending Thread, you cannot extend any other class, while you can implement multiple interfaces when implementing Runnable. Therefore, it's often recommended to implement Runnable to have better design flexibility.
+➳ When extending Thread, you cannot extend any other class, while you can implement multiple interfaces when implementing Runnable. 
+➳ Therefore, it's often recommended to implement Runnable to have better design flexibility.
 _________________________________________________________________________________________________________________________________________________________________________
 
 What are stages of life cycle of a thread in Java?
 
-Lifecycle and States of a Thread in Java
+➳ Lifecycle and States of a Thread in Java
 
 1. New State
 2. Runnable State
@@ -1007,76 +952,77 @@ ________________________________________________________________________________
 
 what is thread pool in java ?
 
-A thread pool reuses previously created threads to execute current tasks and offers a solution to the problem of thread cycle overhead and resource thrashing. 
+➳ A thread pool reuses previously created threads to execute current tasks and offers a solution to the problem of thread cycle overhead and resource thrashing. 
 _________________________________________________________________________________________________________________________________________________________________________
 
 what is executor service in java ?
 
-The Java ExecutorService is the interface which allows us to execute tasks on threads asynchronously. 
-The Java ExecutorService interface is present in the java. util. concurrent package. 
-The ExecutorService helps in maintaining a pool of threads and assigns them tasks.  
+➳ The Java ExecutorService is the interface which allows us to execute tasks on threads asynchronously. 
+➳ The Java ExecutorService interface is present in the java. util. concurrent package. 
+➳ The ExecutorService helps in maintaining a pool of threads and assigns them tasks.  
 _________________________________________________________________________________________________________________________________________________________________________
 
 What is thread safe in java ?
 
-Thread safety in java is the process to make our program safe to use in multithreaded environment there are different ways through which we can make our program thread safe. Synchronization is the easiest and most widely used tool for thread safety in java.
+➳ Thread safety in java is the process to make our program safe to use in multithreaded environment there are different ways through which we can make our program thread safe. Synchronization is the easiest and most widely used tool for thread safety in java.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is thread communication, and how is it achieved in Java?
 
-Answer: Thread communication is a way for threads to coordinate and exchange information. In Java, you can achieve thread communication using methods like wait(), notify(), and notifyAll() that are provided by the Object class.
+➳ Thread communication is a way for threads to coordinate and exchange information. 
+➳ In Java, you can achieve thread communication using methods like wait(), notify(), and notifyAll() that are provided by the Object class.
 __________________________________________________________________________________________________________________________________________________________________________
 
 Explain the difference between wait() and sleep() methods in Java.
 
-Answer: wait() is used for thread synchronization and releases the monitor lock, while sleep() is used for pausing a thread's execution without releasing the lock.
+➳ wait() is used for thread synchronization and releases the monitor lock, while sleep() is used for pausing a thread's execution without releasing the lock.
 __________________________________________________________________________________________________________________________________________________________________________
 
 what is thread sheduler ?
 
-A component of Java that decides which thread to run or execute and which thread to wait is called a thread scheduler in Java. In Java, a thread is only chosen by a thread scheduler if it is in the runnable state.
+➳ A component of Java that decides which thread to run or execute and which thread to wait is called a thread scheduler in Java. 
+➳ In Java, a thread is only chosen by a thread scheduler if it is in the runnable state.
 __________________________________________________________________________________________________________________________________________________________________________
 
 what is thread priority ?
 
-In Java, a thread's priority is an integer in the range 1 to 10. The larger the integer, the higher the priority. The thread scheduler uses this integer from each thread to determine which one should be allowed to execute.
+➳ In Java, a thread's priority is an integer in the range 1 to 10. The larger the integer, the higher the priority. 
+➳ The thread scheduler uses this integer from each thread to determine which one should be allowed to execute.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is synchronization in Java, and why is it important?
 
-Answer: Synchronization in Java is a mechanism to control access to shared resources to ensure thread safety. It prevents multiple threads from concurrently accessing or modifying shared data, preventing data corruption and race conditions.
+➳ Synchronization in Java is a mechanism to control access to shared resources to ensure thread safety. 
+➳ It prevents multiple threads from concurrently accessing or modifying shared data, preventing data corruption and race conditions.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is serialistion in java ?
 
--> serialization is the conversion of a Java object into a static stream (sequence) of bytes, which we can then save to a database or transfer over a network.
-
--> serialisation is a process that converting an object's state in a format that can be easily sorted, transmitted, or reconstructed later.
-
--> In java, serialisation is commonly used to persist object to files, send objects over a network, storing objects in db.
+➳ serialization is the conversion of a Java object into a static stream (sequence) of bytes, which we can then save to a database or transfer over a network.
+➳ serialisation is a process that converting an object's state in a format that can be easily sorted, transmitted, or reconstructed later.
+➳ In java, serialisation is commonly used to persist object to files, send objects over a network, storing objects in db.
 __________________________________________________________________________________________________________________________________________________________________________
 
 what is dead lock ?
 
-dead lock in java is a situation that occur when thread is waiting for an object lock, that is acquired by another thread and second thread is waiting for an object lock that is acquired by th first thread, since both the threads are waiting for each other to release the lock simultaneously this condition is called dead lock.
+➳ Dead lock in java is a situation that occur when thread is waiting for an object lock, that is acquired by another thread and second thread is waiting for an object lock that is acquired by th first thread. since both the threads are waiting for each other to release the lock simultaneously this condition is called dead lock.
 __________________________________________________________________________________________________________________________________________________________________________
 
 what is Diff b/w notify and notifyAll ?
 
-In the case of the multiThreading, notify() method sends the notification to only one thread among the multiple waiting threads which are waiting for the send lock.
-While notifyAll() methods in the same context send notifications to all waiting threads instead of a single thread.
+➳ In the case of the multiThreading, notify() method sends the notification to only one thread among the multiple waiting threads which are waiting for the send lock.
+➳ While notifyAll() methods in the same context send notifications to all waiting threads instead of a single thread.
 __________________________________________________________________________________________________________________________________________________________________________
 
 what is aggregation and composition in java ?
 
 A) 
--> Aggregation and composition are two important concepts in object-oriented programming (OOP) that describe the relationship between two classes.
+➳ Aggregation and composition are two important concepts in object-oriented programming (OOP) that describe the relationship between two classes.
 
 Aggregation:
  
--> Aggregation is a relationship between two classes where one class contains a reference to another class as a member variable.
-
--> An example of aggregation is a university containing multiple departments, where each department can exist independently of the university.
+➳ Aggregation is a relationship between two classes where one class contains a reference to another class as a member variable.
+➳ An example of aggregation is a university containing multiple departments, where each department can exist independently of the university.
 
 ------------------
 class Department {
@@ -1147,29 +1093,25 @@ int horsepower = car.getHorsepower();
 
 Composition:
 
--> Composition is a relationship between two classes where one class contains another class as a member variable, 
+➳ Composition is a relationship between two classes where one class contains another class as a member variable, 
    and the contained class cannot exist independently of the containing class.
 
--> When the containing class is destroyed, the contained class is also destroyed.
+➳ When the containing class is destroyed, the contained class is also destroyed.
    An example of composition is a car containing an engine, where the engine cannot exist without the car.
 __________________________________________________________________________________________________________________________________________________________________________ 
 
 What is the difference between == and .equals() for comparing objects in Java?
 
--> The == operator compares object references, checking if they refer to the same memory location.
-
--> The .equals() method compares the actual content of the objects (the values they hold) based on the implementation of the method in the object's class.
-
--> In other words, == checks for reference equality, while .equals() checks for value equality.
+➳ The == operator compares object references, checking if they refer to the same memory location.
+➳ The .equals() method compares the actual content of the objects (the values they hold) based on the implementation of the method in the object's class.
+➳ In other words, == checks for reference equality, while .equals() checks for value equality.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is the difference between final, finally, and finalize in Java?
 
--> final is a keyword used to make a variable, method, or class constant and unchangeable.
-
--> finally is a block that follows a try-catch block and is used to ensure that a section of code is always executed, regardless of whether an exception occurs or not.
-
--> finalize is a method called by the garbage collector before reclaiming the memory occupied by an object. However, it's generally recommended to use the try-with-
+➳ final is a keyword used to make a variable, method, or class constant and unchangeable.
+➳ finally is a block that follows a try-catch block and is used to ensure that a section of code is always executed, regardless of whether an exception occurs or not.
+➳ finalize is a method called by the garbage collector before reclaiming the memory occupied by an object. However, it's generally recommended to use the try-with-
    resources statement or explicitly close resources instead of relying on finalize
 __________________________________________________________________________________________________________________________________________________________________________
 
@@ -1274,11 +1216,9 @@ ________________________________________________________________________________
 
 what is try with resources in java ?
 
--> The try-with-resources statement is a try statement that declares one or more resources. 
-
--> A resource is an object that must be closed after the program is finished with it. 
- 
--> The try-with-resources statement ensures that each resource is closed at the end of the statement
+➳ The try-with-resources statement is a try statement that declares one or more resources. 
+➳ A resource is an object that must be closed after the program is finished with it.
+➳ The try-with-resources statement ensures that each resource is closed at the end of the statement
 
 static String readFirstLineFromFile(String path) throws IOException {
 	    try (FileReader fr = new FileReader(path);
@@ -1289,25 +1229,24 @@ static String readFirstLineFromFile(String path) throws IOException {
 
 Here are some examples of commonly used resources that need to be closed after use:
 
-File streams: When reading from or writing to files.
-Database connections: When interacting with databases.
-Network sockets: When establishing connections to remote servers.
-Input/output streams: When performing input/output operations, such as reading or writing data.
-Readers and writers: Used for reading and writing character data.
-JDBC resources: PreparedStatements, ResultSets, and other JDBC-related objects.
-Image resources: When working with images, such as loading and manipulating them.
-Audio resources: When playing or manipulating audio files.
-ZIP file streams: When reading from or writing to ZIP archives.
-BufferedReader and BufferedWriter: Used for efficient reading and writing of character data.
+1. File streams: When reading from or writing to files.
+2. Database connections: When interacting with databases.
+3. Network sockets: When establishing connections to remote servers.
+4. Input/output streams: When performing input/output operations, such as reading or writing data.
+5. Readers and writers: Used for reading and writing character data.
+6. JDBC resources: PreparedStatements, ResultSets, and other JDBC-related objects.
+7. Image resources: When working with images, such as loading and manipulating them.
+8. Audio resources: When playing or manipulating audio files.
+9. ZIP file streams: When reading from or writing to ZIP archives.
+10. BufferedReader and BufferedWriter: Used for efficient reading and writing of character data.
 __________________________________________________________________________________________________________________________________________________________________________
  
 Buffer Reader and Buffer Writer ?
 
 buffer reader:
 
--> A BufferedReader reads text from a character stream with buffering capabilities, which helps in reducing the number of I/O operations. 
-
--> It provides methods like readLine() to read a line of text, read() to read a single character, and more.
+➳ A BufferedReader reads text from a character stream with buffering capabilities, which helps in reducing the number of I/O operations. 
+➳ It provides methods like readLine() to read a line of text, read() to read a single character, and more.
 
 try (BufferedReader reader = new BufferedReader(new FileReader("file.txt"))) {
     String line;
@@ -1322,11 +1261,9 @@ try (BufferedReader reader = new BufferedReader(new FileReader("file.txt"))) {
 
 buffer writer :
 
--> A BufferedWriter writes text to a character stream with buffering capabilities. 
-
--> Similar to BufferedReader, it writes data to an internal buffer and performs fewer I/O operations, which can improve performance. 
-
--> It provides methods like write(String) to write a string, newLine() to write a platform-specific line separator, and more.
+➳ A BufferedWriter writes text to a character stream with buffering capabilities. 
+➳ Similar to BufferedReader, it writes data to an internal buffer and performs fewer I/O operations, which can improve performance. 
+➳ It provides methods like write(String) to write a string, newLine() to write a platform-specific line separator, and more.
 
 try (BufferedWriter writer = new BufferedWriter(new FileWriter("file.txt"))) {
     writer.write("Hello, world!");
@@ -1339,14 +1276,11 @@ ________________________________________________________________________________
 
 What is the difference between String, StringBuilder, and StringBuffer in Java?
 
--> String is immutable, meaning its value cannot be changed once created. Each time you modify a String, a new object is created in memory.
-
--> StringBuilder and StringBuffer are mutable classes used to manipulate strings. They provide methods to append, delete, or modify strings. StringBuilder is not 
+➳ String is immutable, meaning its value cannot be changed once created. Each time you modify a String, a new object is created in memory.
+➳ StringBuilder and StringBuffer are mutable classes used to manipulate strings. They provide methods to append, delete, or modify strings. StringBuilder is not 
    thread-safe, while StringBuffer is thread-safe.
-
--> If you need a mutable string and don't require thread safety, use StringBuilder. If you need thread safety, use StringBuffer.
-
--> StringBuffer is thread-safe and synchronized whereas StringBuilder is not. That's why StringBuilder is faster than StringBuffer.
+➳ If you need a mutable string and don't require thread safety, use StringBuilder. If you need thread safety, use StringBuffer.
+➳ StringBuffer is thread-safe and synchronized whereas StringBuilder is not. That's why StringBuilder is faster than StringBuffer.
 __________________________________________________________________________________________________________________________________________________________________________
 
 List some string builder methods ?
@@ -1362,27 +1296,28 @@ ________________________________________________________________________________
 
 Explain the transient keyword in Java.
 
-The transient keyword is used to indicate that a variable should not be serialized when an object is converted to a byte stream (e.g., for storage or network transmission) using Java's Serialization API.
+➳ The transient keyword is used to indicate that a variable should not be serialized when an object is converted to a byte stream (e.g., for storage or network   
+   transmission) using Java's Serialization API.
 _________________________________________________________________________________________________________________________________________________________________________
 
 what are intermediate and terminal operations in java 8?
 
--> In Java 8 and later versions, the Stream API introduced two types of operations: 
+➳ In Java 8 and later versions, the Stream API introduced two types of operations: 
    intermediate operations and terminal operations. These operations are used to perform various transformations and computations on a stream of elements.
 
--> Intermediate Operations:
+➳ Intermediate Operations:
 
 Intermediate operations are operations that are applied to a stream and produce a new stream as a result. They are lazy, meaning they do not execute immediately. 
 Instead, they are stored and executed only when a terminal operation is called.
 
 Some common intermediate operations in Java 8 include:
 
-filter(Predicate<T> predicate): Returns a stream consisting of the elements that match the given predicate.
-map(Function<T, R> mapper): Applies the given function to each element of the stream and returns a stream of the results.
-distinct(): Returns a stream with distinct elements (removes duplicates).
-sorted(): Returns a stream with sorted elements based on their natural order.
-limit(long maxSize): Returns a stream truncated to the specified size.
-Intermediate operations allow you to chain multiple operations together to form a pipeline.
+1. filter(Predicate<T> predicate): Returns a stream consisting of the elements that match the given predicate.
+2. map(Function<T, R> mapper): Applies the given function to each element of the stream and returns a stream of the results.
+3. distinct(): Returns a stream with distinct elements (removes duplicates).
+4. sorted(): Returns a stream with sorted elements based on their natural order.
+5. limit(long maxSize): Returns a stream truncated to the specified size.
+6. Intermediate operations allow you to chain multiple operations together to form a pipeline.
 
 Terminal Operations:
 
@@ -1390,12 +1325,12 @@ Terminal operations are operations that are applied to a stream and produce a no
 
 Some common terminal operations in Java 8 include:
 
-forEach(Consumer<T> action): Performs an action for each element in the stream.
-collect(Collector<T, A, R> collector): Collects the elements of the stream into a collection or a single value.
-count(): Returns the count of elements in the stream.
-anyMatch(Predicate<T> predicate): Returns true if any elements of the stream match the given predicate.
-allMatch(Predicate<T> predicate): Returns true if all elements of the stream match the given predicate.
-findFirst(): Returns the first element of the stream.
+1. forEach(Consumer<T> action): Performs an action for each element in the stream.
+2. collect(Collector<T, A, R> collector): Collects the elements of the stream into a collection or a single value.
+3. count(): Returns the count of elements in the stream.
+4. anyMatch(Predicate<T> predicate): Returns true if any elements of the stream match the given predicate.
+5. allMatch(Predicate<T> predicate): Returns true if all elements of the stream match the given predicate.
+6. findFirst(): Returns the first element of the stream.
 __________________________________________________________________________________________________________________________________________________________________________
 
 what are parallel streams in java8?
@@ -1425,15 +1360,15 @@ public class ParallelStreamExample {
 }
 
 
--> In the example above, we have a list of numbers, and we want to find the sum of the even numbers. The first part demonstrates the sequential stream, 
+➳ In the example above, we have a list of numbers, and we want to find the sum of the even numbers. The first part demonstrates the sequential stream, 
    where operations are executed sequentially on a single thread.
  
--> The second part shows the parallel stream, where operations are divided among multiple threads for concurrent execution.
+➳ The second part shows the parallel stream, where operations are divided among multiple threads for concurrent execution.
 
--> By using parallel streams, Java automatically distributes the workload across available threads and combines the results at the end. 
+➳ By using parallel streams, Java automatically distributes the workload across available threads and combines the results at the end. 
    This can significantly improve the   performance of computationally intensive or data-intensive operations when working with large datasets
 
--> However, it's important to note that not all operations are suitable for parallel execution. Some operations, like forEach, rely on the order of elements and may  
+➳ However, it's important to note that not all operations are suitable for parallel execution. Some operations, like forEach, rely on the order of elements and may  
    produce incorrect results when executed in parallel.
 __________________________________________________________________________________________________________________________________________________________________________
 
@@ -1446,7 +1381,7 @@ ________________________________________________________________________________
 
  class methods ?
 
--> Object() - constructor 
+➳ Object() - constructor 
 1. getClass()
 2. finalize(), its deprcated since 9  
 3. notify()
@@ -1469,33 +1404,42 @@ D -> Dependency Inversion Principle
 Solid principles are the design principles  that enable us to manage most of the software problems.
 
 Single Responsibility Principle (SRP) :
--> the srp states that every java class must perform a single functionality. 
--> Implementation of multiple functionalities in a single class mashup the code.
+
+➳ the srp states that every java class must perform a single functionality. 
+➳ Implementation of multiple functionalities in a single class mashup the code.
+
 
 Open closed principle (OCP) : 
--> the opc states that according to new requirements the module should be open for extension but closed for modification. 
+
+➳ the opc states that according to new requirements the module should be open for extension but closed for modification. 
+
 
 Liskov Substitution Prinicipal (LSP) : 
--> It applies to inheritance in such a way that the derived classes must be completely substitutable for their base classes. 
--> In other words, if class A is sub type of class B, then we should be able to replace B with A without interupting the behaviour of programme.
+
+➳ It applies to inheritance in such a way that the derived classes must be completely substitutable for their base classes. 
+➳ In other words, if class A is sub type of class B, then we should be able to replace B with A without interupting the behaviour of programme.
+
 
 Interface Segregation Principal (ISP) :
--> Clients should not be forced to depend on interfaces they do not use. 
--> This principle promotes the idea of creating specific, focused interfaces rather than large, monolithic interfaces.
--> It aims to avoid "fat" interfaces with unnecessary methods and reduces the coupling between clients and implementations.
+
+➳ Clients should not be forced to depend on interfaces they do not use. 
+➳ This principle promotes the idea of creating specific, focused interfaces rather than large, monolithic interfaces.
+➳ It aims to avoid "fat" interfaces with unnecessary methods and reduces the coupling between clients and implementations.
 
 Dependency Inversion Principle (DIP): 
--> High-level modules should not depend on low-level modules. Both should depend on abstractions. 
--> This principle encourages the use of dependency injection and inversion of control to decouple modules and reduce direct dependencies. 
--> It promotes the use of interfaces and abstract classes to define contracts and allow for flexibility and easier testing.
+➳ High-level modules should not depend on low-level modules. Both should depend on abstractions. 
+➳ This principle encourages the use of dependency injection and inversion of control to decouple modules and reduce direct dependencies. 
+➳ It promotes the use of interfaces and abstract classes to define contracts and allow for flexibility and easier testing.
 _______________________________________________________________________________________________________________________________________________________________________
 
 Shallow copy vs Deep Copy ?
 
 SHALLOW COPY :
 
-
-A shallow copy creates a new object and copies the reference of the original object into it. It means that both the original object and the copied object will point to the same memory location. Any changes made to the original object will be reflected in the copied object and vice versa. In other words, a shallow copy creates a new object but shares the internal references with the original object.
+➳ A shallow copy creates a new object and copies the reference of the original object into it. 
+➳ It means that both the original object and the copied object will point to the same memory location. 
+➳ Any changes made to the original object will be reflected in the copied object and vice versa. 
+➳ In other words, a shallow copy creates a new object but shares the internal references with the original object.
 
 To perform a shallow copy in Java, you can use the clone() method or copy constructors. However, it's important to note that for the clone() method to work properly, the class must implement the Cloneable interface.
 
@@ -1546,7 +1490,9 @@ public class Main {
 
 Deep Copy:
 
-A deep copy creates a new object and recursively copies all the fields of the original object into the new object. It means that even if the original object changes, the copied object remains unaffected. In other words, a deep copy creates a new object and copies all the internal references, recursively, so that both objects are completely independent.
+➳ A deep copy creates a new object and recursively copies all the fields of the original object into the new object. 
+➳ It means that even if the original object changes, the copied object remains unaffected. 
+➳ In other words, a deep copy creates a new object and copies all the internal references, recursively, so that both objects are completely independent.
 
 
 class MyClass implements Cloneable {
@@ -1596,22 +1542,16 @@ ________________________________________________________________________________
 
 what is marker interface in java ?
 
-
-
-
-
-
-
-
+➳ A marker interface is an interface that doesn't have any methods or constants inside it. 
+➳ It provides run-time type information about objects, so the compiler and JVM have additional information about the object.
+➳ Examples of marker interface are Serializable, Cloneable and Remote interface. 
 __________________________________________________________________________________________________________________________________________________________________________
 
 Why do we use Design Patterns ?
 
--> Design patterns are a set of proven solutions to common software design problems. 
-
--> They provide standardized approaches for designing software systems that are reusable, maintainable, and scalable. 
-
--> Java, being an object-oriented programming language, is well-suited for implementing design patterns.
+➳ Design patterns are a set of proven solutions to common software design problems. 
+➳ They provide standardized approaches for designing software systems that are reusable, maintainable, and scalable. 
+➳ Java, being an object-oriented programming language, is well-suited for implementing design patterns.
 __________________________________________________________________________________________________________________________________________________________________________
 
 Design Patterns in java ?
@@ -1621,41 +1561,27 @@ Certainly! There are several design patterns commonly used in Java. Here are som
 
 Creational Patterns:
 
--> Singleton: Ensures that a class has only one instance and provides a global point of access to it.
-
--> Factory Method: Defines an interface for creating objects, but lets subclasses decide which class to instantiate.
-
--> Abstract Factory: Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
-
--> Builder: Separates the construction of a complex object from its representation, allowing the same construction process to create different representations.
-
--> Prototype: Creates new objects by cloning existing ones, avoiding the need for complex initialization.
-
+➳ Singleton: Ensures that a class has only one instance and provides a global point of access to it.
+➳ Factory Method: Defines an interface for creating objects, but lets subclasses decide which class to instantiate.
+➳ Abstract Factory: Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
+➳ Builder: Separates the construction of a complex object from its representation, allowing the same construction process to create different representations.
+➳ Prototype: Creates new objects by cloning existing ones, avoiding the need for complex initialization.
 
 Structural Patterns:
 
--> Adapter: Allows objects with incompatible interfaces to work together by converting the interface of one class into another.
-
--> Decorator: Dynamically adds new behaviors to an object without changing its existing code.
-
--> Composite: Represents a group of objects as a single object, treating individual and composite objects uniformly.
-
--> Proxy: Provides a surrogate or placeholder for another object to control access to it.
-
--> Facade: Provides a simplified interface to a complex subsystem, making it easier to use.
-
+➳ Adapter: Allows objects with incompatible interfaces to work together by converting the interface of one class into another.
+➳ Decorator: Dynamically adds new behaviors to an object without changing its existing code.
+➳ Composite: Represents a group of objects as a single object, treating individual and composite objects uniformly.
+➳ Proxy: Provides a surrogate or placeholder for another object to control access to it.
+➳ Facade: Provides a simplified interface to a complex subsystem, making it easier to use.
 
 Behavioral Patterns:
 
--> Observer: Defines a one-to-many dependency between objects, so that when one object changes state, all its dependents are notified and updated automatically.
-
--> Strategy: Encapsulates a family of algorithms and makes them interchangeable, allowing clients to switch between algorithms at runtime.
-
--> Command: Encapsulates a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.
-
--> Template Method: Defines the skeleton of an algorithm in a base class, allowing subclasses to provide specific implementations of certain steps.
-
--> Iterator: Provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
+➳ Observer: Defines a one-to-many dependency between objects, so that when one object changes state, all its dependents are notified and updated automatically.
+➳ Strategy: Encapsulates a family of algorithms and makes them interchangeable, allowing clients to switch between algorithms at runtime.
+➳ Command: Encapsulates a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.
+➳ Template Method: Defines the skeleton of an algorithm in a base class, allowing subclasses to provide specific implementations of certain steps.
+➳ Iterator: Provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
 __________________________________________________________________________________________________________________________________________________________________________
 
 
