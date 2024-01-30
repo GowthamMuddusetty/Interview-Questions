@@ -1,0 +1,63 @@
+These Questions are Copied from Linikedin posts :
+
+1. Generate Random 4 digit numbers 
+
+2. Problem: Identify the count of a letter in the sentence
+
+3. Problem: Reversal of String (3 ways)
+
+4. Problem: Generating 4-digit random number without using Math.random method
+
+5. Problem: Finding number in an Array and ArrayList
+
+6. Problem: Find out highest numbers in an Array whose adjacent right numbers are smaller
+
+7. Problem: Find a count of each character in a given String.
+
+(Gopi and Kamal Gave this task )
+   You have an array of names where each name is in the format "YY_Name" (e.g., "06_Gowtham"). Your task is to modify the array by appending an underscore and a count to    
+   each repeated name and also create a map that stores the count of each unique name. The modified array and the map should be printed.
+
+8. Problem: Extract last 4 characters of any String.
+
+9. Problem: Program to remove duplicates from a given array.
+
+10. Problem: First letter of each word present in String.
+
+11. Problem: Fibonacci Series using Arrays.
+
+12. Problem: Program to return a new Array after removing first and last elements of an Array.
+
+13. Problem: Minimum and Maximum element in an Array using sort method.
+
+14. Problem: Fibonacci Series using HashMap.
+
+15. Problem: Sorting of an Array.
+
+16. Problem: Program to find non-repetitive characters in a string.
+
+17. Problem: Program to find non-repetitive characters in a string using HashMap.
+
+18. Problem: Given an array of integers, find the indices of two numbers that add up to a specific target. Assume each input has exactly one solution, and the same    
+    element cannot be used twice.
+
+19. Problem: Program to convert the first and last letter of each word in a string to uppercase.
+
+20. Problem: Return the maximum profit by choosing a single day to buy and a different day in the future to sell.
+
+21. Problem: Check if the input is a palindrome.
+
+22. Problem: Java Program to Expand a String with Character Counts.
+
+23. Problem: Java Program to Expand a String.
+
+24. Problem: Program to Find the Longest Contiguous Alphanumeric Substring.
+
+25. Problem: Program to Find the Largest Substring without repeated characters.
+
+
+Youtube lo 
+
+YCode1. Problem: Reverse sentence word by word in java
+YCode2. Problem. Find the HCF of Two Number IBM Coding Interview Questions (Still not solved)
+

@@ -1,4 +1,3 @@
-custom validators
 
 
 							SPRING BOOT INTERVIEW QS :
@@ -19,7 +18,7 @@ ________________________________________________________________________________
 	<artifactId>spring-boot-devtools</artifactId>
 	<scope>runtime</scope>
 	<optional>true</optional>
-</dependency>
+</dependency> 
 
 why this dependency is added in pom.xml ?
 
@@ -74,31 +73,26 @@ ________________________________________________________________________________
 
 What is Spring Boot, and how does it differ from the traditional Spring Framework?
 
--> Spring Boot is a framework that simplifies the development of Spring-based applications by providing a set of defaults, conventions, and auto-configurations.
-
--> Spring Framework, which requires explicit configuration for various components, Spring Boot automatically configures many aspects of the application, reducing 
+➳ Spring Boot is a framework that simplifies the development of Spring-based applications by providing a set of defaults, conventions, and auto-configurations.
+➳ Spring Framework, which requires explicit configuration for various components, Spring Boot automatically configures many aspects of the application, reducing 
    boilerplate code and making development faster and easier.
 __________________________________________________________________________________________________________________________________________________________________________
 
 Explain the concept of "auto-configuration" in Spring Boot. How does it simplify application setup?
 
--> Auto-configuration in Spring Boot refers to the mechanism by which the framework automatically configures beans based on the classpath dependencies and the   
+➳ Auto-configuration in Spring Boot refers to the mechanism by which the framework automatically configures beans based on the classpath dependencies and the   
    environment. 
 __________________________________________________________________________________________________________________________________________________________________________
 
 what is the purpose of @SpringBootApplication Annotation in a spring boot application ? 
 
-➳ the main class is annoted with @SpringBootApplication 
+➳ The main class is annoted with @SpringBootApplication 
+➳ It is used to mark a configuration class that declares one or more @Bean methods and also triggers auto-configuration and component scanning. 
+➳ It is equal to a class that is annoted with @componentscan , @Configuration and @Enableautoconfiguration.
 
-➳ it is used to mark a configuration class that declares one or more @Bean methods and also triggers auto-configuration and component scanning. 
-
-➳ it is equal to a class that is annoted with @componentscan , @Configuration and @Enableautoconfiguration.
-
-➳ @componentscan : this annotation tells spring boot to scan current package and its sub packages in order to configure them as spring beans.
-
-➳ @configuration : this annotation designates a class as configuration class for java configuring.
-
-➳ @Enableautoconfiguration : this enables spring boot autoconfiguration mechanism. it refers to creating beans automatically by scanning the class path.
+1. @componentscan : this annotation tells spring boot to scan current package and its sub packages in order to configure them as spring beans.
+2. @configuration : this annotation designates a class as configuration class for java configuring.
+3. @Enableautoconfiguration : this enables spring boot autoconfiguration mechanism. it refers to creating beans automatically by scanning the class path.
 __________________________________________________________________________________________________________________________________________________________________________
 
 @SpringBootApplication
@@ -120,11 +114,8 @@ ________________________________________________________________________________
 What are the Spring Boot key components?
  
 ➳ Spring Boot Auto Configuration
-
 ➳ Spring Boot CLI
-
 ➳ Spring Boot POMs
-
 ➳ Spring Boot Acutator
 _______________________________________________________________________________________________________________________________________________________________________
 
@@ -147,15 +138,10 @@ ________________________________________________________________________________
 Advantages of RESTful web services:
 
 ➳ RESTful web services are platform-independent.
- 
 ➳ It can be written in any programming language and can be executed on any platform.
-
-➳ It provides different data format like JSON, text, HTML, and XML.
-
+➳ It provides different data format like JSON, ext, HTML, and XML.
 ➳ It is fast in comparison to SOAP because there is no strict specification like SOAP.
-
 ➳ These are reusable.
-
 ➳ They are language neutral.
 __________________________________________________________________________________________________________________________________________________________________________
 

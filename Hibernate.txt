@@ -13,9 +13,7 @@ ________________________________________________________________________________
 What is ORM Hibernate ?
 
 ➳ Hibernate orm stands for (object relational mapping). 
-
 ➳ this tool is mainly used for converting data in rdbms to an object used in object oriented programming constructs.
-
 ➳ it greatly helps in simplifying data retrieval, creation and manipulation.
 _________________________________________________________________________________________________________________________________________________________________________
 
@@ -23,17 +21,12 @@ What are some of the important interfaces of Hibernate framework?
 
 Hibernate core interfaces are:
 
-➳ Configuration
-
-➳ SessionFactory
-
-➳ Session
-
-➳ Criteria
-
-➳ Query
-
-➳ Transaction
+1. Configuration
+2. SessionFactory
+3. Session
+4. Criteria
+5. Query
+6. Transaction
 _________________________________________________________________________________________________________________________________________________________________________
 
 what is configuration ?
@@ -50,7 +43,6 @@ SessionFactory sessionFactory = configuration.buildSessionFactory();
 ➳ It plays a vital role in defining how your Java objects are persisted and retrieved from the database.
 _________________________________________________________________________________________________________________________________________________________________________
 
- 
 what is transaction ?
 
 ➳ In the context of Hibernate and database management, a transaction refers to a sequence of one or more database operations that are executed as a single, atomic unit of work. 
@@ -59,8 +51,8 @@ ________________________________________________________________________________
 
 What is Session and Session Factory in Hibernate ? 
 
-➳ The Session Factory in Hibernate is responsible for creating of session objects. The Hibernate Session provides methods such as Update, Delete, Post, Get all, all the 
-   Crud based operations on database to which the session factory is connected.
+➳ The Session Factory in Hibernate is responsible for creating of session objects. 
+➳ The Hibernate Session provides methods such as Update, Delete, Post, Get all, all the Crud based operations on database to which the session factory is connected.
 __________________________________________________________________________________________________________________________________________________________________________
 
 what is caching in hibernate ?
@@ -72,16 +64,14 @@ ________________________________________________________________________________
 What is Hibernate first level and second level cache?
 
 ➳ the first level caching is only associated with session level and accessable only at the session level.
-
 ➳ where as second level caching is associated with session factory and it is available to all the sessions.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is the benefit of using Hibernate?
 
-➳ Some of the important advantages of Hibernate framework over JDBC are: 
+Some of the important advantages of Hibernate framework over JDBC are: 
 
 ➳ Hibernate removes a lot of boiler-plate code that comes with JDBC API, the code looks more cleaner and readable.  
-
 ➳ Hibernate supports inheritance, associations and collections. These features are not present with JDBC API.
 __________________________________________________________________________________________________________________________________________________________________________
 

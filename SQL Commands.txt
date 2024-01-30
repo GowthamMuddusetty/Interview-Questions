@@ -154,11 +154,21 @@ SELECT * FROM spartaa.employee;
 
 __________________________________________________________________________________________________________________________________________________________________________
 
+1. What is differnce betweewn RDBMS and DBMS ?
 
+DBMS (Database Management System):
 
+➳ Manages data but may not enforce relationships or a predefined schema.
+➳ Can handle various types of data, including structured, unstructured, and semi-structured.
+➳ Examples: MongoDB, Redis.
 
+RDBMS (Relational Database Management System):
 
-
+➳ Manages data in a tabular form with rows and columns.
+➳ Enforces relationships between tables and has a predefined schema.
+➳ Emphasizes normalization to eliminate data redundancy.
+➳ Examples: MySQL, PostgreSQL, Oracle.
+__________________________________________________________________________________________________________________________________________________________________________
 
 
 

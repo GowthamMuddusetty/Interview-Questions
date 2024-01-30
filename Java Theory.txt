@@ -18,7 +18,7 @@ Tell me some features of java ?
 
 ➳ Secured : Java is best known for its security. With Java, we can develop virus-free systems. Java is secured because:
              No explicit pointer
-             Java Programs run inside a virtual machine sandbox
+             Java Programs run inside a virtual machine sandbox 
 
 ➳ Robust : The English mining of Robust is strong. Java is robust because:
 	    It uses strong memory management.
@@ -57,9 +57,7 @@ ________________________________________________________________________________
 What is ClassLoader in java ?
 
 ➳ In Java, class loaders are a fundamental part of the Java Runtime Environment (JRE) responsible for loading classes and resources at runtime.
-
 ➳ The primary purpose of class loaders is to dynamically find and load Java class files into memory when they are needed by the Java program.
-
 ➳ Java class loaders form a hierarchy and work together to load classes as needed. There are three main types of class loaders in Java:
 
 Bootstrap Class Loader:
@@ -71,41 +69,55 @@ How many types of memory areas are allocated by JVM?
 
 ➳ JVM Is the actual one that calls the main method in java application. it is a part of jre.
 
-Class(Method) Area
-Heap
-Stack
-Program Counter Register
-Native Method Stack
+1. Class(Method) Area
+2. Heap
+3. Stack
+4. Program Counter Register
+5. Native Method Stack
+__________________________________________________________________________________________________________________________________________________________________________
+
+What will be the value of a local variable ?
+
+➳ The local variables do not have any default values in Java. 
+➳ This means that they can be declared and assigned a value before the variables are used for the first time, otherwise, the compiler throws an error.
+➳ The local variable i had declared without a value like ( int i;), it will compile, but if u try to access it (syso(i)), then it says local variable has not been intialialised.
+__________________________________________________________________________________________________________________________________________________________________________
+
+Describe the process of memory allocation in java ?
+
+➳ In Java, memory allocation primarily refers to the allocation of memory for objects and variables during the runtime of a Java program.
+➳ Java memory allocation is managed by the Java Virtual Machine (JVM), which is responsible for dynamically allocating and deallocating memory as needed. 
+
+Heap Memory: Objects are stored in the heap memory, shared among all threads.
+Stack Memory: Local variables are stored in the stack memory, using a last-in-first-out approach.
+Garbage Collection: Automatic memory management system that reclaims memory no longer referenced by live objects.
+Memory Management: Techniques such as generational garbage collection and compaction are used for efficient memory management.
+Primitive Types: Memory allocation for int, float, char, etc., is done directly on the stack and deallocated when out of scope.
+Arrays: Memory for array elements is allocated on the heap, and elements are stored consecutively in memory.
 __________________________________________________________________________________________________________________________________________________________________________
 
 Heap Memory:
 
-The heap is a region of memory used for dynamic memory allocation.
-It is where objects and their associated data are stored during the execution of a Java program.
+➳ The heap is a region of memory used for dynamic memory allocation.
+➳ It is where objects and their associated data are stored during the execution of a Java program.
 
 Stack Memory:
 
-The stack is a region of memory used for storing method call frames, local variables, and method call information.
-Each thread in a Java program has its own stack, which stores data related to the methods being executed by that thread.
+➳ The stack is a region of memory used for storing method call frames, local variables, and method call information.
+➳ Each thread in a Java program has its own stack, which stores data related to the methods being executed by that thread.
 __________________________________________________________________________________________________________________________________________________________________________
  
+
 Data Types and size of DT ?
 
-➳ Byte  - 1(byte)
-
-➳ Short - 2 bytes
-
-➳ Int  -  4 bytes 
-
-➳ Long  -  8 bytes
-
-➳ Float  - 4 bytes 
-
-➳ Double  - 8 bytes
-
-➳ Char  -  2 bytes
-
-➳ Boolean  - 1 bit
+1. Byte  - 1(byte)
+2. Short - 2 bytes
+3. Int  -  4 bytes 
+4. Long  -  8 bytes
+5. Float  - 4 bytes 
+6. Double  - 8 bytes
+7. Char  -  2 bytes
+8. Boolean  - 1 bit
 __________________________________________________________________________________________________________________________________________________________________________
 
 Explain system.out.println ?
@@ -115,19 +127,31 @@ Explain system.out.println ?
 ➳ system.out.println is used to print statement. here system is a class, out is a object of the print stream class, println is a method of PrintStream class.
 __________________________________________________________________________________________________________________________________________________________________________
 
+Order of execution of java programme ?
+
+➳ In Java, the order of execution refers to the sequence in which different parts of a program are executed. 
+   Generally, Java programs are executed in the following order:
+
+1. Static blocks and variable initialization: Static variables and static blocks are initialized and executed before the main method is called. This happens only once,     
+   when the class is loaded by the JVM.
+2. Main method execution: The main method is the entry point of any Java program. It is executed after the static blocks and variable initialization.
+3. Instance initialization blocks and variable initialization: Instance variables and instance initialization blocks are executed when an object of the class is created.
+4. Constructor execution: Constructors are special methods that are used to initialize objects. When an object is created, the constructor corresponding to that class is   
+   executed.
+5. Method execution: After the object is created, methods can be called and executed.
+__________________________________________________________________________________________________________________________________________________________________________
+
 What is the purpose of the static keyword in Java?
 
-The static keyword is used to define a class-level member that belongs to the class itself rather than to an instance of the class. 
-
-The static keyword in Java is mainly used for memory management.
-
-Less memory consumption since they are allocated memory only once when the class is being loaded.
+➳ The static keyword is used to define a class-level member that belongs to the class itself rather than to an instance of the class. 
+➳ The static keyword in Java is mainly used for memory management.
+➳ Less memory consumption since they are allocated memory only once when the class is being loaded.
 __________________________________________________________________________________________________________________________________________________________________________
 
 Why String is Immutable ?
 
-string with the same content share the same storage in a string pool to minimize the copy of the same variable.
-this is tosay, once a string is created, it cannot be changed, if any changes it it will lead to creation of new strings.
+String with the same content share the same storage in a string pool to minimize the copy of the same variable.
+this is tosay, once a string is created, it cannot be changed, if any changes it will lead to creation of new strings.
 This design decision was made for several reasons, including:
 
 String Pooling: Java maintains a string pool (also known as the string constant pool) to store unique string literals. When you create a string literal, Java checks if an identical string already exists in the pool. If it does, the existing instance is returned instead of creating a new one. This saves memory and improves performance.
@@ -142,7 +166,6 @@ ________________________________________________________________________________
 How Java provide high Performance ?
 
 ➳ Java uses Just-In-Time compiler to enable high performance. 
-
 ➳ Just-In-Time compiler is a program that turns Java bytecode into instructions that can be sent directly to the processor.
 __________________________________________________________________________________________________________________________________________________________________________
 
@@ -162,9 +185,7 @@ ________________________________________________________________________________
 What are wrapper classes in java ?
 
 ➳ Wrapper classes in Java are a set of classes that allow you to convert primitive data types into objects and vice versa.
-
 ➳ Wrapper classes provide a way to treat these primitive types as objects and enable various utility methods to be applied to them.
-
 ➳ wrapper classes are immutable classes.
 
 The following are the wrapper classes in Java for each primitive data type:
@@ -179,7 +200,7 @@ Character: Wrapper for char
 Boolean: Wrapper for boolean
 __________________________________________________________________________________________________________________________________________________________________________
 
-how to you convert primitive data type into wrapper class in java
+how do you convert primitive data type into wrapper class in java ?
 
 ➳ In Java, you can convert a primitive data type into its corresponding wrapper class using a process called "boxing" or "wrapping."
 
@@ -199,24 +220,24 @@ ________________________________________________________________________________
 
 What is polymorphism ?
 
--> Polymorphism is the ability to present the same interface for differing underlying forms (data types).
+➳ Polymorphism is the ability to present the same interface for differing underlying forms (data types).
 
--> Types of Polymorphism IMP 
+➳ Types of Polymorphism IMP 
    1. Compile Time Polymorphism (Static) 
    2. Runtime Polymorphism (Dynamic) 
 
--> Compile Time Polymorphism : The polymorphism which is implemented at the compile time is known as compile-time polymorphism. Example - Method Overloading 
+➳ Compile Time Polymorphism : The polymorphism which is implemented at the compile time is known as compile-time polymorphism. Example - Method Overloading 
 
--> Method Overloading : Method overloading is a technique which allows you to have more than one function with the same function name but with different functionality.      
+➳ Method Overloading : Method overloading is a technique which allows you to have more than one function with the same function name but with different functionality.      
    Method overloading can be possible on the following basis: 
    1. The type of the parameters passed to the function. 
    2. The number of parameters passed to the function.
 
--> Runtime Polymorphism : Runtime polymorphism is also known as dynamic polymorphism. Function overriding is an example of runtime polymorphism. 
--> Function overriding means when the child class contains the method which is already present in the parent class. Hence, the child class overrides the method of the   
+➳ Runtime Polymorphism : Runtime polymorphism is also known as dynamic polymorphism. Function overriding is an example of runtime polymorphism. 
+➳ Function overriding means when the child class contains the method which is already present in the parent class. Hence, the child class overrides the method of the   
    parent class. 
 
-In case of function overriding, parent and child classes both contain the same function with a different definition. The call to the function is determined at runtime is known as runtime polymorphism.
+In case of function overriding, parent and child classes both contain the same function with a different definition. The call to the function is determined at runtime is known as runtime polymorphism.  
 __________________________________________________________________________________________________________________________________________________________________________
 
 what is loose coupling & tight coupling ?
@@ -250,15 +271,10 @@ ________________________________________________________________________________
 What is Abstraction ?
 
 ➳ Abstraction in Java is a process of hiding the implementation details from the user and showing only the functionality to the user.
-
 ➳ In java abstraction is achieved through abstract classes and interfaces. 
-
 ➳ An abstract class in Java is a class that cannot be instantiated directly, meaning you cannot create objects of that class. 
-
 ➳ Instead, it serves as a blueprint for other classes to extend and implement. 
-
 ➳ Abstract classes can contain both abstract methods (methods without a body) and concrete methods (methods with a body).
-
 ➳ Abstract methods must be implemented by the concrete subclasses that extend the abstract class.
 
 abstract class Shape {
@@ -325,7 +341,6 @@ ________________________________________________________________________________
 Exception Heriarchy ?
 
 ➳ Exception is an event that disturbs the normal flow of the programme. It is an object which is thrown at run time.
-
 ➳ Exception handling is an mechanism that handles the compile & run time errors.
 
    https://media.geeksforgeeks.org/wp-content/uploads/20220120111809/Group21-660x330.jpg
@@ -338,7 +353,7 @@ What is the difference between throw and throws in Java?
    propagate those exceptions.
 __________________________________________________________________________________________________________________________________________________________________________
 
-What are checked and unchecked exceptions in Java?
+What are checked and unchecked exceptions in Java ?
 
 ➳ Checked exceptions are exceptions that need to be declared in the method signature using the throws keyword or handled using a try-catch block. 
    Examples include    IOException, SQLException,ClassNotFoundException, SocketException, FileNotFoundException etc.
@@ -383,32 +398,25 @@ ________________________________________________________________________________
 
 
 
-									COLLECTION FRAMEWORK
+								COLLECTION FRAMEWORK
 
 
 What is the difference between Java collection and Java collections?
 
 ➳ Collection is a interface where you group objects in to single unit.
-
 ➳ Collections is a utility class that has some set of operations you perform on collection.
-
 ➳ Collection doesnt have all static methods in it, where Collections consist methods that are all static.
 _________________________________________________________________________________________________________________________________________________________________________
 
 What is the difference between Collection and Collections?
 
 ➳ The differences between the Collection and Collections are given below.
- 
 ➳ The Collection is an interface whereas Collections is a class.
-
 ➳ The Collection in Java is a framework that provides an architecture to store and manipulate the group of objects.
-
 ➳ The Collection interface provides the standard functionality of data structure to List, Set, and Queue.
-
-➳  However, Collections class is to sort and synchronize the collection elements.
-
-➳ The Collection interface provides the methods that can be used for data structure
-   whereas Collections class provides the static methods which can be used for various operation on a collection.
+➳ However, Collections class is to sort and synchronize the collection elements.
+➳ The Collection interface provides the methods that can be used for data structure.
+➳ Whereas Collections class provides the static methods which can be used for various operation on a collection.
 _________________________________________________________________________________________________________________________________________________________________________
 
 What is Iterator?
@@ -427,20 +435,16 @@ ________________________________________________________________________________
 How HashMap internally works?
 
 ➳ A hashmap uses a hashtable, however it internally implemented by 2 data structutres namely arrays and linked list. 
-
 ➳ When ever you declare a hashmap, internally it will create an array of buckets. The buckets are reffered to as nodes or you can say as list.
-
-➳ Internally HashMap uses a hashCode of the key Object and this hashCode is further used by the hash function to find the index of the bucket where the new entry can be added. 
-
-➳ HashMap uses multiple buckets and each bucket points to a Singly Linked List where the entries (nodes) are stored.
+➳ Internally HashMap uses a hashCode of the key Object and this hashCode is further used by the hash function to find the index of the bucket where the new entry can be    
+   added. 
+➳ HashMap uses multiple buckets and each bucket points to a Singly Linked List where the entries (nodes) are stored. 
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is the difference between ArrayList and LinkedList?
 
 ➳ ArrayList is implemented as a resizable array and provides fast random access but slower insertion and deletion of elements in the middle of the list.
-
 ➳ LinkedList is implemented as a doubly-linked list and provides fast insertion and deletion of elements but slower random access.
-
 ➳ Use ArrayList when you need fast access to elements and LinkedList when you frequently need to add or remove elements from the list.
 __________________________________________________________________________________________________________________________________________________________________________
 
@@ -448,9 +452,7 @@ ________________________________________________________________________________
 
 ➳ In Java, a Set is a collection that does not allow duplicate elements. That means that if you try to add an element to a Set that already exists in the Set, the new  
    element will not be added.
-
 ➳ HashSet and LinkedHashSet both allow null values.
-
 ➳ TreeSet does not allow null values. If you try to add a null value to a TreeSet, it will throw a NullPointerException.
 __________________________________________________________________________________________________________________________________________________________________________
 
@@ -465,8 +467,14 @@ ________________________________________________________________________________
 What is ConcurrentHashMap used for?
 
 ➳ ConcurrentHashMap is the Map implementation that allows us to modify the Map while iteration. 
-
 ➳ The ConcurrentHashMap operations are thread-safe. ConcurrentHashMap doesn't allow null for keys and values.
+__________________________________________________________________________________________________________________________________________________________________________
+
+Why ConcurrentHashMap is used?
+
+➳ ConcurrentHashMap is ideal for high-performance, multi-threaded applications. 
+➳ If you need to access and update a map from multiple threads, ConcurrentHashMap is the best option. 
+➳ It provides all the operations of a HashMap and additionally allows concurrent access for read, write, and update.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What are new features introduced with Java 8 ?
@@ -489,30 +497,22 @@ What is the difference between Iterator and ListIterator?
 
 ➳ Iterator traverses the elements in the forward direction only whereas ListIterator traverses the elements into forward and backward direction.
 __________________________________________________________________________________________________________________________________________________________________________
-
+                                                             
 What is the difference between List and Set?
 
 ➳ The List and Set both extend the collection interface. However, there are some differences between the both which are listed below.
-
 ➳ The List can contain duplicate elements whereas Set includes unique items.
-
 ➳ The List is an ordered collection which maintains the insertion order whereas Set is an unordered collection which does not preserve the insertion order.
-
 ➳ The List interface contains a single legacy class which is Vector class whereas Set interface does not have any legacy class.
-
 ➳ The List interface can allow n number of null values whereas Set interface only allows a single null value.
 __________________________________________________________________________________________________________________________________________________________________________
 
 What is the difference between HashSet and TreeSet?
 
 ➳ The HashSet and TreeSet, both classes, implement Set interface. The differences between the both are listed below.
-
 ➳ HashSet maintains no order whereas TreeSet maintains ascending order.
-
 ➳ HashSet implemented by hash table whereas TreeSet implemented by a Tree structure.
-
 ➳ HashSet performs faster than TreeSet.
-
 ➳ HashSet is backed by HashMap whereas TreeSet is backed by TreeMap.
 __________________________________________________________________________________________________________________________________________________________________________
 
@@ -639,10 +639,12 @@ ________________________________________________________________________________
 
 what is PreparedStatement and Statement in jdbc?
 
-➳  In JDBC, both Statement and PreparedStatement are interfaces used to execute SQL queries against a database. 
-    However, they have some differences in their functionality and usage.
+➳ In JDBC, both Statement and PreparedStatement are interfaces used to execute SQL queries against a database. 
+   However, they have some differences in their functionality and usage.
+
 ➳ Statement is an interface in JDBC that is used to execute a static SQL statement and return the results. 
    Static SQL statements are those whose values are hard-coded at the time of execution.
+
 ➳ PreparedStatement is used for dynamic SQL statements with parameters, while Statement is used for static SQL statements.
 ➳ PreparedStatement provides protection against SQL injection attacks, while Statement does not.
 __________________________________________________________________________________________________________________________________________________________________________
@@ -805,7 +807,7 @@ what is the reason for introducing functional interface after java 8 ?
 ➳ Various built-in interfaces were declared with @FunctionalInterface annotation and made functional from Java 8.
 __________________________________________________________________________________________________________________________________________________________________________
 
-why functional interface in java has one abstract method
+why functional interface in java has one abstract method ?
 
 ➳ The functional interface also known as Single Abstract Method Interface was introduced to facilitate Lambda functions.
 ➳ Since a lambda function can only provide the implementation for 1 method it is mandatory for the functional interface to have ONLY one abstract method.__________________________________________________________________________________________________________________________________________________________________________
@@ -813,6 +815,12 @@ why functional interface in java has one abstract method
 What is Stream?
 
 ➳ Stream represents a sequence of objects from a source, which supports aggregate operations. 
+__________________________________________________________________________________________________________________________________________________________________________
+
+What is Completable Future in java ?
+
+➳ CompletableFuture is a class introduced in Java 8 that allows us to write asynchronous, non-blocking code. 
+➳ It is a powerful tool that can help us write code that is more efficient and responsive.
 __________________________________________________________________________________________________________________________________________________________________________
 
 How to implement an immutable class ?
@@ -893,7 +901,7 @@ ________________________________________________________________________________
 Threads in java ?
 
 ➳ In java, a thread is a unit of execution that allows a programme to perform multiple tasks concurrently.
-➳ Java provides a buiult-in support for multi-threading the the "java.lang.Thread" class.
+➳ Java provides a built-in support for multi-threading the "java.lang.Thread" class.
 ➳ A thread is created by instantiating an object of the "Thread" class and calling its method start().
 ➳ when the start() method is called, a new thread is created and its run() method is invoked in separated flow of execution.
 ➳ Multithreading is commonly used in Java for tasks that require parallel processing,
